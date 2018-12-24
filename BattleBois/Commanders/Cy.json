@@ -1,0 +1,10 @@
+﻿{
+    "Name" : "Cyrano",
+    "Stats": {
+        "Intelligence"    : 1,
+        "Wisdom"          : 3,
+        "Charisma"        : 3,
+        "Land Warfare"     : 4,
+        "Maritime Tactics" : 0
+    }
+}

@@ -1,0 +1,23 @@
+{
+	"Name" : "Absolute Unit",
+	"Type" : "Heavy Infantry",
+
+	"Stats" : {
+		"Offensive Strength" : 30,
+		"Defensive Strength" : 70,
+		"Initiative Penalty" : -3,
+		"Recruitment Cost"   : 50,
+		"Maintenence Cost"   : 8
+	},
+	
+	"Dice" : {
+		"Casualty Dice" : "3d6+1",
+		"Morale Dice"   : "3d6+3"
+	},
+
+  "Traits": {
+    "Range" : 2,
+    "In Awe of the Size": 25,
+    "Mad Lads" :  0
+  }			
+}
