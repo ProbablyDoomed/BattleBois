@@ -12,7 +12,7 @@ namespace BattleBois
 
         public String Name { get; set; } = DEFAULT_NAME;
         public String Type { get; set; } = DEFAULT_TYPE;
-        public Dictionary<String, int> Stats { get; set; } = new Dictionary<string, int>();
+        public Dictionary<String, double> Stats { get; set; } = new Dictionary<string, double>();
         public Dictionary<String, String> Dice { get; set; } = new Dictionary<string, string>();
         public Dictionary<String, int> Traits { get; set; } = new Dictionary<string, int>();
     }

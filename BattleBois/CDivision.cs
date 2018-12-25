@@ -8,9 +8,11 @@ namespace BattleBois
 {
     class CDivision
     {
-        public Guid ID { get; set; } = Guid.NewGuid();
+        public static readonly String DEFAULT_NAME = "Unnamed";
 
-        public CUnit UnitType { get; set; }
+        public Guid ID { get; set; } = Guid.NewGuid();
+        public String Name { get; set; } = DEFAULT_NAME;
+        public CUnit UnitType { get; set; } = new CUnit();
 
         public int Size { get; set; } = 0;
         public int Losses { get; set; } = 0;
@@ -18,16 +20,16 @@ namespace BattleBois
 
         public int Initiative { get; set; } = 0;
 
-        public int AttackResult { get; set; } = 0;
-        public int InflictedCasualties { get; set; } = 0;
-
         public Guid GuardPairing { get; set; } = Guid.Empty;
+
+        /*public int AttackResult { get; set; } = 0;
+        public int InflictedCasualties { get; set; } = 0;
 
 
         public int RollInitiative(CCommander commander, int modifiers)
         {
             Initiative = Dice.Roll("1d20") 
-                + UnitType.Stats["Initiative Penalty"] 
+                + (int)(UnitType.Stats["Initiative Penalty"])
                 + commander.Stats["Wisdom"] 
                 + modifiers
                 ;
@@ -38,7 +40,7 @@ namespace BattleBois
         public int RollAttack(CCommander commander, String proficiency, int modifiers)
         {
             AttackResult = Dice.Roll("1d100") 
-                + UnitType.Stats["Offensive Strength"] 
+                + (int)(UnitType.Stats["Offensive Strength"]) 
                 + Morale 
                 + commander.Stats["Intelligence"] + commander.Stats[proficiency]
                 + modifiers
@@ -51,6 +53,7 @@ namespace BattleBois
         {
             InflictedCasualties = (Dice.Roll(UnitType.Dice["Casualty Dice"]) * Size) / 100;
             return InflictedCasualties;
-        }
+        }*/
+
     }
 }

@@ -8,5 +8,7 @@ namespace BattleBois
 {
     class CBattle
     {
+        public List<CArmy> Armies { get; set; } = new List<CArmy>();
+
     }
 }

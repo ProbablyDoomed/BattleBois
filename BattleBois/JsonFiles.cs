@@ -48,7 +48,7 @@ namespace BattleBois
 
         public static void SaveAs<T>(String fileName, T item)
         {
-            String fileContent = JsonConvert.SerializeObject(item);
+            String fileContent = JsonConvert.SerializeObject(item, Formatting.Indented);
             String fullPath = fileName;
 
             try

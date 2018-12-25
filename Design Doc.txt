@@ -1,0 +1,181 @@
+﻿
+1. Allow me to make units that need stats of Offensive Strength, Defensive Strength, Casualty Dice, Initiative Penalty, Morale Dice, Supply Cost, Type and Traits. These should essentially be templates, and given that the system is very in-development it’s probably better to set up a way for me to just make them rather than hardcode them in one by one.
+
+2. Allow me to take these units and put them into an army like: 30 Spearmen + 10 Footmen + 20 Archers can be set up to make the 1st Army of Batal or whatever. When put into divisions in an army like this, they also need to be able to track current morale which is separate from the morale dice that are rolled during morale checks.
+
+3. Allow me to put two armies up against one another, along with commanders that need the following stats: Intelligence, Wisdom, Charisma, (Modifiers, not scores) Proficiency Modifier on Land Warfare and Maritime Tactics. For now, each army has only 1 Commander, but it could also be useful to include a reserve system so that if the commander dies during a battle you can slot in another easily. It’d be good to have a summary screen where you can see at a glance the total size, composition, cost of an army, movement speed and so on.
+
+4. The general actual combat mechanic:
+
+	1. Both sides roll initiative, per division of units (AkA all Footmen of Army A roll as one, all Spearmen of Army A roll as one and so on). These are just 1d20 rolls + Commander’s Wisdom modifier + the Initiative Penalty of the division which is a negative number. These are then ordered from highest to lowest, as usual.
+	
+	2. First units with the Range trait send off their attacks, and it goes in order of priority. So first all units with Range 3 send off an attack, then all units with Range 3 or 2 send off an attack, then all units with Range 3, 2 or 1 send off an attack, then combat proper starts.
+
+	3. Each attack goes as follows: The attacker, aka the acting unit, rolls a 1d100 + the Unit’s Morale + the Commander’s Intelligence + the Commander’s Land Warfare proficiency bonus + the Unit’s Offensive Strength + any applicable traits + any applicable terrain modifiers (Short: 1d100 + Morale + Int/Land Warfare + Offensive Strength + Traits/Terrain). Once this number is rolled, they may roll their casualty dice as well, which is then converted to a percentage and multiplied by the size of the attacking division. So 100 Spearmen roll 2d8 Casualty Dice, get a 13 and then go 100*0.13 = 13 casualties. These 13 casualties can then be applied across any enemy units whose Defensive Strength is equal to or lower than the Combat roll above. So that’s 13 casualties in total, not per division, just to be clear.
+
+	4. Step C is then repeated for each division until the battle is over.
+
+	5. During the battle, there will be a need to roll morale checks every now and then. Given how this is very player-inputty and not super set in stone, I think it’s probably best just to have this be done manually rather than automatically, so I think all that’s needed is to have a button on each division that just allows you to roll Morale dice, with input to set up a DC and a penalty for failing to roll equal to or above the DC. The morale check is always the Morale Dice of the unit in question + the Commander’s Charisma.
+
+	6. One ability of particular importance is the Guarding Mechanic, which is basically just the ability for an acting unit to skip their turn in order to switch their Defensive Strength with that of another unit until the start of the guarding unit’s next turn (At which point they can obviously just repeat the action if they want to). This is a per-unit basis, so 100 units can only guard 100 units in most cases, although that brings me to another point
+
+	7. Most units will have a trait or ability that changes their own mechanics a little bit. In most cases this is stuff like: Horsebane 15: This unit gains +15 Offensive Strength against Light Cavalry and Heavy Cavalry units. but can also be stuff like getting advantage on retreat checks or changing morale bonuses around, like undead constructs not having morale at all. I think is mostly just a case of looking around at the units in the roll20 to get a feel for what it is all about.
+
+	8. The final point is about retreating. Either when Morale hits -11 or when the unit is ordered to they start retreating. When retreating the unit can’t attack unless they have a trait that allows them to do so, and if it’s a morale-induced retreat pursuers get advantage on attacks against the retreaters. During a retreat, both pursuers and retreaters make Land Warfare/Wisdom checks (If there is no acting commander, the roll is made at a flat -3) during the retreating unit’s turn, and if the retreater wins they gain 1 point towards successfully retreating. Once they have a number of points equal to the absolute value of their Initiative penalty + 1, they are considered out of the battle. So, Heavy Cav has a penalty of -1 so they retreat once they have [-1] + 1 = 2 points, for example. While pursuing retreating units, the pursuers can only attack the retreating units, and if they break off pursuit, the retreating units automatically escape.
+
+
+5) Finally, after battles casualties need to be calculated. I’d like 1/3rd of in-combat casualties to be considered dead-dead, while 2/3rds of the casualties are wounded and will recover in 5 days, but only for the winners as the losers won’t be able to, you know, take care of the wounded on the battlefield they run away from. As an additional point on this, it’d be like 10/10 if you could also add in a calendar function to this so you can keep track of recovery time and such, but that is extra stuff.
+
+
+Down here I’m just going to outline some of the different types of traits that are in the game:
+
+
+Hookblades 10: This unit has +10 Offensive Strength against units that are guarding other units.
+
+Horsebane 10: This unit gains +10 Offensive Strength against Light Cavalry and Heavy Cavalry units.
+
+Horsedread 15: This unit gains +15 Defensive Strength against Light Cavalry and Heavy Cavalry units.
+
+Lone Wolves: This unit gains +20 Defensive Strength when in an army of 1000 units or less.
+
+Righteous Cause: This unit may Guard twice its number in units. Once per combat, this unit may negate a morale loss that would be applied to its Guarded units.
+
+Inspired: This unit's morale bonus or penalty is doubled.
+
+Impact 20: This unit gains +20 Offensive Strength against Heavy Infantry units at the start of battle, decreasing by 5 for each subsequent turn until this bonus reaches 0.
+
+Run Down: This unit gains +15 Offensive Strength against Light and Heavy Infantry units.
+
+Cut Down: Against retreating units, this unit's casualty dice is 12d8.
+
+Reinforced Wheels: This unit ignores Horsebane traits.
+
+Range 1: Before combat begins, this unit may make 1 attack.
+
+Platebreaker 10: This unit gains +10 Offensive Strength against Heavy Infantry units.
+
+Pavise Shields: This unit gains +15 Defensive Strength after the third round of combat until the end of the battle.
+
+Accuracy 1: Once per combat, this unit may reroll an attack.
+
+Lethality 1: Once per combat, this unit may reroll its casualty dice.
+
+Rally 1: Once per combat, this unit may reroll a morale check.
+
+Drag Them Down: In naval combat, or while attacking across a river, this unit's casualty dice is 3d10
+
+Hit and Run: This unit cannot guard or be guarded by other units.
+
+Deepsight 30: In combat on the open ocean, this unit gains +30 Defensive Strength
+
+Slice Through: This unit's casualty dice is 6d10 against Light Infantry Units (This type of stuff I figure should only apply if they are exclusively damaging Light Infantry, in this case)
+
+Crushing Landing: When attacking from an amphibious landing, this unit has +15 Offensive Strength and does not take the normal penalties associated with an amphibious landing.
+
+Spine and Spirit 15: This unit has +15 Defensive Strength against units with more Offensive Strength than it.
+
+Suppress 20: This unit has +20 Defensive Strength against units with less Offensive Strength than it
+
+Bloodletting: At the start of each of their turns, this unit loses 5 Defensive Strength and gains 5 Offensive Strength. At the start of every 3rd turn, this unit gains +1d10 Casualty Dice.
+
+Zealous: When fighting religious enemies, this unit's morale dice is 3d8 + 1.
+
+Stalwart Steed: This unit ignores Horsedread traits.
+
+Seagull's Sight: This unit gains the Range 2 trait in combat on the open ocean.
+
+Invoke Takfir: As long as their current commander is of the same faith as this unit, its morale dice is 2d8 + 1.
+
+Fair Weather Fighters: The first morale loss of each battle is applied twice to this unit
+
+Shieldwall 10: This unit gains +10 Defensive Strength against units with the Range trait.
+
+Doctrine of al-Takayuf: At the start of combat, this unit may choose to gain either the Platebreaker 10 trait or the Shieldwall 15 trait until the end of combat.
+
+Sokejan Feint: At the start of combat, this unit may choose to gain either the Horsebane 10 trait or the Range 1 trait until the end of combat.
+
+Rashidun: This unit doubles its morale bonus when attacking units with less morale than it.
+
+Weighted Shields 15: This unit has +15 Offensive Strength against units with less Defensive Strength than it.
+
+Outrun 15: This unit has +15 Defensive Strength against units that goes after it in initiative.
+
+Lance Formation: On the first turn of combat, this unit may ignore Guarding on Heavy Infantry units, and gains +40 Defensive Strength.
+
+Parting Gifts: This unit may attack during retreats.
+
+Nerves of Steel: This unit ignores the first two morale losses of each battle.
+
+Shock and Awe: This unit has +20 Defensive Strength against units with lower morale than it.
+
+Exploit Weakness: This unit's casualty dice is 12d10 against units that are being guarded by other units.
+
+Juggernaut: This unit may attack while Guarding
+
+Smokescreens: This unit may choose to guard twice its number on a turn, but cannot guard any units the following turn.
+
+Dig In 10: This units gains +10 Defensive Strength when Guarding another unit.
+
+Hill Canter: This unit's movement speed is not reduced by Hill terrain.
+
+To Shatter Mountains 25: This units gains +25 Offensive Strength against units with Defensive Strength 100 or above.
+
+Rooted: This unit has disadvantage on attacks against retreating units
+
+Mammoth: At the start of combat, the enemy army must make a successful morale check or suffer -2 morale. The morale check's DC is equal to 12 + ((Amount of friendly units with Mammoth / Enemy army size) * 10 ).
+
+Ketiri Spite: This unit's Morale Dice is set to 3d6 when in combat versus Tiefling units.
+
+Tread Leaf 25: In Forest or Woods terrain, this unit has +25 Defensive Strength
+
+Trappers: On the first turn of combat, this unit's casualty dice is 4d12, and its initiative penalty is 0.
+
+Living Armor: This unit is unaffected by Steelbreaker and Platebreaker traits.
+
+Lumbering: This unit has its Offensive Strength halved against Light Cavalry and Heavy Cavalry Units
+
+Scholars of War: Each Yamaist Sergeant may assign +10 Offensive or +10 Defensive Strength at the start of combat to 5 allied units. Even if the Yamaist Sergeant is slain, the bonus remains until the end of combat.. If there is no assigned commander, a Yamaist Sergeant may serve in that role as a (Int +2, Wis +2, Cha 0, Prof +3) Commander.
+
+Choke the Life Out of Them: After the two attacks granted by the Range 2 trait have been made, this unit no longer has the Range trait.
+
+Spirits' Endurance: This unit ignores any exhaustion and morale penalties on the first round of combat.
+
+Zenata: This unit has advantage on retreat checks.
+
+Mandekalu Charge: On the first turn of combat, this unit's casualty dice is 7d10
+
+Heroism: At the start of combat, this unit gains +1 morale. If this unit's army is outnumbered by the enemy army, this unit instead gains +3 morale and grants +1 morale to 1 unit.
+
+Precision: This unit may ignore Guarding on Heavy Infantry and Light Infantry Units when attacking.
+
+Unsaved: Voidbound cannot lose morale in combat, but their maximum morale is 0.
+
+Three Points for Three Men: If this unit's army is outnumbered by the enemy army, this unit has +1d10 Casualty Dice.
+
+Fifty Blades, One Wound: If this unit's army is outnumbered by the enemy army, this unit has +15 Defensive Strength.
+
+Claws on Bronze: This unit may use its action to reduce all incoming casualties against it by half until the start of its next turn.
+
+Blood Prayer: This unit may still act on the turn following their death.
+
+Luhim's Guidance: On the first turn of combat, this unit does not need to roll to attack any units with less than 150 Defensive Strength, calculated after traits.
+
+Seek the Heart: Casualties inflicted by this unit are always killed or mortally wounded, and cannot be brought back to service without major magical assistance.
+
+Fleet of Foot: This unit moves at a speed of 45 km/day
+
+Bouldershot: Each round before attacking, this unit may choose to gain disadvantage on its attack roll to gain advantage on its casualty dice. (Figure this might be a toggle function)
+
+Measure Once, Cut Twice: This unit may choose to attack twice during its turn, gaining disadvantage on both attacks.
+
+Pincushion: This unit may die instead of an allied unit to casualties inflicted by attacks gained from the Range trait.
+
+Loose Formation: This unit can only be attacked by Ranged attacks during the last of these attacks, effectively treating all Range traits as if they were Range 1 traits.
+
+Overwhelm: This unit's casualty dice is 8d8 against units that go after it in initiative.
+
+Pride Unbroken: This unit ignores the first three morale losses of each combat, but each morale loss after that is doubled.
+
+Climbing Claws: This unit counts as a Light Infantry unit for the purposes of determining terrain penalties in Jungle terrain.
+
+Iron Advance: This unit gains +15 Offensive Strength against Light or Heavy Infantry units with the Range trait.
