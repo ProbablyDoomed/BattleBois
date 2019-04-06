@@ -12,10 +12,16 @@ namespace BattleBois
 {
     public partial class Form1 : Form
     {
+        const int MAX_TRAITS = 10;
+
+        const String TRAIT_NAME_CONTROL_PREFIX = "textTraitName";
+        const String TRAIT_VALUE_CONTROL_PREFIX = "numericTraitValue";
+
         public Form1()
         {
             InitializeComponent();
-        }
+            tableTraits.RowCount--;
+        }        
 
         private void TestButtonClick(object sender, EventArgs e)
         {
@@ -74,6 +80,42 @@ namespace BattleBois
 
             JsonFiles.SaveAs<CArmy>("fightclub.json", fightClub);
 
+        }
+
+        private void buttonTraitAdd_Click(object sender, EventArgs e)
+        {
+            int newRow = tableTraits.RowCount;
+
+            if (newRow < MAX_TRAITS)
+            {
+                TextBox newText = new TextBox()
+                {
+                    Name = TRAIT_NAME_CONTROL_PREFIX + newRow.ToString(),
+                    Dock = DockStyle.Fill
+                };
+
+                NumericUpDown newNumeric = new NumericUpDown()
+                {
+                    Name = TRAIT_VALUE_CONTROL_PREFIX + newRow.ToString(),
+                    Dock = DockStyle.Fill
+                };
+
+                tableTraits.Controls.Add(newText, 0, newRow);
+                tableTraits.Controls.Add(newNumeric, 1, newRow);
+                tableTraits.RowCount++;
+            }
+        }
+
+        private void buttonTraitRemove_Click(object sender, EventArgs e)
+        {
+            int lastRow = tableTraits.RowCount-1;
+
+            if(lastRow >= 0)
+            {
+                tableTraits.Controls.RemoveByKey(TRAIT_NAME_CONTROL_PREFIX + lastRow.ToString());
+                tableTraits.Controls.RemoveByKey(TRAIT_VALUE_CONTROL_PREFIX + lastRow.ToString());
+                tableTraits.RowCount--;
+            }
         }
     }
 }

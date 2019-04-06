@@ -126,6 +126,7 @@
   <ItemGroup>
     <Folder Include="Armies\" />
     <Folder Include="Battles\" />
+    <Folder Include="Custom_Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
