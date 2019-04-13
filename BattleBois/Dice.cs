@@ -32,7 +32,7 @@ namespace BattleBois
 
         public static int Roll(String diceFormula, Advantage advantage = Advantage.None)
         {
-            String formula = diceFormula.Replace(" ", "").ToLower(); //filter out uppercase and 
+            String formula = diceFormula.Replace(" ", "").ToLower(); //filter out uppercase and spaces
 
             int c = 0;
             int result = 0;
@@ -75,7 +75,9 @@ namespace BattleBois
             }
             catch(FormatException e)
             {
-                MessageBox.Show("Dice formula not valid. Must be of the form XdY+Z or XdY-Z \r\n" + e.Message);
+                MessageBox.Show("Dice formula not valid. Must be of the form \"XdY\", \"XdY+Z\", or \"XdY-Z\"." 
+                     + "\r\n" + "If dice formula is not applicable to the unit, use an empty string: \"\", or \"n/a\". "
+                     + "\r\n" + e.Message);
             }
 
             return result;

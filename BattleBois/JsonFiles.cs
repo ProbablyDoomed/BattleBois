@@ -10,7 +10,7 @@ namespace BattleBois
 {
     static class JsonFiles
     {
-        private static readonly Dictionary<Type, String> TYPE_DIRECTORIES = new Dictionary<Type, string>
+        public static readonly Dictionary<Type, String> TYPE_DIRECTORIES = new Dictionary<Type, string>
         {
             [typeof(CUnit)]      = "Units",
             [typeof(CCommander)] = "Commanders",
@@ -18,24 +18,29 @@ namespace BattleBois
             [typeof(CBattle)]    = "Battles",
         };
 
-        public static T LoadFrom<T>(String fileName)
+        public static T LoadFromDefault<T>(String fileName)
         {
-            T jsonObject;
-            String fileContent = "";
             String fullPath = fileName;
-
             try
             {
                 fullPath = TYPE_DIRECTORIES[typeof(T)] + '\\' + fileName;
             }
-            catch(KeyNotFoundException)
+            catch (KeyNotFoundException)
             {
                 Console.WriteLine("No directory for type," + typeof(T).ToString() + ", will check top level.");
             }
 
+            return LoadFrom<T>(fullPath);
+        }
+
+        public static T LoadFrom<T>(String filePath)
+        {
+            T jsonObject;
+            String fileContent = "";
+
             try
             {
-                fileContent = File.ReadAllText(fullPath);
+                fileContent = File.ReadAllText(filePath);
             }
             catch(Exception e)
             {
@@ -46,9 +51,8 @@ namespace BattleBois
             return jsonObject;
         }
 
-        public static void SaveAs<T>(String fileName, T item)
+        public static void SaveAsToDefault<T>(String fileName, T item)
         {
-            String fileContent = JsonConvert.SerializeObject(item, Formatting.Indented);
             String fullPath = fileName;
 
             try
@@ -60,9 +64,16 @@ namespace BattleBois
                 Console.WriteLine("No directory for type," + typeof(T).ToString() + ", will save at top level.");
             }
 
+            SaveAs<T>(fullPath, item);
+        }
+
+        public static void SaveAs<T>(String filePath, T item)
+        {
+            String fileContent = JsonConvert.SerializeObject(item, Formatting.Indented);
+            
             try
             {
-                File.WriteAllText(fullPath, fileContent);
+                File.WriteAllText(filePath, fileContent);
             }
             catch (Exception e)
             {

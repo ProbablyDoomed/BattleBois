@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.tabs = new System.Windows.Forms.TabControl();
-            this.battlePage = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabUnitCommander = new System.Windows.Forms.TabPage();
+            this.buttonLoadUnit = new System.Windows.Forms.Button();
+            this.buttonSaveUnit = new System.Windows.Forms.Button();
             this.buttonTraitRemove = new System.Windows.Forms.Button();
             this.buttonTraitAdd = new System.Windows.Forms.Button();
             this.tableUnitCreateStats = new System.Windows.Forms.TableLayoutPanel();
@@ -54,9 +55,11 @@
             this.unitRecruitmentLabel = new System.Windows.Forms.Label();
             this.unitMaintenenceLabel = new System.Windows.Forms.Label();
             this.unitOffenseNumeric = new System.Windows.Forms.NumericUpDown();
-            this.tableTraits = new System.Windows.Forms.TableLayoutPanel();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabs.SuspendLayout();
+            this.unitTraitsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.battlePage = new System.Windows.Forms.TabPage();
+            this.tabs = new System.Windows.Forms.TabControl();
+            this.saveDialog = new System.Windows.Forms.SaveFileDialog();
+            this.loadDialog = new System.Windows.Forms.OpenFileDialog();
             this.tabUnitCommander.SuspendLayout();
             this.tableUnitCreateStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.unitMaintenenceNumeric)).BeginInit();
@@ -64,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.unitInitiativeNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitDefenseNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOffenseNumeric)).BeginInit();
+            this.tabs.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -76,30 +80,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.TestButtonClick);
             // 
-            // tabs
+            // tabPage1
             // 
-            this.tabs.Controls.Add(this.battlePage);
-            this.tabs.Controls.Add(this.tabUnitCommander);
-            this.tabs.Controls.Add(this.tabPage1);
-            this.tabs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabs.Location = new System.Drawing.Point(0, 0);
-            this.tabs.Name = "tabs";
-            this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(1189, 630);
-            this.tabs.TabIndex = 1;
-            // 
-            // battlePage
-            // 
-            this.battlePage.Location = new System.Drawing.Point(4, 22);
-            this.battlePage.Name = "battlePage";
-            this.battlePage.Padding = new System.Windows.Forms.Padding(3);
-            this.battlePage.Size = new System.Drawing.Size(1181, 604);
-            this.battlePage.TabIndex = 0;
-            this.battlePage.Text = "Battle Manager";
-            this.battlePage.UseVisualStyleBackColor = true;
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1181, 604);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Create Divisions and Armies";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabUnitCommander
             // 
+            this.tabUnitCommander.Controls.Add(this.buttonLoadUnit);
+            this.tabUnitCommander.Controls.Add(this.buttonSaveUnit);
             this.tabUnitCommander.Controls.Add(this.buttonTraitRemove);
             this.tabUnitCommander.Controls.Add(this.buttonTraitAdd);
             this.tabUnitCommander.Controls.Add(this.tableUnitCreateStats);
@@ -110,6 +104,28 @@
             this.tabUnitCommander.TabIndex = 1;
             this.tabUnitCommander.Text = "Create Units and Commanders";
             this.tabUnitCommander.UseVisualStyleBackColor = true;
+            // 
+            // buttonLoadUnit
+            // 
+            this.buttonLoadUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLoadUnit.Location = new System.Drawing.Point(430, 59);
+            this.buttonLoadUnit.Name = "buttonLoadUnit";
+            this.buttonLoadUnit.Size = new System.Drawing.Size(81, 53);
+            this.buttonLoadUnit.TabIndex = 4;
+            this.buttonLoadUnit.Text = "Load Unit";
+            this.buttonLoadUnit.UseVisualStyleBackColor = true;
+            this.buttonLoadUnit.Click += new System.EventHandler(this.buttonLoadUnit_Click);
+            // 
+            // buttonSaveUnit
+            // 
+            this.buttonSaveUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSaveUnit.Location = new System.Drawing.Point(430, 6);
+            this.buttonSaveUnit.Name = "buttonSaveUnit";
+            this.buttonSaveUnit.Size = new System.Drawing.Size(81, 53);
+            this.buttonSaveUnit.TabIndex = 3;
+            this.buttonSaveUnit.Text = "Save Unit";
+            this.buttonSaveUnit.UseVisualStyleBackColor = true;
+            this.buttonSaveUnit.Click += new System.EventHandler(this.buttonSaveUnit_Click);
             // 
             // buttonTraitRemove
             // 
@@ -157,7 +173,7 @@
             this.tableUnitCreateStats.Controls.Add(this.unitRecruitmentLabel, 0, 5);
             this.tableUnitCreateStats.Controls.Add(this.unitMaintenenceLabel, 0, 6);
             this.tableUnitCreateStats.Controls.Add(this.unitOffenseNumeric, 1, 2);
-            this.tableUnitCreateStats.Controls.Add(this.tableTraits, 1, -1);
+            this.tableUnitCreateStats.Controls.Add(this.unitTraitsTable, 1, -1);
             this.tableUnitCreateStats.Location = new System.Drawing.Point(8, 7);
             this.tableUnitCreateStats.Name = "tableUnitCreateStats";
             this.tableUnitCreateStats.RowCount = 10;
@@ -345,7 +361,7 @@
             this.unitNameLabel.Name = "unitNameLabel";
             this.unitNameLabel.Size = new System.Drawing.Size(98, 26);
             this.unitNameLabel.TabIndex = 1;
-            this.unitNameLabel.Text = "Name";
+            this.unitNameLabel.Text = "Unit Name";
             this.unitNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // unitTypeLabel
@@ -358,7 +374,7 @@
             this.unitTypeLabel.Name = "unitTypeLabel";
             this.unitTypeLabel.Size = new System.Drawing.Size(98, 26);
             this.unitTypeLabel.TabIndex = 2;
-            this.unitTypeLabel.Text = "Type";
+            this.unitTypeLabel.Text = "Unit Type";
             this.unitTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // unitTypeCombo
@@ -463,28 +479,46 @@
             this.unitOffenseNumeric.Size = new System.Drawing.Size(306, 20);
             this.unitOffenseNumeric.TabIndex = 9;
             // 
-            // tableTraits
+            // unitTraitsTable
             // 
-            this.tableTraits.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableTraits.ColumnCount = 2;
-            this.tableTraits.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableTraits.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
-            this.tableTraits.Location = new System.Drawing.Point(107, 237);
-            this.tableTraits.Name = "tableTraits";
-            this.tableTraits.RowCount = 1;
-            this.tableTraits.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableTraits.Size = new System.Drawing.Size(306, 349);
-            this.tableTraits.TabIndex = 19;
+            this.unitTraitsTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.unitTraitsTable.ColumnCount = 2;
+            this.unitTraitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.unitTraitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.unitTraitsTable.Location = new System.Drawing.Point(107, 237);
+            this.unitTraitsTable.Name = "unitTraitsTable";
+            this.unitTraitsTable.RowCount = 1;
+            this.unitTraitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.unitTraitsTable.Size = new System.Drawing.Size(306, 349);
+            this.unitTraitsTable.TabIndex = 19;
             // 
-            // tabPage1
+            // battlePage
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1181, 604);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Create Divisions and Armies";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.battlePage.Location = new System.Drawing.Point(4, 22);
+            this.battlePage.Name = "battlePage";
+            this.battlePage.Padding = new System.Windows.Forms.Padding(3);
+            this.battlePage.Size = new System.Drawing.Size(1181, 604);
+            this.battlePage.TabIndex = 0;
+            this.battlePage.Text = "Battle Manager";
+            this.battlePage.UseVisualStyleBackColor = true;
+            // 
+            // tabs
+            // 
+            this.tabs.Controls.Add(this.battlePage);
+            this.tabs.Controls.Add(this.tabUnitCommander);
+            this.tabs.Controls.Add(this.tabPage1);
+            this.tabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabs.Location = new System.Drawing.Point(0, 0);
+            this.tabs.Name = "tabs";
+            this.tabs.SelectedIndex = 0;
+            this.tabs.Size = new System.Drawing.Size(1189, 630);
+            this.tabs.TabIndex = 1;
+            // 
+            // saveDialog
+            // 
+            this.saveDialog.DefaultExt = "json";
+            this.saveDialog.Filter = "JSON files|*.json";
+            this.saveDialog.Title = "Save Unit JSON File";
             // 
             // Form1
             // 
@@ -495,7 +529,6 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "BattlesBois";
-            this.tabs.ResumeLayout(false);
             this.tabUnitCommander.ResumeLayout(false);
             this.tableUnitCreateStats.ResumeLayout(false);
             this.tableUnitCreateStats.PerformLayout();
@@ -504,6 +537,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.unitInitiativeNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitDefenseNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOffenseNumeric)).EndInit();
+            this.tabs.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -511,11 +545,21 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TabControl tabs;
-        private System.Windows.Forms.TabPage battlePage;
-        private System.Windows.Forms.TabPage tabUnitCommander;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabUnitCommander;
+        private System.Windows.Forms.Button buttonSaveUnit;
+        private System.Windows.Forms.Button buttonTraitRemove;
+        private System.Windows.Forms.Button buttonTraitAdd;
         private System.Windows.Forms.TableLayoutPanel tableUnitCreateStats;
+        private System.Windows.Forms.Label unitTraitsLabel;
+        private System.Windows.Forms.TextBox unitMoraleText;
+        private System.Windows.Forms.Label unitMoraleLabel;
+        private System.Windows.Forms.TextBox unitCasualtyText;
+        private System.Windows.Forms.Label unitCasualtyLabel;
+        private System.Windows.Forms.NumericUpDown unitMaintenenceNumeric;
+        private System.Windows.Forms.NumericUpDown unitRecruitmentNumeric;
+        private System.Windows.Forms.NumericUpDown unitInitiativeNumeric;
+        private System.Windows.Forms.NumericUpDown unitDefenseNumeric;
         private System.Windows.Forms.TextBox unitNameText;
         private System.Windows.Forms.Label unitNameLabel;
         private System.Windows.Forms.Label unitTypeLabel;
@@ -525,19 +569,13 @@
         private System.Windows.Forms.Label unitInitiativeLabel;
         private System.Windows.Forms.Label unitRecruitmentLabel;
         private System.Windows.Forms.Label unitMaintenenceLabel;
-        private System.Windows.Forms.NumericUpDown unitMaintenenceNumeric;
-        private System.Windows.Forms.NumericUpDown unitRecruitmentNumeric;
-        private System.Windows.Forms.NumericUpDown unitInitiativeNumeric;
-        private System.Windows.Forms.NumericUpDown unitDefenseNumeric;
         private System.Windows.Forms.NumericUpDown unitOffenseNumeric;
-        private System.Windows.Forms.Label unitTraitsLabel;
-        private System.Windows.Forms.TextBox unitMoraleText;
-        private System.Windows.Forms.Label unitMoraleLabel;
-        private System.Windows.Forms.TextBox unitCasualtyText;
-        private System.Windows.Forms.Label unitCasualtyLabel;
-        private System.Windows.Forms.TableLayoutPanel tableTraits;
-        private System.Windows.Forms.Button buttonTraitAdd;
-        private System.Windows.Forms.Button buttonTraitRemove;
+        private System.Windows.Forms.TableLayoutPanel unitTraitsTable;
+        private System.Windows.Forms.TabPage battlePage;
+        private System.Windows.Forms.TabControl tabs;
+        private System.Windows.Forms.Button buttonLoadUnit;
+        private System.Windows.Forms.SaveFileDialog saveDialog;
+        private System.Windows.Forms.OpenFileDialog loadDialog;
     }
 }
 
