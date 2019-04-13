@@ -15,16 +15,16 @@ namespace BattleBois
     {
         const int MAX_TRAITS = 10;
 
-        const String TRAIT_NAME_CONTROL_PREFIX = "textTraitName";
-        const String TRAIT_VALUE_CONTROL_PREFIX = "numericTraitValue";
+        const String TRAIT_NAME_CONTROL_PREFIX = "TextTraitName";
+        const String TRAIT_VALUE_CONTROL_PREFIX = "NumericTraitValue";
 
         public Form1()
         {
             InitializeComponent();
-            clearAllTraitRows();
+            ClearAllTraitRows();
         }        
 
-        private void showSaveJsonObjectDialog<T>(T objectToSave)
+        private void ShowSaveJsonObjectDialog<T>(T objectToSave)
         {
             saveDialog.InitialDirectory = Application.StartupPath 
                                         + Path.DirectorySeparatorChar 
@@ -38,7 +38,7 @@ namespace BattleBois
             }
         }
 
-        private T showLoadJsonObjectDialog<T>()
+        private T ShowLoadJsonObjectDialog<T>()
         {
             loadDialog.InitialDirectory = Application.StartupPath
                                         + Path.DirectorySeparatorChar
@@ -56,14 +56,14 @@ namespace BattleBois
             }
         }        
 
-        private void buttonTraitAdd_Click(object sender, EventArgs e)
+        private void UnitTraitAddButton_Click(object sender, EventArgs e)
         {
-            addNewTraitRow();
+            AddNewTraitRow();
         }
 
-        private void addNewTraitRow()
+        private void AddNewTraitRow()
         {
-            int newRow = unitTraitsTable.RowCount;
+            int newRow = UnitTraitsTable.RowCount;
 
             if (newRow < MAX_TRAITS)
             {
@@ -79,166 +79,146 @@ namespace BattleBois
                     Dock = DockStyle.Fill
                 };
 
-                unitTraitsTable.Controls.Add(newText, 0, newRow);
-                unitTraitsTable.Controls.Add(newNumeric, 1, newRow);
-                unitTraitsTable.RowCount++;
+                UnitTraitsTable.Controls.Add(newText, 0, newRow);
+                UnitTraitsTable.Controls.Add(newNumeric, 1, newRow);
+                UnitTraitsTable.RowCount++;
             }
         }
 
-        private void addNewTraitRow(String name, double value)
+        private void AddNewTraitRow(String name, double value)
         {
-            addNewTraitRow();
-            int lastRow = unitTraitsTable.RowCount - 1;
-            TextBox newTextBox = (TextBox)(unitTraitsTable.Controls[TRAIT_NAME_CONTROL_PREFIX + lastRow.ToString()]);
-            NumericUpDown newNumeric = (NumericUpDown)(unitTraitsTable.Controls[TRAIT_VALUE_CONTROL_PREFIX + lastRow.ToString()]);
+            AddNewTraitRow();
+            int lastRow = UnitTraitsTable.RowCount - 1;
+            TextBox newTextBox = (TextBox)(UnitTraitsTable.Controls[TRAIT_NAME_CONTROL_PREFIX + lastRow.ToString()]);
+            NumericUpDown newNumeric = (NumericUpDown)(UnitTraitsTable.Controls[TRAIT_VALUE_CONTROL_PREFIX + lastRow.ToString()]);
             newTextBox.Text = name;
             newNumeric.Value = (decimal)value;
         }
 
-        private void buttonTraitRemove_Click(object sender, EventArgs e)
+        private void UnitTraitRemoveButton_Click(object sender, EventArgs e)
         {
-            removeLastTraitRow();
+            RemoveLastTraitRow();
         }
 
-        private void removeLastTraitRow()
+        private void RemoveLastTraitRow()
         {
-            int lastRow = unitTraitsTable.RowCount - 1;
+            int lastRow = UnitTraitsTable.RowCount - 1;
 
             if (lastRow >= 0)
             {
-                unitTraitsTable.Controls.RemoveByKey(TRAIT_NAME_CONTROL_PREFIX + lastRow.ToString());
-                unitTraitsTable.Controls.RemoveByKey(TRAIT_VALUE_CONTROL_PREFIX + lastRow.ToString());
-                unitTraitsTable.RowCount--;
+                UnitTraitsTable.Controls.RemoveByKey(TRAIT_NAME_CONTROL_PREFIX + lastRow.ToString());
+                UnitTraitsTable.Controls.RemoveByKey(TRAIT_VALUE_CONTROL_PREFIX + lastRow.ToString());
+                UnitTraitsTable.RowCount--;
             }
         }
 
-        private void clearAllTraitRows()
+        private void ClearAllTraitRows()
         {
-            while(unitTraitsTable.RowCount > 0)
+            while(UnitTraitsTable.RowCount > 0)
             {
-                removeLastTraitRow();
+                RemoveLastTraitRow();
             }
         }
 
-        private void buttonSaveUnit_Click(object sender, EventArgs e)
+        private void UnitSaveButton_Click(object sender, EventArgs e)
         {
             CUnit unitToSave = new CUnit()
             {
-                Name = unitNameText.Text,
-                Type = unitTypeCombo.Text,
+                Name = UnitNameText.Text,
+                Type = UnitTypeCombo.Text,
                 Stats = new Dictionary<string, double>
                 {
-                    ["Offensive Strength"] = (double) unitOffenseNumeric.Value,
-                    ["Defensive Strength"] = (double) unitDefenseNumeric.Value,
-                    ["Initiative Penalty"] = (double) unitInitiativeNumeric.Value,
-                    ["Recruitment Cost"]   = (double) unitRecruitmentNumeric.Value,
-                    ["Maintenence Cost"]   = (double) unitMaintenenceNumeric.Value
+                    [CUnit.STAT_OFFENSE]     = (double) UnitOffenseNumeric.Value,
+                    [CUnit.STAT_DEFENSE]     = (double) UnitDefenseNumeric.Value,
+                    [CUnit.STAT_INITIATIVE]  = (double) UnitInitiativeNumeric.Value,
+                    [CUnit.STAT_RECRUITMENT] = (double) UnitRecruitmentNumeric.Value,
+                    [CUnit.STAT_MAINTENANCE] = (double) UnitMaintenenceNumeric.Value
                 },
                 Dice = new Dictionary<string, string>
                 {
-                    ["Casualty Dice"] = unitCasualtyText.Text,
-                    ["Morale Dice"]   = unitMoraleText.Text
+                    [CUnit.DICE_CASUALTY] = UnitCasualtyText.Text,
+                    [CUnit.DICE_MORALE]   = UnitMoraleText.Text
                 }                
             };
 
             var traitSet = new Dictionary<string, int>();
             TextBox traitNameTextBox;
             NumericUpDown traitValueNumeric;
-            for (int row = 0; row < unitTraitsTable.RowCount; row++)
+            for (int row = 0; row < UnitTraitsTable.RowCount; row++)
             {
-                traitNameTextBox = (TextBox) unitTraitsTable.Controls[TRAIT_NAME_CONTROL_PREFIX + row.ToString()];
-                traitValueNumeric = (NumericUpDown) unitTraitsTable.Controls[TRAIT_VALUE_CONTROL_PREFIX + row.ToString()];
+                traitNameTextBox = (TextBox) UnitTraitsTable.Controls[TRAIT_NAME_CONTROL_PREFIX + row.ToString()];
+                traitValueNumeric = (NumericUpDown) UnitTraitsTable.Controls[TRAIT_VALUE_CONTROL_PREFIX + row.ToString()];
                 traitSet.Add(traitNameTextBox.Text, (int)traitValueNumeric.Value);
             }
             unitToSave.Traits = traitSet;
 
-            showSaveJsonObjectDialog<CUnit>(unitToSave);
+            ShowSaveJsonObjectDialog<CUnit>(unitToSave);
 
         }
 
-        private void buttonLoadUnit_Click(object sender, EventArgs e)
+        private void UnitLoadButton_Click(object sender, EventArgs e)
         {
-            CUnit unitToLoad = showLoadJsonObjectDialog<CUnit>();
+            CUnit unitToLoad = ShowLoadJsonObjectDialog<CUnit>();
 
             if (unitToLoad != default(CUnit))
             {
-                unitNameText.Text = unitToLoad.Name;
-                unitTypeCombo.Text = unitToLoad.Type;
+                UnitNameText.Text = unitToLoad.Name;
+                UnitTypeCombo.Text = unitToLoad.Type;
 
-                unitOffenseNumeric.Value     = (decimal) unitToLoad.Stats["Offensive Strength"];
-                unitDefenseNumeric.Value     = (decimal) unitToLoad.Stats["Defensive Strength"];
-                unitInitiativeNumeric.Value  = (decimal) unitToLoad.Stats["Initiative Penalty"];
-                unitRecruitmentNumeric.Value = (decimal) unitToLoad.Stats["Recruitment Cost"];
-                unitMaintenenceNumeric.Value = (decimal) unitToLoad.Stats["Maintenence Cost"] ;
+                UnitOffenseNumeric.Value     = (decimal) unitToLoad.Stats[CUnit.STAT_OFFENSE];
+                UnitDefenseNumeric.Value     = (decimal) unitToLoad.Stats[CUnit.STAT_DEFENSE];
+                UnitInitiativeNumeric.Value  = (decimal) unitToLoad.Stats[CUnit.STAT_INITIATIVE];
+                UnitRecruitmentNumeric.Value = (decimal) unitToLoad.Stats[CUnit.STAT_RECRUITMENT];
+                UnitMaintenenceNumeric.Value = (decimal) unitToLoad.Stats[CUnit.STAT_MAINTENANCE];
 
-                unitCasualtyText.Text = unitToLoad.Dice["Casualty Dice"];
-                unitMoraleText.Text   = unitToLoad.Dice["Morale Dice"];
+                UnitCasualtyText.Text = unitToLoad.Dice[CUnit.DICE_CASUALTY];
+                UnitMoraleText.Text   = unitToLoad.Dice[CUnit.DICE_MORALE];
 
-                clearAllTraitRows();
+                ClearAllTraitRows();
 
                 foreach(var trait in unitToLoad.Traits)
                 {
-                    addNewTraitRow(trait.Key, trait.Value);
+                    AddNewTraitRow(trait.Key, trait.Value);
                 }
+            }
+        }
+
+        private void CommanderSaveButton_Click(object sender, EventArgs e)
+        {
+            CCommander commanderToSave = new CCommander()
+            {
+                Name = CommanderNameText.Text,
+                Stats = new Dictionary<string, int>
+                {
+                    [CCommander.STAT_INT] = (int) CommanderIntNumeric.Value,
+                    [CCommander.STAT_WIS] = (int) CommanderWisNumeric.Value,
+                    [CCommander.STAT_CHA] = (int) CommanderChaNumeric.Value,
+                    [CCommander.STAT_LAND_WAR] = (int) CommanderLandWarNumeric.Value,
+                    [CCommander.STAT_MARITIME] = (int) CommanderMaritimeNumeric.Value
+                }
+            };
+
+            ShowSaveJsonObjectDialog<CCommander>(commanderToSave);
+        }
+
+        private void CommanderLoadButton_Click(object sender, EventArgs e)
+        {
+            CCommander commanderToLoad = ShowLoadJsonObjectDialog<CCommander>();
+
+            if (commanderToLoad != default(CCommander))
+            {
+                CommanderNameText.Text = commanderToLoad.Name;
+
+                CommanderIntNumeric.Value      = (decimal) commanderToLoad.Stats[CCommander.STAT_INT];
+                CommanderWisNumeric.Value      = (decimal) commanderToLoad.Stats[CCommander.STAT_WIS];
+                CommanderChaNumeric.Value      = (decimal) commanderToLoad.Stats[CCommander.STAT_CHA];
+                CommanderLandWarNumeric.Value  = (decimal) commanderToLoad.Stats[CCommander.STAT_LAND_WAR];
+                CommanderMaritimeNumeric.Value = (decimal) commanderToLoad.Stats[CCommander.STAT_MARITIME];
             }
         }
 
         private void TestButtonClick(object sender, EventArgs e)
         {
-            CUnit dave = JsonFiles.LoadFrom<CUnit>("AbsoluteUnit.json");
-            String dice = dave.Dice["Casualty Dice"];
-            Console.WriteLine(dice + " --> " + Dice.Roll(dice).ToString());
-
-            foreach (KeyValuePair<String, int> item in dave.Traits)
-            {
-                Console.WriteLine(item.Key + " " + (item.Value == 0 ? "" : item.Value.ToString()));
-            }
-
-            CUnit mike = new CUnit
-            {
-                Name = "Armed Bastards",
-                Type = "Light Infantry",
-                Stats = new Dictionary<string, double>
-                {
-                    ["Offensive Strength"] = 30,
-                    ["Defensive Strength"] = 70,
-                    ["Initiative Penalty"] = -3,
-                    ["Recruitment Cost"] = 2.5,
-                    ["Maintenence Cost"] = 0.5
-                },
-                Dice = new Dictionary<string, string>
-                {
-                    ["Casualty Dice"] = "1d20",
-                    ["Morale Dice"] = "3d8-1"
-                },
-                Traits = new Dictionary<string, int>
-                {
-                    ["Horsedread"] = 10,
-                    ["Horsebane"] = 20
-                }
-            };
-
-            JsonFiles.SaveAs<CUnit>("bigbois.json", mike);
-
-
-            CArmy fightClub = new CArmy()
-            {
-                Name = "Fight Club",
-                Commander = JsonFiles.LoadFrom<CCommander>("Cy.json")
-            };
-
-            for (int i = 0; i < 10; i++)
-            {
-                fightClub.Divisions.Add(new CDivision()
-                {
-                    UnitType = mike,
-                    Name = "Mike Division " + i.ToString(),
-                    Size = i * 10 - i
-                }
-                );
-            }
-
-            JsonFiles.SaveAs<CArmy>("fightclub.json", fightClub);
 
         }
     }

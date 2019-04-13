@@ -49,10 +49,10 @@ namespace BattleBois
             _totalLosses = 0;
             foreach (CDivision division in Divisions)
             {
-                _totalSize += division.Size;
-                _totalCost += division.Size * division.UnitType.Stats["Recruitment Cost"];
-                _totalUpkeep += (division.Size - division.Losses) * division.UnitType.Stats["Maintenance Cost"];
-                _totalLosses += division.Losses;
+                _totalSize   += division.CurrentSize;
+                _totalCost   += (division.CurrentSize * division.UnitType.Stats[CUnit.STAT_RECRUITMENT]);
+                _totalUpkeep += (division.CurrentSize * division.UnitType.Stats[CUnit.STAT_MAINTENANCE]);
+                _totalLosses += (division.StartingSize - division.CurrentSize);
             }
         }
 
@@ -86,14 +86,14 @@ namespace BattleBois
             int defense = 0;
             if (division.GuardPairing == Guid.Empty)
             {
-                defense = (int)(division.UnitType.Stats["Defensive Strength"]);
+                defense = (int)(division.UnitType.Stats[CUnit.STAT_DEFENSE]);
             }
             else
             {
                 CDivision other = Divisions.Find(i => i.GuardPairing == division.ID);
                 if (other != null)
                 {
-                    defense = (int)(other.UnitType.Stats["Defensive Strength"]);
+                    defense = (int)(other.UnitType.Stats[CUnit.STAT_DEFENSE]);
                 }
                 else
                 {

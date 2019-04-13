@@ -14,9 +14,11 @@ namespace BattleBois
         public String Name { get; set; } = DEFAULT_NAME;
         public CUnit UnitType { get; set; } = new CUnit();
 
-        public int Size { get; set; } = 0;
-        public int Losses { get; set; } = 0;
+        public int StartingSize { get; set; } = 0;
+        public int CurrentSize { get; set; } = 0;
+
         public int Morale { get; set; } = 0;
+        public int RetreatScore { get; set; } = 0;
 
         public int Initiative { get; set; } = 0;
 

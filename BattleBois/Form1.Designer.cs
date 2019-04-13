@@ -31,43 +31,64 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabUnitCommander = new System.Windows.Forms.TabPage();
-            this.buttonLoadUnit = new System.Windows.Forms.Button();
-            this.buttonSaveUnit = new System.Windows.Forms.Button();
-            this.buttonTraitRemove = new System.Windows.Forms.Button();
-            this.buttonTraitAdd = new System.Windows.Forms.Button();
-            this.tableUnitCreateStats = new System.Windows.Forms.TableLayoutPanel();
-            this.unitTraitsLabel = new System.Windows.Forms.Label();
-            this.unitMoraleText = new System.Windows.Forms.TextBox();
-            this.unitMoraleLabel = new System.Windows.Forms.Label();
-            this.unitCasualtyText = new System.Windows.Forms.TextBox();
-            this.unitCasualtyLabel = new System.Windows.Forms.Label();
-            this.unitMaintenenceNumeric = new System.Windows.Forms.NumericUpDown();
-            this.unitRecruitmentNumeric = new System.Windows.Forms.NumericUpDown();
-            this.unitInitiativeNumeric = new System.Windows.Forms.NumericUpDown();
-            this.unitDefenseNumeric = new System.Windows.Forms.NumericUpDown();
-            this.unitNameText = new System.Windows.Forms.TextBox();
-            this.unitNameLabel = new System.Windows.Forms.Label();
-            this.unitTypeLabel = new System.Windows.Forms.Label();
-            this.unitTypeCombo = new System.Windows.Forms.ComboBox();
-            this.unitOffenseLabel = new System.Windows.Forms.Label();
-            this.unitDefenseLabel = new System.Windows.Forms.Label();
-            this.unitInitiativeLabel = new System.Windows.Forms.Label();
-            this.unitRecruitmentLabel = new System.Windows.Forms.Label();
-            this.unitMaintenenceLabel = new System.Windows.Forms.Label();
-            this.unitOffenseNumeric = new System.Windows.Forms.NumericUpDown();
-            this.unitTraitsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.UnitLoadButton = new System.Windows.Forms.Button();
+            this.UnitSaveButton = new System.Windows.Forms.Button();
+            this.UnitTraitRemoveButton = new System.Windows.Forms.Button();
+            this.UnitTraitAddButton = new System.Windows.Forms.Button();
+            this.UnitCreateStatsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.UnitTraitsLabel = new System.Windows.Forms.Label();
+            this.UnitMoraleText = new System.Windows.Forms.TextBox();
+            this.UnitMoraleLabel = new System.Windows.Forms.Label();
+            this.UnitCasualtyText = new System.Windows.Forms.TextBox();
+            this.UnitCasualtyLabel = new System.Windows.Forms.Label();
+            this.UnitMaintenenceNumeric = new System.Windows.Forms.NumericUpDown();
+            this.UnitRecruitmentNumeric = new System.Windows.Forms.NumericUpDown();
+            this.UnitInitiativeNumeric = new System.Windows.Forms.NumericUpDown();
+            this.UnitDefenseNumeric = new System.Windows.Forms.NumericUpDown();
+            this.UnitNameText = new System.Windows.Forms.TextBox();
+            this.UnitNameLabel = new System.Windows.Forms.Label();
+            this.UnitTypeLabel = new System.Windows.Forms.Label();
+            this.UnitTypeCombo = new System.Windows.Forms.ComboBox();
+            this.UnitOffenseLabel = new System.Windows.Forms.Label();
+            this.UnitDefenseLabel = new System.Windows.Forms.Label();
+            this.UnitInitiativeLabel = new System.Windows.Forms.Label();
+            this.UnitRecruitmentLabel = new System.Windows.Forms.Label();
+            this.UnitMaintenenceLabel = new System.Windows.Forms.Label();
+            this.UnitOffenseNumeric = new System.Windows.Forms.NumericUpDown();
+            this.UnitTraitsTable = new System.Windows.Forms.TableLayoutPanel();
             this.battlePage = new System.Windows.Forms.TabPage();
             this.tabs = new System.Windows.Forms.TabControl();
             this.saveDialog = new System.Windows.Forms.SaveFileDialog();
             this.loadDialog = new System.Windows.Forms.OpenFileDialog();
+            this.CommanderCreateStatsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.CommanderNameLabel = new System.Windows.Forms.Label();
+            this.CommanderNameText = new System.Windows.Forms.TextBox();
+            this.CommanderIntLabel = new System.Windows.Forms.Label();
+            this.CommanderIntNumeric = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CommanderChaLabel = new System.Windows.Forms.Label();
+            this.CommanderLandWarLabel = new System.Windows.Forms.Label();
+            this.CommanderMaritimeLabel = new System.Windows.Forms.Label();
+            this.CommanderWisNumeric = new System.Windows.Forms.NumericUpDown();
+            this.CommanderChaNumeric = new System.Windows.Forms.NumericUpDown();
+            this.CommanderLandWarNumeric = new System.Windows.Forms.NumericUpDown();
+            this.CommanderMaritimeNumeric = new System.Windows.Forms.NumericUpDown();
+            this.CommanderLoadButton = new System.Windows.Forms.Button();
+            this.CommanderSaveButton = new System.Windows.Forms.Button();
             this.tabUnitCommander.SuspendLayout();
-            this.tableUnitCreateStats.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.unitMaintenenceNumeric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitRecruitmentNumeric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitInitiativeNumeric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitDefenseNumeric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitOffenseNumeric)).BeginInit();
+            this.UnitCreateStatsTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UnitMaintenenceNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnitRecruitmentNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnitInitiativeNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnitDefenseNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnitOffenseNumeric)).BeginInit();
             this.tabs.SuspendLayout();
+            this.CommanderCreateStatsTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CommanderIntNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommanderWisNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommanderChaNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommanderLandWarNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommanderMaritimeNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -85,419 +106,428 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1181, 604);
+            this.tabPage1.Size = new System.Drawing.Size(884, 554);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Create Divisions and Armies";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabUnitCommander
             // 
-            this.tabUnitCommander.Controls.Add(this.buttonLoadUnit);
-            this.tabUnitCommander.Controls.Add(this.buttonSaveUnit);
-            this.tabUnitCommander.Controls.Add(this.buttonTraitRemove);
-            this.tabUnitCommander.Controls.Add(this.buttonTraitAdd);
-            this.tabUnitCommander.Controls.Add(this.tableUnitCreateStats);
+            this.tabUnitCommander.Controls.Add(this.CommanderLoadButton);
+            this.tabUnitCommander.Controls.Add(this.CommanderSaveButton);
+            this.tabUnitCommander.Controls.Add(this.CommanderCreateStatsTable);
+            this.tabUnitCommander.Controls.Add(this.UnitLoadButton);
+            this.tabUnitCommander.Controls.Add(this.UnitSaveButton);
+            this.tabUnitCommander.Controls.Add(this.UnitTraitRemoveButton);
+            this.tabUnitCommander.Controls.Add(this.UnitTraitAddButton);
+            this.tabUnitCommander.Controls.Add(this.UnitCreateStatsTable);
             this.tabUnitCommander.Location = new System.Drawing.Point(4, 22);
             this.tabUnitCommander.Name = "tabUnitCommander";
             this.tabUnitCommander.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUnitCommander.Size = new System.Drawing.Size(1181, 604);
+            this.tabUnitCommander.Size = new System.Drawing.Size(884, 554);
             this.tabUnitCommander.TabIndex = 1;
             this.tabUnitCommander.Text = "Create Units and Commanders";
             this.tabUnitCommander.UseVisualStyleBackColor = true;
             // 
-            // buttonLoadUnit
+            // UnitLoadButton
             // 
-            this.buttonLoadUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLoadUnit.Location = new System.Drawing.Point(430, 59);
-            this.buttonLoadUnit.Name = "buttonLoadUnit";
-            this.buttonLoadUnit.Size = new System.Drawing.Size(81, 53);
-            this.buttonLoadUnit.TabIndex = 4;
-            this.buttonLoadUnit.Text = "Load Unit";
-            this.buttonLoadUnit.UseVisualStyleBackColor = true;
-            this.buttonLoadUnit.Click += new System.EventHandler(this.buttonLoadUnit_Click);
+            this.UnitLoadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnitLoadButton.Location = new System.Drawing.Point(327, 60);
+            this.UnitLoadButton.Name = "UnitLoadButton";
+            this.UnitLoadButton.Size = new System.Drawing.Size(81, 53);
+            this.UnitLoadButton.TabIndex = 4;
+            this.UnitLoadButton.Text = "Load Unit";
+            this.UnitLoadButton.UseVisualStyleBackColor = true;
+            this.UnitLoadButton.Click += new System.EventHandler(this.UnitLoadButton_Click);
             // 
-            // buttonSaveUnit
+            // UnitSaveButton
             // 
-            this.buttonSaveUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSaveUnit.Location = new System.Drawing.Point(430, 6);
-            this.buttonSaveUnit.Name = "buttonSaveUnit";
-            this.buttonSaveUnit.Size = new System.Drawing.Size(81, 53);
-            this.buttonSaveUnit.TabIndex = 3;
-            this.buttonSaveUnit.Text = "Save Unit";
-            this.buttonSaveUnit.UseVisualStyleBackColor = true;
-            this.buttonSaveUnit.Click += new System.EventHandler(this.buttonSaveUnit_Click);
+            this.UnitSaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnitSaveButton.Location = new System.Drawing.Point(327, 7);
+            this.UnitSaveButton.Name = "UnitSaveButton";
+            this.UnitSaveButton.Size = new System.Drawing.Size(81, 53);
+            this.UnitSaveButton.TabIndex = 3;
+            this.UnitSaveButton.Text = "Save Unit";
+            this.UnitSaveButton.UseVisualStyleBackColor = true;
+            this.UnitSaveButton.Click += new System.EventHandler(this.UnitSaveButton_Click);
             // 
-            // buttonTraitRemove
+            // UnitTraitRemoveButton
             // 
-            this.buttonTraitRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTraitRemove.Location = new System.Drawing.Point(430, 240);
-            this.buttonTraitRemove.Name = "buttonTraitRemove";
-            this.buttonTraitRemove.Size = new System.Drawing.Size(32, 32);
-            this.buttonTraitRemove.TabIndex = 2;
-            this.buttonTraitRemove.Text = "-";
-            this.buttonTraitRemove.UseVisualStyleBackColor = true;
-            this.buttonTraitRemove.Click += new System.EventHandler(this.buttonTraitRemove_Click);
+            this.UnitTraitRemoveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnitTraitRemoveButton.Location = new System.Drawing.Point(327, 250);
+            this.UnitTraitRemoveButton.Name = "UnitTraitRemoveButton";
+            this.UnitTraitRemoveButton.Size = new System.Drawing.Size(32, 32);
+            this.UnitTraitRemoveButton.TabIndex = 2;
+            this.UnitTraitRemoveButton.Text = "-";
+            this.UnitTraitRemoveButton.UseVisualStyleBackColor = true;
+            this.UnitTraitRemoveButton.Click += new System.EventHandler(this.UnitTraitRemoveButton_Click);
             // 
-            // buttonTraitAdd
+            // UnitTraitAddButton
             // 
-            this.buttonTraitAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTraitAdd.Location = new System.Drawing.Point(430, 278);
-            this.buttonTraitAdd.Name = "buttonTraitAdd";
-            this.buttonTraitAdd.Size = new System.Drawing.Size(32, 32);
-            this.buttonTraitAdd.TabIndex = 1;
-            this.buttonTraitAdd.Text = "+";
-            this.buttonTraitAdd.UseVisualStyleBackColor = true;
-            this.buttonTraitAdd.Click += new System.EventHandler(this.buttonTraitAdd_Click);
+            this.UnitTraitAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnitTraitAddButton.Location = new System.Drawing.Point(327, 288);
+            this.UnitTraitAddButton.Name = "UnitTraitAddButton";
+            this.UnitTraitAddButton.Size = new System.Drawing.Size(32, 32);
+            this.UnitTraitAddButton.TabIndex = 1;
+            this.UnitTraitAddButton.Text = "+";
+            this.UnitTraitAddButton.UseVisualStyleBackColor = true;
+            this.UnitTraitAddButton.Click += new System.EventHandler(this.UnitTraitAddButton_Click);
             // 
-            // tableUnitCreateStats
+            // UnitCreateStatsTable
             // 
-            this.tableUnitCreateStats.ColumnCount = 2;
-            this.tableUnitCreateStats.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableUnitCreateStats.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableUnitCreateStats.Controls.Add(this.unitTraitsLabel, 0, 9);
-            this.tableUnitCreateStats.Controls.Add(this.unitMoraleText, 1, 8);
-            this.tableUnitCreateStats.Controls.Add(this.unitMoraleLabel, 0, 8);
-            this.tableUnitCreateStats.Controls.Add(this.unitCasualtyText, 1, 7);
-            this.tableUnitCreateStats.Controls.Add(this.unitCasualtyLabel, 0, 7);
-            this.tableUnitCreateStats.Controls.Add(this.unitMaintenenceNumeric, 1, 6);
-            this.tableUnitCreateStats.Controls.Add(this.unitRecruitmentNumeric, 1, 5);
-            this.tableUnitCreateStats.Controls.Add(this.unitInitiativeNumeric, 1, 4);
-            this.tableUnitCreateStats.Controls.Add(this.unitDefenseNumeric, 1, 3);
-            this.tableUnitCreateStats.Controls.Add(this.unitNameText, 1, 0);
-            this.tableUnitCreateStats.Controls.Add(this.unitNameLabel, 0, 0);
-            this.tableUnitCreateStats.Controls.Add(this.unitTypeLabel, 0, 1);
-            this.tableUnitCreateStats.Controls.Add(this.unitTypeCombo, 1, 1);
-            this.tableUnitCreateStats.Controls.Add(this.unitOffenseLabel, 0, 2);
-            this.tableUnitCreateStats.Controls.Add(this.unitDefenseLabel, 0, 3);
-            this.tableUnitCreateStats.Controls.Add(this.unitInitiativeLabel, 0, 4);
-            this.tableUnitCreateStats.Controls.Add(this.unitRecruitmentLabel, 0, 5);
-            this.tableUnitCreateStats.Controls.Add(this.unitMaintenenceLabel, 0, 6);
-            this.tableUnitCreateStats.Controls.Add(this.unitOffenseNumeric, 1, 2);
-            this.tableUnitCreateStats.Controls.Add(this.unitTraitsTable, 1, -1);
-            this.tableUnitCreateStats.Location = new System.Drawing.Point(8, 7);
-            this.tableUnitCreateStats.Name = "tableUnitCreateStats";
-            this.tableUnitCreateStats.RowCount = 10;
-            this.tableUnitCreateStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableUnitCreateStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableUnitCreateStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableUnitCreateStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableUnitCreateStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableUnitCreateStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableUnitCreateStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableUnitCreateStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableUnitCreateStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableUnitCreateStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableUnitCreateStats.Size = new System.Drawing.Size(416, 589);
-            this.tableUnitCreateStats.TabIndex = 0;
+            this.UnitCreateStatsTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.UnitCreateStatsTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.UnitCreateStatsTable.ColumnCount = 2;
+            this.UnitCreateStatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.UnitCreateStatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.UnitCreateStatsTable.Controls.Add(this.UnitTraitsLabel, 0, 9);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitMoraleText, 1, 8);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitMoraleLabel, 0, 8);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitCasualtyText, 1, 7);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitCasualtyLabel, 0, 7);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitMaintenenceNumeric, 1, 6);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitRecruitmentNumeric, 1, 5);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitInitiativeNumeric, 1, 4);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitDefenseNumeric, 1, 3);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitNameText, 1, 0);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitNameLabel, 0, 0);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitTypeLabel, 0, 1);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitTypeCombo, 1, 1);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitOffenseLabel, 0, 2);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitDefenseLabel, 0, 3);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitInitiativeLabel, 0, 4);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitRecruitmentLabel, 0, 5);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitMaintenenceLabel, 0, 6);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitOffenseNumeric, 1, 2);
+            this.UnitCreateStatsTable.Controls.Add(this.UnitTraitsTable, 1, -1);
+            this.UnitCreateStatsTable.Location = new System.Drawing.Point(8, 7);
+            this.UnitCreateStatsTable.Name = "UnitCreateStatsTable";
+            this.UnitCreateStatsTable.RowCount = 10;
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.UnitCreateStatsTable.Size = new System.Drawing.Size(313, 541);
+            this.UnitCreateStatsTable.TabIndex = 0;
             // 
-            // unitTraitsLabel
+            // UnitTraitsLabel
             // 
-            this.unitTraitsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.UnitTraitsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitTraitsLabel.AutoSize = true;
-            this.unitTraitsLabel.Location = new System.Drawing.Point(3, 243);
-            this.unitTraitsLabel.Margin = new System.Windows.Forms.Padding(3, 9, 3, 0);
-            this.unitTraitsLabel.Name = "unitTraitsLabel";
-            this.unitTraitsLabel.Size = new System.Drawing.Size(98, 13);
-            this.unitTraitsLabel.TabIndex = 18;
-            this.unitTraitsLabel.Text = "Traits";
-            this.unitTraitsLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.UnitTraitsLabel.AutoSize = true;
+            this.UnitTraitsLabel.Location = new System.Drawing.Point(3, 243);
+            this.UnitTraitsLabel.Margin = new System.Windows.Forms.Padding(3, 9, 3, 0);
+            this.UnitTraitsLabel.Name = "UnitTraitsLabel";
+            this.UnitTraitsLabel.Size = new System.Drawing.Size(98, 13);
+            this.UnitTraitsLabel.TabIndex = 18;
+            this.UnitTraitsLabel.Text = "Traits";
+            this.UnitTraitsLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // unitMoraleText
+            // UnitMoraleText
             // 
-            this.unitMoraleText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitMoraleText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitMoraleText.Location = new System.Drawing.Point(107, 211);
-            this.unitMoraleText.Name = "unitMoraleText";
-            this.unitMoraleText.Size = new System.Drawing.Size(306, 20);
-            this.unitMoraleText.TabIndex = 17;
+            this.UnitMoraleText.Location = new System.Drawing.Point(107, 211);
+            this.UnitMoraleText.Name = "UnitMoraleText";
+            this.UnitMoraleText.Size = new System.Drawing.Size(200, 20);
+            this.UnitMoraleText.TabIndex = 17;
             // 
-            // unitMoraleLabel
+            // UnitMoraleLabel
             // 
-            this.unitMoraleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitMoraleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitMoraleLabel.AutoSize = true;
-            this.unitMoraleLabel.Location = new System.Drawing.Point(3, 208);
-            this.unitMoraleLabel.Name = "unitMoraleLabel";
-            this.unitMoraleLabel.Size = new System.Drawing.Size(98, 26);
-            this.unitMoraleLabel.TabIndex = 16;
-            this.unitMoraleLabel.Text = "Morale Dice";
-            this.unitMoraleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.UnitMoraleLabel.AutoSize = true;
+            this.UnitMoraleLabel.Location = new System.Drawing.Point(3, 208);
+            this.UnitMoraleLabel.Name = "UnitMoraleLabel";
+            this.UnitMoraleLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitMoraleLabel.TabIndex = 16;
+            this.UnitMoraleLabel.Text = "Morale Dice";
+            this.UnitMoraleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // unitCasualtyText
+            // UnitCasualtyText
             // 
-            this.unitCasualtyText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitCasualtyText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitCasualtyText.Location = new System.Drawing.Point(107, 185);
-            this.unitCasualtyText.Name = "unitCasualtyText";
-            this.unitCasualtyText.Size = new System.Drawing.Size(306, 20);
-            this.unitCasualtyText.TabIndex = 15;
+            this.UnitCasualtyText.Location = new System.Drawing.Point(107, 185);
+            this.UnitCasualtyText.Name = "UnitCasualtyText";
+            this.UnitCasualtyText.Size = new System.Drawing.Size(200, 20);
+            this.UnitCasualtyText.TabIndex = 15;
             // 
-            // unitCasualtyLabel
+            // UnitCasualtyLabel
             // 
-            this.unitCasualtyLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitCasualtyLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitCasualtyLabel.AutoSize = true;
-            this.unitCasualtyLabel.Location = new System.Drawing.Point(3, 182);
-            this.unitCasualtyLabel.Name = "unitCasualtyLabel";
-            this.unitCasualtyLabel.Size = new System.Drawing.Size(98, 26);
-            this.unitCasualtyLabel.TabIndex = 14;
-            this.unitCasualtyLabel.Text = "Casualty Dice";
-            this.unitCasualtyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.UnitCasualtyLabel.AutoSize = true;
+            this.UnitCasualtyLabel.Location = new System.Drawing.Point(3, 182);
+            this.UnitCasualtyLabel.Name = "UnitCasualtyLabel";
+            this.UnitCasualtyLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitCasualtyLabel.TabIndex = 14;
+            this.UnitCasualtyLabel.Text = "Casualty Dice";
+            this.UnitCasualtyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // unitMaintenenceNumeric
+            // UnitMaintenenceNumeric
             // 
-            this.unitMaintenenceNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitMaintenenceNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitMaintenenceNumeric.DecimalPlaces = 2;
-            this.unitMaintenenceNumeric.Increment = new decimal(new int[] {
+            this.UnitMaintenenceNumeric.DecimalPlaces = 2;
+            this.UnitMaintenenceNumeric.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.unitMaintenenceNumeric.Location = new System.Drawing.Point(107, 159);
-            this.unitMaintenenceNumeric.Maximum = new decimal(new int[] {
+            this.UnitMaintenenceNumeric.Location = new System.Drawing.Point(107, 159);
+            this.UnitMaintenenceNumeric.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
-            this.unitMaintenenceNumeric.Minimum = new decimal(new int[] {
+            this.UnitMaintenenceNumeric.Minimum = new decimal(new int[] {
             1000000,
             0,
             0,
             -2147483648});
-            this.unitMaintenenceNumeric.Name = "unitMaintenenceNumeric";
-            this.unitMaintenenceNumeric.Size = new System.Drawing.Size(306, 20);
-            this.unitMaintenenceNumeric.TabIndex = 13;
+            this.UnitMaintenenceNumeric.Name = "UnitMaintenenceNumeric";
+            this.UnitMaintenenceNumeric.Size = new System.Drawing.Size(200, 20);
+            this.UnitMaintenenceNumeric.TabIndex = 13;
             // 
-            // unitRecruitmentNumeric
+            // UnitRecruitmentNumeric
             // 
-            this.unitRecruitmentNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitRecruitmentNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitRecruitmentNumeric.DecimalPlaces = 2;
-            this.unitRecruitmentNumeric.Increment = new decimal(new int[] {
+            this.UnitRecruitmentNumeric.DecimalPlaces = 2;
+            this.UnitRecruitmentNumeric.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.unitRecruitmentNumeric.Location = new System.Drawing.Point(107, 133);
-            this.unitRecruitmentNumeric.Maximum = new decimal(new int[] {
+            this.UnitRecruitmentNumeric.Location = new System.Drawing.Point(107, 133);
+            this.UnitRecruitmentNumeric.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
-            this.unitRecruitmentNumeric.Minimum = new decimal(new int[] {
+            this.UnitRecruitmentNumeric.Minimum = new decimal(new int[] {
             1000000,
             0,
             0,
             -2147483648});
-            this.unitRecruitmentNumeric.Name = "unitRecruitmentNumeric";
-            this.unitRecruitmentNumeric.Size = new System.Drawing.Size(306, 20);
-            this.unitRecruitmentNumeric.TabIndex = 12;
+            this.UnitRecruitmentNumeric.Name = "UnitRecruitmentNumeric";
+            this.UnitRecruitmentNumeric.Size = new System.Drawing.Size(200, 20);
+            this.UnitRecruitmentNumeric.TabIndex = 12;
             // 
-            // unitInitiativeNumeric
+            // UnitInitiativeNumeric
             // 
-            this.unitInitiativeNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitInitiativeNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitInitiativeNumeric.Location = new System.Drawing.Point(107, 107);
-            this.unitInitiativeNumeric.Maximum = new decimal(new int[] {
+            this.UnitInitiativeNumeric.Location = new System.Drawing.Point(107, 107);
+            this.UnitInitiativeNumeric.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.unitInitiativeNumeric.Minimum = new decimal(new int[] {
+            this.UnitInitiativeNumeric.Minimum = new decimal(new int[] {
             1000,
             0,
             0,
             -2147483648});
-            this.unitInitiativeNumeric.Name = "unitInitiativeNumeric";
-            this.unitInitiativeNumeric.Size = new System.Drawing.Size(306, 20);
-            this.unitInitiativeNumeric.TabIndex = 11;
+            this.UnitInitiativeNumeric.Name = "UnitInitiativeNumeric";
+            this.UnitInitiativeNumeric.Size = new System.Drawing.Size(200, 20);
+            this.UnitInitiativeNumeric.TabIndex = 11;
             // 
-            // unitDefenseNumeric
+            // UnitDefenseNumeric
             // 
-            this.unitDefenseNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitDefenseNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitDefenseNumeric.Location = new System.Drawing.Point(107, 81);
-            this.unitDefenseNumeric.Maximum = new decimal(new int[] {
+            this.UnitDefenseNumeric.Location = new System.Drawing.Point(107, 81);
+            this.UnitDefenseNumeric.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.unitDefenseNumeric.Minimum = new decimal(new int[] {
+            this.UnitDefenseNumeric.Minimum = new decimal(new int[] {
             1000,
             0,
             0,
             -2147483648});
-            this.unitDefenseNumeric.Name = "unitDefenseNumeric";
-            this.unitDefenseNumeric.Size = new System.Drawing.Size(306, 20);
-            this.unitDefenseNumeric.TabIndex = 10;
+            this.UnitDefenseNumeric.Name = "UnitDefenseNumeric";
+            this.UnitDefenseNumeric.Size = new System.Drawing.Size(200, 20);
+            this.UnitDefenseNumeric.TabIndex = 10;
             // 
-            // unitNameText
+            // UnitNameText
             // 
-            this.unitNameText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitNameText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitNameText.Location = new System.Drawing.Point(107, 3);
-            this.unitNameText.Name = "unitNameText";
-            this.unitNameText.Size = new System.Drawing.Size(306, 20);
-            this.unitNameText.TabIndex = 0;
+            this.UnitNameText.Location = new System.Drawing.Point(107, 3);
+            this.UnitNameText.Name = "UnitNameText";
+            this.UnitNameText.Size = new System.Drawing.Size(200, 20);
+            this.UnitNameText.TabIndex = 0;
             // 
-            // unitNameLabel
+            // UnitNameLabel
             // 
-            this.unitNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitNameLabel.AutoSize = true;
-            this.unitNameLabel.Location = new System.Drawing.Point(3, 0);
-            this.unitNameLabel.Name = "unitNameLabel";
-            this.unitNameLabel.Size = new System.Drawing.Size(98, 26);
-            this.unitNameLabel.TabIndex = 1;
-            this.unitNameLabel.Text = "Unit Name";
-            this.unitNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.UnitNameLabel.AutoSize = true;
+            this.UnitNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.UnitNameLabel.Name = "UnitNameLabel";
+            this.UnitNameLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitNameLabel.TabIndex = 1;
+            this.UnitNameLabel.Text = "Unit Name";
+            this.UnitNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // unitTypeLabel
+            // UnitTypeLabel
             // 
-            this.unitTypeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitTypeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitTypeLabel.AutoSize = true;
-            this.unitTypeLabel.Location = new System.Drawing.Point(3, 26);
-            this.unitTypeLabel.Name = "unitTypeLabel";
-            this.unitTypeLabel.Size = new System.Drawing.Size(98, 26);
-            this.unitTypeLabel.TabIndex = 2;
-            this.unitTypeLabel.Text = "Unit Type";
-            this.unitTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.UnitTypeLabel.AutoSize = true;
+            this.UnitTypeLabel.Location = new System.Drawing.Point(3, 26);
+            this.UnitTypeLabel.Name = "UnitTypeLabel";
+            this.UnitTypeLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitTypeLabel.TabIndex = 2;
+            this.UnitTypeLabel.Text = "Unit Type";
+            this.UnitTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // unitTypeCombo
+            // UnitTypeCombo
             // 
-            this.unitTypeCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitTypeCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitTypeCombo.FormattingEnabled = true;
-            this.unitTypeCombo.Items.AddRange(new object[] {
+            this.UnitTypeCombo.FormattingEnabled = true;
+            this.UnitTypeCombo.Items.AddRange(new object[] {
             "Light Infanty",
             "Heavy Infantry",
             "Light Cavalry",
             "Heavy Cavalry",
             "Siege Weapon"});
-            this.unitTypeCombo.Location = new System.Drawing.Point(107, 29);
-            this.unitTypeCombo.Name = "unitTypeCombo";
-            this.unitTypeCombo.Size = new System.Drawing.Size(306, 21);
-            this.unitTypeCombo.TabIndex = 3;
+            this.UnitTypeCombo.Location = new System.Drawing.Point(107, 29);
+            this.UnitTypeCombo.Name = "UnitTypeCombo";
+            this.UnitTypeCombo.Size = new System.Drawing.Size(200, 21);
+            this.UnitTypeCombo.TabIndex = 3;
             // 
-            // unitOffenseLabel
+            // UnitOffenseLabel
             // 
-            this.unitOffenseLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitOffenseLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitOffenseLabel.AutoSize = true;
-            this.unitOffenseLabel.Location = new System.Drawing.Point(3, 52);
-            this.unitOffenseLabel.Name = "unitOffenseLabel";
-            this.unitOffenseLabel.Size = new System.Drawing.Size(98, 26);
-            this.unitOffenseLabel.TabIndex = 4;
-            this.unitOffenseLabel.Text = "Offensive Strength";
-            this.unitOffenseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.UnitOffenseLabel.AutoSize = true;
+            this.UnitOffenseLabel.Location = new System.Drawing.Point(3, 52);
+            this.UnitOffenseLabel.Name = "UnitOffenseLabel";
+            this.UnitOffenseLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitOffenseLabel.TabIndex = 4;
+            this.UnitOffenseLabel.Text = "Offensive Strength";
+            this.UnitOffenseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // unitDefenseLabel
+            // UnitDefenseLabel
             // 
-            this.unitDefenseLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitDefenseLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitDefenseLabel.AutoSize = true;
-            this.unitDefenseLabel.Location = new System.Drawing.Point(3, 78);
-            this.unitDefenseLabel.Name = "unitDefenseLabel";
-            this.unitDefenseLabel.Size = new System.Drawing.Size(98, 26);
-            this.unitDefenseLabel.TabIndex = 5;
-            this.unitDefenseLabel.Text = "Defensive Strength";
-            this.unitDefenseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.UnitDefenseLabel.AutoSize = true;
+            this.UnitDefenseLabel.Location = new System.Drawing.Point(3, 78);
+            this.UnitDefenseLabel.Name = "UnitDefenseLabel";
+            this.UnitDefenseLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitDefenseLabel.TabIndex = 5;
+            this.UnitDefenseLabel.Text = "Defensive Strength";
+            this.UnitDefenseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // unitInitiativeLabel
+            // UnitInitiativeLabel
             // 
-            this.unitInitiativeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitInitiativeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitInitiativeLabel.AutoSize = true;
-            this.unitInitiativeLabel.Location = new System.Drawing.Point(3, 104);
-            this.unitInitiativeLabel.Name = "unitInitiativeLabel";
-            this.unitInitiativeLabel.Size = new System.Drawing.Size(98, 26);
-            this.unitInitiativeLabel.TabIndex = 6;
-            this.unitInitiativeLabel.Text = "Initiative Penalty";
-            this.unitInitiativeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.UnitInitiativeLabel.AutoSize = true;
+            this.UnitInitiativeLabel.Location = new System.Drawing.Point(3, 104);
+            this.UnitInitiativeLabel.Name = "UnitInitiativeLabel";
+            this.UnitInitiativeLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitInitiativeLabel.TabIndex = 6;
+            this.UnitInitiativeLabel.Text = "Initiative Penalty";
+            this.UnitInitiativeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // unitRecruitmentLabel
+            // UnitRecruitmentLabel
             // 
-            this.unitRecruitmentLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitRecruitmentLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitRecruitmentLabel.AutoSize = true;
-            this.unitRecruitmentLabel.Location = new System.Drawing.Point(3, 130);
-            this.unitRecruitmentLabel.Name = "unitRecruitmentLabel";
-            this.unitRecruitmentLabel.Size = new System.Drawing.Size(98, 26);
-            this.unitRecruitmentLabel.TabIndex = 7;
-            this.unitRecruitmentLabel.Text = "Recruitment Cost";
-            this.unitRecruitmentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.UnitRecruitmentLabel.AutoSize = true;
+            this.UnitRecruitmentLabel.Location = new System.Drawing.Point(3, 130);
+            this.UnitRecruitmentLabel.Name = "UnitRecruitmentLabel";
+            this.UnitRecruitmentLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitRecruitmentLabel.TabIndex = 7;
+            this.UnitRecruitmentLabel.Text = "Recruitment Cost";
+            this.UnitRecruitmentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // unitMaintenenceLabel
+            // UnitMaintenenceLabel
             // 
-            this.unitMaintenenceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitMaintenenceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitMaintenenceLabel.AutoSize = true;
-            this.unitMaintenenceLabel.Location = new System.Drawing.Point(3, 156);
-            this.unitMaintenenceLabel.Name = "unitMaintenenceLabel";
-            this.unitMaintenenceLabel.Size = new System.Drawing.Size(98, 26);
-            this.unitMaintenenceLabel.TabIndex = 8;
-            this.unitMaintenenceLabel.Text = "Maintenence Cost";
-            this.unitMaintenenceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.UnitMaintenenceLabel.AutoSize = true;
+            this.UnitMaintenenceLabel.Location = new System.Drawing.Point(3, 156);
+            this.UnitMaintenenceLabel.Name = "UnitMaintenenceLabel";
+            this.UnitMaintenenceLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitMaintenenceLabel.TabIndex = 8;
+            this.UnitMaintenenceLabel.Text = "Maintenence Cost";
+            this.UnitMaintenenceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // unitOffenseNumeric
+            // UnitOffenseNumeric
             // 
-            this.unitOffenseNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.UnitOffenseNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitOffenseNumeric.Location = new System.Drawing.Point(107, 55);
-            this.unitOffenseNumeric.Maximum = new decimal(new int[] {
+            this.UnitOffenseNumeric.Location = new System.Drawing.Point(107, 55);
+            this.UnitOffenseNumeric.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.unitOffenseNumeric.Minimum = new decimal(new int[] {
+            this.UnitOffenseNumeric.Minimum = new decimal(new int[] {
             1000,
             0,
             0,
             -2147483648});
-            this.unitOffenseNumeric.Name = "unitOffenseNumeric";
-            this.unitOffenseNumeric.Size = new System.Drawing.Size(306, 20);
-            this.unitOffenseNumeric.TabIndex = 9;
+            this.UnitOffenseNumeric.Name = "UnitOffenseNumeric";
+            this.UnitOffenseNumeric.Size = new System.Drawing.Size(200, 20);
+            this.UnitOffenseNumeric.TabIndex = 9;
             // 
-            // unitTraitsTable
+            // UnitTraitsTable
             // 
-            this.unitTraitsTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.unitTraitsTable.ColumnCount = 2;
-            this.unitTraitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.unitTraitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.unitTraitsTable.Location = new System.Drawing.Point(107, 237);
-            this.unitTraitsTable.Name = "unitTraitsTable";
-            this.unitTraitsTable.RowCount = 1;
-            this.unitTraitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.unitTraitsTable.Size = new System.Drawing.Size(306, 349);
-            this.unitTraitsTable.TabIndex = 19;
+            this.UnitTraitsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.UnitTraitsTable.ColumnCount = 2;
+            this.UnitTraitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.UnitTraitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
+            this.UnitTraitsTable.Location = new System.Drawing.Point(107, 237);
+            this.UnitTraitsTable.Name = "UnitTraitsTable";
+            this.UnitTraitsTable.RowCount = 1;
+            this.UnitTraitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.UnitTraitsTable.Size = new System.Drawing.Size(200, 342);
+            this.UnitTraitsTable.TabIndex = 19;
             // 
             // battlePage
             // 
             this.battlePage.Location = new System.Drawing.Point(4, 22);
             this.battlePage.Name = "battlePage";
             this.battlePage.Padding = new System.Windows.Forms.Padding(3);
-            this.battlePage.Size = new System.Drawing.Size(1181, 604);
+            this.battlePage.Size = new System.Drawing.Size(884, 554);
             this.battlePage.TabIndex = 0;
             this.battlePage.Text = "Battle Manager";
             this.battlePage.UseVisualStyleBackColor = true;
@@ -511,7 +541,7 @@
             this.tabs.Location = new System.Drawing.Point(0, 0);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(1189, 630);
+            this.tabs.Size = new System.Drawing.Size(892, 580);
             this.tabs.TabIndex = 1;
             // 
             // saveDialog
@@ -520,24 +550,271 @@
             this.saveDialog.Filter = "JSON files|*.json";
             this.saveDialog.Title = "Save Unit JSON File";
             // 
+            // CommanderCreateStatsTable
+            // 
+            this.CommanderCreateStatsTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.CommanderCreateStatsTable.ColumnCount = 2;
+            this.CommanderCreateStatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.CommanderCreateStatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.CommanderCreateStatsTable.Controls.Add(this.CommanderMaritimeNumeric, 1, 5);
+            this.CommanderCreateStatsTable.Controls.Add(this.CommanderLandWarNumeric, 1, 4);
+            this.CommanderCreateStatsTable.Controls.Add(this.CommanderChaNumeric, 1, 3);
+            this.CommanderCreateStatsTable.Controls.Add(this.CommanderWisNumeric, 1, 2);
+            this.CommanderCreateStatsTable.Controls.Add(this.CommanderMaritimeLabel, 0, 5);
+            this.CommanderCreateStatsTable.Controls.Add(this.CommanderLandWarLabel, 0, 4);
+            this.CommanderCreateStatsTable.Controls.Add(this.CommanderChaLabel, 0, 3);
+            this.CommanderCreateStatsTable.Controls.Add(this.CommanderNameLabel, 0, 0);
+            this.CommanderCreateStatsTable.Controls.Add(this.CommanderNameText, 1, 0);
+            this.CommanderCreateStatsTable.Controls.Add(this.CommanderIntLabel, 0, 1);
+            this.CommanderCreateStatsTable.Controls.Add(this.CommanderIntNumeric, 1, 1);
+            this.CommanderCreateStatsTable.Controls.Add(this.label1, 0, 2);
+            this.CommanderCreateStatsTable.Location = new System.Drawing.Point(465, 7);
+            this.CommanderCreateStatsTable.Name = "CommanderCreateStatsTable";
+            this.CommanderCreateStatsTable.RowCount = 6;
+            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.CommanderCreateStatsTable.Size = new System.Drawing.Size(312, 164);
+            this.CommanderCreateStatsTable.TabIndex = 5;
+            // 
+            // CommanderNameLabel
+            // 
+            this.CommanderNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommanderNameLabel.AutoSize = true;
+            this.CommanderNameLabel.Location = new System.Drawing.Point(4, 1);
+            this.CommanderNameLabel.Name = "CommanderNameLabel";
+            this.CommanderNameLabel.Size = new System.Drawing.Size(94, 26);
+            this.CommanderNameLabel.TabIndex = 2;
+            this.CommanderNameLabel.Text = "Commander Name";
+            this.CommanderNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CommanderNameText
+            // 
+            this.CommanderNameText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommanderNameText.Location = new System.Drawing.Point(105, 4);
+            this.CommanderNameText.Name = "CommanderNameText";
+            this.CommanderNameText.Size = new System.Drawing.Size(203, 20);
+            this.CommanderNameText.TabIndex = 3;
+            // 
+            // CommanderIntLabel
+            // 
+            this.CommanderIntLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommanderIntLabel.AutoSize = true;
+            this.CommanderIntLabel.Location = new System.Drawing.Point(4, 28);
+            this.CommanderIntLabel.Name = "CommanderIntLabel";
+            this.CommanderIntLabel.Size = new System.Drawing.Size(94, 26);
+            this.CommanderIntLabel.TabIndex = 4;
+            this.CommanderIntLabel.Text = "INT";
+            this.CommanderIntLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CommanderIntNumeric
+            // 
+            this.CommanderIntNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommanderIntNumeric.Location = new System.Drawing.Point(105, 31);
+            this.CommanderIntNumeric.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.CommanderIntNumeric.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            -2147483648});
+            this.CommanderIntNumeric.Name = "CommanderIntNumeric";
+            this.CommanderIntNumeric.Size = new System.Drawing.Size(203, 20);
+            this.CommanderIntNumeric.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 26);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "WIS";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CommanderChaLabel
+            // 
+            this.CommanderChaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommanderChaLabel.AutoSize = true;
+            this.CommanderChaLabel.Location = new System.Drawing.Point(4, 82);
+            this.CommanderChaLabel.Name = "CommanderChaLabel";
+            this.CommanderChaLabel.Size = new System.Drawing.Size(94, 26);
+            this.CommanderChaLabel.TabIndex = 6;
+            this.CommanderChaLabel.Text = "CHA";
+            this.CommanderChaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CommanderLandWarLabel
+            // 
+            this.CommanderLandWarLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommanderLandWarLabel.AutoSize = true;
+            this.CommanderLandWarLabel.Location = new System.Drawing.Point(4, 109);
+            this.CommanderLandWarLabel.Name = "CommanderLandWarLabel";
+            this.CommanderLandWarLabel.Size = new System.Drawing.Size(94, 26);
+            this.CommanderLandWarLabel.TabIndex = 6;
+            this.CommanderLandWarLabel.Text = "Land Warfare";
+            this.CommanderLandWarLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CommanderMaritimeLabel
+            // 
+            this.CommanderMaritimeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommanderMaritimeLabel.AutoSize = true;
+            this.CommanderMaritimeLabel.Location = new System.Drawing.Point(4, 136);
+            this.CommanderMaritimeLabel.Name = "CommanderMaritimeLabel";
+            this.CommanderMaritimeLabel.Size = new System.Drawing.Size(94, 27);
+            this.CommanderMaritimeLabel.TabIndex = 6;
+            this.CommanderMaritimeLabel.Text = "Maritime Tactics";
+            this.CommanderMaritimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CommanderWisNumeric
+            // 
+            this.CommanderWisNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommanderWisNumeric.Location = new System.Drawing.Point(105, 58);
+            this.CommanderWisNumeric.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.CommanderWisNumeric.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            -2147483648});
+            this.CommanderWisNumeric.Name = "CommanderWisNumeric";
+            this.CommanderWisNumeric.Size = new System.Drawing.Size(203, 20);
+            this.CommanderWisNumeric.TabIndex = 12;
+            // 
+            // CommanderChaNumeric
+            // 
+            this.CommanderChaNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommanderChaNumeric.Location = new System.Drawing.Point(105, 85);
+            this.CommanderChaNumeric.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.CommanderChaNumeric.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            -2147483648});
+            this.CommanderChaNumeric.Name = "CommanderChaNumeric";
+            this.CommanderChaNumeric.Size = new System.Drawing.Size(203, 20);
+            this.CommanderChaNumeric.TabIndex = 13;
+            // 
+            // CommanderLandWarNumeric
+            // 
+            this.CommanderLandWarNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommanderLandWarNumeric.Location = new System.Drawing.Point(105, 112);
+            this.CommanderLandWarNumeric.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.CommanderLandWarNumeric.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            -2147483648});
+            this.CommanderLandWarNumeric.Name = "CommanderLandWarNumeric";
+            this.CommanderLandWarNumeric.Size = new System.Drawing.Size(203, 20);
+            this.CommanderLandWarNumeric.TabIndex = 14;
+            // 
+            // CommanderMaritimeNumeric
+            // 
+            this.CommanderMaritimeNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommanderMaritimeNumeric.Location = new System.Drawing.Point(105, 139);
+            this.CommanderMaritimeNumeric.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.CommanderMaritimeNumeric.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            -2147483648});
+            this.CommanderMaritimeNumeric.Name = "CommanderMaritimeNumeric";
+            this.CommanderMaritimeNumeric.Size = new System.Drawing.Size(203, 20);
+            this.CommanderMaritimeNumeric.TabIndex = 15;
+            // 
+            // CommanderLoadButton
+            // 
+            this.CommanderLoadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CommanderLoadButton.Location = new System.Drawing.Point(783, 61);
+            this.CommanderLoadButton.Name = "CommanderLoadButton";
+            this.CommanderLoadButton.Size = new System.Drawing.Size(87, 53);
+            this.CommanderLoadButton.TabIndex = 7;
+            this.CommanderLoadButton.Text = "Load Commander";
+            this.CommanderLoadButton.UseVisualStyleBackColor = true;
+            this.CommanderLoadButton.Click += new System.EventHandler(this.CommanderLoadButton_Click);
+            // 
+            // CommanderSaveButton
+            // 
+            this.CommanderSaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CommanderSaveButton.Location = new System.Drawing.Point(783, 8);
+            this.CommanderSaveButton.Name = "CommanderSaveButton";
+            this.CommanderSaveButton.Size = new System.Drawing.Size(87, 53);
+            this.CommanderSaveButton.TabIndex = 6;
+            this.CommanderSaveButton.Text = "Save Commander";
+            this.CommanderSaveButton.UseVisualStyleBackColor = true;
+            this.CommanderSaveButton.Click += new System.EventHandler(this.CommanderSaveButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1189, 630);
+            this.ClientSize = new System.Drawing.Size(892, 580);
             this.Controls.Add(this.tabs);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "BattlesBois";
             this.tabUnitCommander.ResumeLayout(false);
-            this.tableUnitCreateStats.ResumeLayout(false);
-            this.tableUnitCreateStats.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.unitMaintenenceNumeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitRecruitmentNumeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitInitiativeNumeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitDefenseNumeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitOffenseNumeric)).EndInit();
+            this.UnitCreateStatsTable.ResumeLayout(false);
+            this.UnitCreateStatsTable.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UnitMaintenenceNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnitRecruitmentNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnitInitiativeNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnitDefenseNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnitOffenseNumeric)).EndInit();
             this.tabs.ResumeLayout(false);
+            this.CommanderCreateStatsTable.ResumeLayout(false);
+            this.CommanderCreateStatsTable.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CommanderIntNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommanderWisNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommanderChaNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommanderLandWarNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommanderMaritimeNumeric)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -547,35 +824,50 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabUnitCommander;
-        private System.Windows.Forms.Button buttonSaveUnit;
-        private System.Windows.Forms.Button buttonTraitRemove;
-        private System.Windows.Forms.Button buttonTraitAdd;
-        private System.Windows.Forms.TableLayoutPanel tableUnitCreateStats;
-        private System.Windows.Forms.Label unitTraitsLabel;
-        private System.Windows.Forms.TextBox unitMoraleText;
-        private System.Windows.Forms.Label unitMoraleLabel;
-        private System.Windows.Forms.TextBox unitCasualtyText;
-        private System.Windows.Forms.Label unitCasualtyLabel;
-        private System.Windows.Forms.NumericUpDown unitMaintenenceNumeric;
-        private System.Windows.Forms.NumericUpDown unitRecruitmentNumeric;
-        private System.Windows.Forms.NumericUpDown unitInitiativeNumeric;
-        private System.Windows.Forms.NumericUpDown unitDefenseNumeric;
-        private System.Windows.Forms.TextBox unitNameText;
-        private System.Windows.Forms.Label unitNameLabel;
-        private System.Windows.Forms.Label unitTypeLabel;
-        private System.Windows.Forms.ComboBox unitTypeCombo;
-        private System.Windows.Forms.Label unitOffenseLabel;
-        private System.Windows.Forms.Label unitDefenseLabel;
-        private System.Windows.Forms.Label unitInitiativeLabel;
-        private System.Windows.Forms.Label unitRecruitmentLabel;
-        private System.Windows.Forms.Label unitMaintenenceLabel;
-        private System.Windows.Forms.NumericUpDown unitOffenseNumeric;
-        private System.Windows.Forms.TableLayoutPanel unitTraitsTable;
+        private System.Windows.Forms.Button UnitSaveButton;
+        private System.Windows.Forms.Button UnitTraitRemoveButton;
+        private System.Windows.Forms.Button UnitTraitAddButton;
+        private System.Windows.Forms.TableLayoutPanel UnitCreateStatsTable;
+        private System.Windows.Forms.Label UnitTraitsLabel;
+        private System.Windows.Forms.TextBox UnitMoraleText;
+        private System.Windows.Forms.Label UnitMoraleLabel;
+        private System.Windows.Forms.TextBox UnitCasualtyText;
+        private System.Windows.Forms.Label UnitCasualtyLabel;
+        private System.Windows.Forms.NumericUpDown UnitMaintenenceNumeric;
+        private System.Windows.Forms.NumericUpDown UnitRecruitmentNumeric;
+        private System.Windows.Forms.NumericUpDown UnitInitiativeNumeric;
+        private System.Windows.Forms.NumericUpDown UnitDefenseNumeric;
+        private System.Windows.Forms.TextBox UnitNameText;
+        private System.Windows.Forms.Label UnitNameLabel;
+        private System.Windows.Forms.Label UnitTypeLabel;
+        private System.Windows.Forms.ComboBox UnitTypeCombo;
+        private System.Windows.Forms.Label UnitOffenseLabel;
+        private System.Windows.Forms.Label UnitDefenseLabel;
+        private System.Windows.Forms.Label UnitInitiativeLabel;
+        private System.Windows.Forms.Label UnitRecruitmentLabel;
+        private System.Windows.Forms.Label UnitMaintenenceLabel;
+        private System.Windows.Forms.NumericUpDown UnitOffenseNumeric;
+        private System.Windows.Forms.TableLayoutPanel UnitTraitsTable;
         private System.Windows.Forms.TabPage battlePage;
         private System.Windows.Forms.TabControl tabs;
-        private System.Windows.Forms.Button buttonLoadUnit;
+        private System.Windows.Forms.Button UnitLoadButton;
         private System.Windows.Forms.SaveFileDialog saveDialog;
         private System.Windows.Forms.OpenFileDialog loadDialog;
+        private System.Windows.Forms.TableLayoutPanel CommanderCreateStatsTable;
+        private System.Windows.Forms.Label CommanderNameLabel;
+        private System.Windows.Forms.TextBox CommanderNameText;
+        private System.Windows.Forms.Label CommanderIntLabel;
+        private System.Windows.Forms.NumericUpDown CommanderIntNumeric;
+        private System.Windows.Forms.Button CommanderLoadButton;
+        private System.Windows.Forms.Button CommanderSaveButton;
+        private System.Windows.Forms.NumericUpDown CommanderMaritimeNumeric;
+        private System.Windows.Forms.NumericUpDown CommanderLandWarNumeric;
+        private System.Windows.Forms.NumericUpDown CommanderChaNumeric;
+        private System.Windows.Forms.NumericUpDown CommanderWisNumeric;
+        private System.Windows.Forms.Label CommanderMaritimeLabel;
+        private System.Windows.Forms.Label CommanderLandWarLabel;
+        private System.Windows.Forms.Label CommanderChaLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
 
