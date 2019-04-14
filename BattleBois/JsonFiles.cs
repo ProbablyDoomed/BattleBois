@@ -12,10 +12,12 @@ namespace BattleBois
     {
         public static readonly Dictionary<Type, String> TYPE_DIRECTORIES = new Dictionary<Type, string>
         {
-            [typeof(CUnit)]      = "Units",
+            [typeof(CUnit)] = "Units",
             [typeof(CCommander)] = "Commanders",
-            [typeof(CArmy)]      = "Armies",
-            [typeof(CBattle)]    = "Battles",
+            [typeof(CArmy)] = "Armies",
+            [typeof(CBattle)] = "Battles",
+
+            [typeof(TraitReference.TraitDefinitions)] = "CommonJson"
         };
 
         public static T LoadFromDefault<T>(String fileName)

@@ -21,7 +21,10 @@ namespace BattleBois
         public Form1()
         {
             InitializeComponent();
+
+            TraitReference.LoadTraitDefinitions();
             ClearAllTraitRows();
+
         }        
 
         private void ShowSaveJsonObjectDialog<T>(T objectToSave)
@@ -176,10 +179,18 @@ namespace BattleBois
 
                 ClearAllTraitRows();
 
-                foreach(var trait in unitToLoad.Traits)
+                //String missingTraits = "";
+                foreach (var trait in unitToLoad.Traits)
                 {
-                    AddNewTraitRow(trait.Key, trait.Value);
-                }
+                    if (TraitReference.IsThisATrait(trait.Key))
+                    {
+                        AddNewTraitRow(trait.Key, trait.Value);
+                    }
+                    else
+                    {
+                        //missingTraits = missingTraits + trait.Key + "\r\n";
+                    }
+                }                
             }
         }
 
