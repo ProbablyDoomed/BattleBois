@@ -8,6 +8,7 @@ namespace BattleBois
 {
     static class TraitReference
     {
+        private static readonly String STRING_FMT_ARG_0 = "{0}";
         private static readonly String TRAIT_FILE = "TraitDefinitions.json";
         private static bool loaded = false;
         private static TraitDefinitions definitions;
@@ -51,13 +52,21 @@ namespace BattleBois
         {
             if (IsThisATrait(traitName))
             {
-                String description = traitName + " {0}: " + definitions.List[traitName];
-                description = String.Format(description, ((value == 0) ? "" : value.ToString()));
+                String explanation = definitions.List[traitName];
+                String nameFormat = ": ", descriptionValue = "N";
+                if(explanation.Contains(STRING_FMT_ARG_0))
+                {
+                    nameFormat = " "+ STRING_FMT_ARG_0 + ": ";
+                    descriptionValue = value.ToString();
+                }
+
+                String description = traitName + nameFormat + definitions.List[traitName];
+                description = String.Format(description, descriptionValue);
                 return description;
             }
             else
             {
-                return "Trait not found.";
+                return "Couldn't find a trait named \"" + traitName + "\"";
             }
         }
     }

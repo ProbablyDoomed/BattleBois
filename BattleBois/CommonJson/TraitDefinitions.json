@@ -3,7 +3,7 @@
     "Accuracy": "{0} times per combat, this unit may reroll an attack.",
     "Blood Prayer": "This unit may still act on the turn following their death.",
     "Bloodletting": "At the start of each of their turns, this unit loses 5 Defensive Strength and gains 5 Offensive Strength. At the start of every 3rd turn, this unit gains +1d10 Casualty Dice.",
-    "Bouldershot": "Each round before attacking, this unit may choose to gain disadvantage on its attack roll to gain advantage on its casualty dice. (Figure this might be a toggle function)",
+    "Bouldershot": "Each round before attacking, this unit may choose to gain disadvantage on its attack roll to gain advantage on its casualty dice.",
     "Choke the Life Out of Them": "After the two attacks granted by the Range 2 trait have been made, this unit no longer has the Range trait.",
     "Claws on Bronze": "This unit may use its action to reduce all incoming casualties against it by half until the start of its next turn.",
     "Climbing Claws": "This unit counts as a Light Infantry unit for the purposes of determining terrain penalties in Jungle terrain.",
@@ -60,20 +60,23 @@
     "Seek the Heart": "Casualties inflicted by this unit are always killed or mortally wounded, and cannot be brought back to service without major magical assistance.",
     "Shieldwall": "This unit gains {0} Defensive Strength against units with the Range trait.",
     "Shock and Awe": "This unit has +20 Defensive Strength against units with lower morale than it.",
-    "Slice Through": "This unit's casualty dice is 6d10 against Light Infantry Units (This type of stuff I figure should only apply if they are exclusively damaging Light Infantry, in this case)",
+    "Slice Through": "This unit's casualty dice is 6d10 against Light Infantry Units.",
     "Smokescreens": "This unit may choose to guard twice its number on a turn, but cannot guard any units the following turn.",
     "Sokejan Feint": "At the start of combat, this unit may choose to gain either the Horsebane 10 trait or the Range 1 trait until the end of combat.",
     "Spine and Spirit": "This unit gains {0} Defensive Strength against units with more Offensive Strength than it.",
     "Spirits' Endurance": "This unit ignores any exhaustion and morale penalties on the first round of combat.",
     "Stalwart Steed": "This unit ignores Horsedread traits.",
-    "Suppress": "This unit gains {0} Defensive Strength against units with less Offensive Strength than it",
+    "Suppress": "This unit gains {0} Defensive Strength against units with less Offensive Strength than it.",
     "Three Points for Three Men": "If this unit's army is outnumbered by the enemy army, this unit has +1d10 Casualty Dice.",
     "To Shatter Mountains": "This units gains {0} Offensive Strength against units with Defensive Strength 100 or above.",
     "Trappers": "On the first turn of combat, this unit's casualty dice is 4d12, and its initiative penalty is 0.",
-    "Tread Leaf": "In Forest or Woods terrain, this unit gains {0} Defensive Strength",
+    "Tread Leaf": "In Forest or Woods terrain, this unit gains {0} Defensive Strength.",
     "Unsaved": "Voidbound cannot lose morale in combat, but their maximum morale is 0.",
     "Weighted Shields": "This unit gains {0} Offensive Strength against units with less Defensive Strength than it.",
     "Zealous": "When fighting religious enemies, this unit's morale dice is 3d8 + 1.",
-    "Zenata": "This unit has advantage on retreat checks."
+    "Zenata": "This unit has advantage on retreat checks.",
+
+    "In Awe of the Size": "This unit gains {0} Defensive Strength against units that it outnumbers.",
+    "Mad Lads": "This unit's casualty dice are doubled for an attack that beats the highest Defensive Strength among the enemy units."
   }
 }

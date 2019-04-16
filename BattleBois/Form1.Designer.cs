@@ -75,6 +75,7 @@
             this.AppTabs = new System.Windows.Forms.TabControl();
             this.saveDialog = new System.Windows.Forms.SaveFileDialog();
             this.loadDialog = new System.Windows.Forms.OpenFileDialog();
+            this.UnitCreateTraitDetailText = new System.Windows.Forms.TextBox();
             this.TabUnitCommander.SuspendLayout();
             this.CommanderCreateStatsTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CommanderMaritimeNumeric)).BeginInit();
@@ -113,6 +114,7 @@
             // 
             // TabUnitCommander
             // 
+            this.TabUnitCommander.Controls.Add(this.UnitCreateTraitDetailText);
             this.TabUnitCommander.Controls.Add(this.CommanderLoadButton);
             this.TabUnitCommander.Controls.Add(this.CommanderSaveButton);
             this.TabUnitCommander.Controls.Add(this.CommanderCreateStatsTable);
@@ -790,6 +792,15 @@
             this.saveDialog.Filter = "JSON files|*.json";
             this.saveDialog.Title = "Save Unit JSON File";
             // 
+            // UnitCreateTraitDetailText
+            // 
+            this.UnitCreateTraitDetailText.Location = new System.Drawing.Point(387, 254);
+            this.UnitCreateTraitDetailText.Multiline = true;
+            this.UnitCreateTraitDetailText.Name = "UnitCreateTraitDetailText";
+            this.UnitCreateTraitDetailText.ReadOnly = true;
+            this.UnitCreateTraitDetailText.Size = new System.Drawing.Size(483, 290);
+            this.UnitCreateTraitDetailText.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -800,6 +811,7 @@
             this.Name = "Form1";
             this.Text = "BattlesBois";
             this.TabUnitCommander.ResumeLayout(false);
+            this.TabUnitCommander.PerformLayout();
             this.CommanderCreateStatsTable.ResumeLayout(false);
             this.CommanderCreateStatsTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CommanderMaritimeNumeric)).EndInit();
@@ -868,6 +880,7 @@
         private System.Windows.Forms.Label CommanderLandWarLabel;
         private System.Windows.Forms.Label CommanderChaLabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox UnitCreateTraitDetailText;
     }
 }
 

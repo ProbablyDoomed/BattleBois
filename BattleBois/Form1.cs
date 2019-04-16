@@ -57,7 +57,22 @@ namespace BattleBois
             {
                 return default(T);
             }
-        }        
+        }
+        
+        private void RefreshTraitDescriptionList(object sender, EventArgs e)
+        {
+            UnitCreateTraitDetailText.Text = "";
+            for (int row = 0; row < UnitTraitsTable.RowCount; row++)
+            {
+                TextBox newTextBox = (TextBox)(UnitTraitsTable.Controls[TRAIT_NAME_CONTROL_PREFIX + row.ToString()]);
+                NumericUpDown newNumeric = (NumericUpDown)(UnitTraitsTable.Controls[TRAIT_VALUE_CONTROL_PREFIX + row.ToString()]);
+                String name = newTextBox.Text;
+                int value = (int)newNumeric.Value;
+
+                UnitCreateTraitDetailText.Text = UnitCreateTraitDetailText.Text + TraitReference.GetFullTraitDescription(name, value) + "\r\n";
+  
+            }
+        }
 
         private void UnitTraitAddButton_Click(object sender, EventArgs e)
         {
@@ -73,14 +88,16 @@ namespace BattleBois
                 TextBox newText = new TextBox()
                 {
                     Name = TRAIT_NAME_CONTROL_PREFIX + newRow.ToString(),
-                    Dock = DockStyle.Fill
+                    Dock = DockStyle.Fill                   
                 };
+                newText.TextChanged += new EventHandler(RefreshTraitDescriptionList);
 
                 NumericUpDown newNumeric = new NumericUpDown()
                 {
                     Name = TRAIT_VALUE_CONTROL_PREFIX + newRow.ToString(),
                     Dock = DockStyle.Fill
                 };
+                newNumeric.ValueChanged += new EventHandler(RefreshTraitDescriptionList);
 
                 UnitTraitsTable.Controls.Add(newText, 0, newRow);
                 UnitTraitsTable.Controls.Add(newNumeric, 1, newRow);
@@ -178,18 +195,10 @@ namespace BattleBois
                 UnitMoraleText.Text   = unitToLoad.Dice[CUnit.DICE_MORALE];
 
                 ClearAllTraitRows();
-
-                //String missingTraits = "";
+                
                 foreach (var trait in unitToLoad.Traits)
                 {
-                    if (TraitReference.IsThisATrait(trait.Key))
-                    {
-                        AddNewTraitRow(trait.Key, trait.Value);
-                    }
-                    else
-                    {
-                        //missingTraits = missingTraits + trait.Key + "\r\n";
-                    }
+                    AddNewTraitRow(trait.Key, trait.Value);
                 }                
             }
         }
