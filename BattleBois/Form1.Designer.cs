@@ -30,7 +30,16 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.TabArmy = new System.Windows.Forms.TabPage();
+            this.DivisionLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.DivisionMoraleLabel = new System.Windows.Forms.Label();
+            this.DivisionNameLabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DivisionUnitLabel = new System.Windows.Forms.Label();
+            this.DivisionSizeLabel = new System.Windows.Forms.Label();
             this.TabUnitCommander = new System.Windows.Forms.TabPage();
+            this.UnitCreateTraitDetailText = new System.Windows.Forms.TextBox();
             this.CommanderLoadButton = new System.Windows.Forms.Button();
             this.CommanderSaveButton = new System.Windows.Forms.Button();
             this.CommanderCreateStatsTable = new System.Windows.Forms.TableLayoutPanel();
@@ -75,7 +84,12 @@
             this.AppTabs = new System.Windows.Forms.TabControl();
             this.saveDialog = new System.Windows.Forms.SaveFileDialog();
             this.loadDialog = new System.Windows.Forms.OpenFileDialog();
-            this.UnitCreateTraitDetailText = new System.Windows.Forms.TextBox();
+            this.DivisionUnitLoadButton = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.TabArmy.SuspendLayout();
+            this.DivisionLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.TabUnitCommander.SuspendLayout();
             this.CommanderCreateStatsTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CommanderMaritimeNumeric)).BeginInit();
@@ -104,6 +118,8 @@
             // 
             // TabArmy
             // 
+            this.TabArmy.Controls.Add(this.DivisionUnitLoadButton);
+            this.TabArmy.Controls.Add(this.DivisionLayoutPanel);
             this.TabArmy.Location = new System.Drawing.Point(4, 22);
             this.TabArmy.Name = "TabArmy";
             this.TabArmy.Padding = new System.Windows.Forms.Padding(3);
@@ -111,6 +127,132 @@
             this.TabArmy.TabIndex = 2;
             this.TabArmy.Text = "Create Armies";
             this.TabArmy.UseVisualStyleBackColor = true;
+            // 
+            // DivisionLayoutPanel
+            // 
+            this.DivisionLayoutPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.DivisionLayoutPanel.ColumnCount = 2;
+            this.DivisionLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.DivisionLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.DivisionLayoutPanel.Controls.Add(this.numericUpDown3, 1, 3);
+            this.DivisionLayoutPanel.Controls.Add(this.numericUpDown4, 1, 2);
+            this.DivisionLayoutPanel.Controls.Add(this.DivisionMoraleLabel, 0, 3);
+            this.DivisionLayoutPanel.Controls.Add(this.DivisionNameLabel, 0, 0);
+            this.DivisionLayoutPanel.Controls.Add(this.textBox1, 1, 0);
+            this.DivisionLayoutPanel.Controls.Add(this.DivisionUnitLabel, 0, 1);
+            this.DivisionLayoutPanel.Controls.Add(this.DivisionSizeLabel, 0, 2);
+            this.DivisionLayoutPanel.Controls.Add(this.comboBox1, 1, 1);
+            this.DivisionLayoutPanel.Location = new System.Drawing.Point(8, 6);
+            this.DivisionLayoutPanel.Name = "DivisionLayoutPanel";
+            this.DivisionLayoutPanel.RowCount = 4;
+            this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.DivisionLayoutPanel.Size = new System.Drawing.Size(312, 110);
+            this.DivisionLayoutPanel.TabIndex = 6;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericUpDown3.Location = new System.Drawing.Point(89, 85);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(219, 20);
+            this.numericUpDown3.TabIndex = 13;
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericUpDown4.Location = new System.Drawing.Point(89, 58);
+            this.numericUpDown4.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown4.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(219, 20);
+            this.numericUpDown4.TabIndex = 12;
+            // 
+            // DivisionMoraleLabel
+            // 
+            this.DivisionMoraleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DivisionMoraleLabel.AutoSize = true;
+            this.DivisionMoraleLabel.Location = new System.Drawing.Point(4, 82);
+            this.DivisionMoraleLabel.Name = "DivisionMoraleLabel";
+            this.DivisionMoraleLabel.Size = new System.Drawing.Size(78, 27);
+            this.DivisionMoraleLabel.TabIndex = 6;
+            this.DivisionMoraleLabel.Text = "Starting Morale";
+            this.DivisionMoraleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // DivisionNameLabel
+            // 
+            this.DivisionNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DivisionNameLabel.AutoSize = true;
+            this.DivisionNameLabel.Location = new System.Drawing.Point(4, 1);
+            this.DivisionNameLabel.Name = "DivisionNameLabel";
+            this.DivisionNameLabel.Size = new System.Drawing.Size(78, 26);
+            this.DivisionNameLabel.TabIndex = 2;
+            this.DivisionNameLabel.Text = "Division Name";
+            this.DivisionNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(89, 4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(219, 20);
+            this.textBox1.TabIndex = 3;
+            // 
+            // DivisionUnitLabel
+            // 
+            this.DivisionUnitLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DivisionUnitLabel.AutoSize = true;
+            this.DivisionUnitLabel.Location = new System.Drawing.Point(4, 28);
+            this.DivisionUnitLabel.Name = "DivisionUnitLabel";
+            this.DivisionUnitLabel.Size = new System.Drawing.Size(78, 26);
+            this.DivisionUnitLabel.TabIndex = 4;
+            this.DivisionUnitLabel.Text = "Unit Type";
+            this.DivisionUnitLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // DivisionSizeLabel
+            // 
+            this.DivisionSizeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DivisionSizeLabel.AutoSize = true;
+            this.DivisionSizeLabel.Location = new System.Drawing.Point(4, 55);
+            this.DivisionSizeLabel.Name = "DivisionSizeLabel";
+            this.DivisionSizeLabel.Size = new System.Drawing.Size(78, 26);
+            this.DivisionSizeLabel.TabIndex = 11;
+            this.DivisionSizeLabel.Text = "Starting Size";
+            this.DivisionSizeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // TabUnitCommander
             // 
@@ -128,8 +270,17 @@
             this.TabUnitCommander.Padding = new System.Windows.Forms.Padding(3);
             this.TabUnitCommander.Size = new System.Drawing.Size(884, 554);
             this.TabUnitCommander.TabIndex = 1;
-            this.TabUnitCommander.Text = "Create Units and Commanders";
+            this.TabUnitCommander.Text = "Create Unit Types and Commanders";
             this.TabUnitCommander.UseVisualStyleBackColor = true;
+            // 
+            // UnitCreateTraitDetailText
+            // 
+            this.UnitCreateTraitDetailText.Location = new System.Drawing.Point(387, 254);
+            this.UnitCreateTraitDetailText.Multiline = true;
+            this.UnitCreateTraitDetailText.Name = "UnitCreateTraitDetailText";
+            this.UnitCreateTraitDetailText.ReadOnly = true;
+            this.UnitCreateTraitDetailText.Size = new System.Drawing.Size(483, 290);
+            this.UnitCreateTraitDetailText.TabIndex = 8;
             // 
             // CommanderLoadButton
             // 
@@ -777,8 +928,8 @@
             // AppTabs
             // 
             this.AppTabs.Controls.Add(this.TabBattle);
-            this.AppTabs.Controls.Add(this.TabUnitCommander);
             this.AppTabs.Controls.Add(this.TabArmy);
+            this.AppTabs.Controls.Add(this.TabUnitCommander);
             this.AppTabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AppTabs.Location = new System.Drawing.Point(0, 0);
             this.AppTabs.Name = "AppTabs";
@@ -792,14 +943,23 @@
             this.saveDialog.Filter = "JSON files|*.json";
             this.saveDialog.Title = "Save Unit JSON File";
             // 
-            // UnitCreateTraitDetailText
+            // DivisionUnitLoadButton
             // 
-            this.UnitCreateTraitDetailText.Location = new System.Drawing.Point(387, 254);
-            this.UnitCreateTraitDetailText.Multiline = true;
-            this.UnitCreateTraitDetailText.Name = "UnitCreateTraitDetailText";
-            this.UnitCreateTraitDetailText.ReadOnly = true;
-            this.UnitCreateTraitDetailText.Size = new System.Drawing.Size(483, 290);
-            this.UnitCreateTraitDetailText.TabIndex = 8;
+            this.DivisionUnitLoadButton.Location = new System.Drawing.Point(326, 35);
+            this.DivisionUnitLoadButton.Name = "DivisionUnitLoadButton";
+            this.DivisionUnitLoadButton.Size = new System.Drawing.Size(54, 23);
+            this.DivisionUnitLoadButton.TabIndex = 7;
+            this.DivisionUnitLoadButton.Text = "Select...";
+            this.DivisionUnitLoadButton.UseVisualStyleBackColor = true;
+            this.DivisionUnitLoadButton.Click += new System.EventHandler(this.DivisionUnitLoadButton_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(89, 31);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(219, 21);
+            this.comboBox1.TabIndex = 14;
             // 
             // Form1
             // 
@@ -809,7 +969,12 @@
             this.Controls.Add(this.AppTabs);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "BattlesBois";
+            this.Text = "BattleBois";
+            this.TabArmy.ResumeLayout(false);
+            this.DivisionLayoutPanel.ResumeLayout(false);
+            this.DivisionLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             this.TabUnitCommander.ResumeLayout(false);
             this.TabUnitCommander.PerformLayout();
             this.CommanderCreateStatsTable.ResumeLayout(false);
@@ -881,6 +1046,16 @@
         private System.Windows.Forms.Label CommanderChaLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox UnitCreateTraitDetailText;
+        private System.Windows.Forms.TableLayoutPanel DivisionLayoutPanel;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.Label DivisionMoraleLabel;
+        private System.Windows.Forms.Label DivisionNameLabel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label DivisionUnitLabel;
+        private System.Windows.Forms.Label DivisionSizeLabel;
+        private System.Windows.Forms.Button DivisionUnitLoadButton;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

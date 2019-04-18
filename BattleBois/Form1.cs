@@ -241,5 +241,10 @@ namespace BattleBois
         {
 
         }
+
+        private void DivisionUnitLoadButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
