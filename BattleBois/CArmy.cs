@@ -9,51 +9,58 @@ namespace BattleBois
 {
     class CArmy
     {
-        private int _totalSize = 0;
-        private double _totalUpkeep = 0;
-        private double _totalCost = 0;
-        private int _totalLosses = 0;
-        private readonly string MISSING_GUARD_PAIR_MESSAGE = "Guard pairing GUID not found.";
-
 
         public static readonly String DEFAULT_NAME = "Unnamed";
+        public static readonly int DEFAULT_COMMANDER_INDEX = 0;
+
+        private readonly string MISSING_GUARD_PAIR_MESSAGE = "Guard pairing GUID not found.";
 
         public String Name { get; set; } = DEFAULT_NAME;
         public List<CDivision> Divisions { get; set; } = new List<CDivision>();
-        public CCommander Commander { get; set; } = new CCommander();
+        public List<CCommander> Commanders { get; set; } = new List<CCommander>()
+        {
+            [DEFAULT_COMMANDER_INDEX] = CCommander.NO_COMMANDER
+        };
+        public int ActiveCommanderIndex { get; set; } = DEFAULT_COMMANDER_INDEX;
 
         public int GetTotalSize()
-        {
-            return _totalSize;
+        {        
+            int totalSize = 0;
+            foreach (CDivision division in Divisions)
+            {
+                totalSize += division.CurrentSize;
+            }
+            return totalSize;
         }
 
         public double GetTotalCost()
         {
-            return _totalCost;
+            double totalCost = 0;
+            foreach (CDivision division in Divisions)
+            {
+                totalCost += (division.CurrentSize * division.UnitType.Stats[CUnit.STAT_RECRUITMENT]);
+            }
+            return totalCost;
         }
 
         public double GetTotalUpkeep()
         {
-            return _totalUpkeep;
+            double totalUpkeep = 0;
+            foreach (CDivision division in Divisions)
+            {
+                totalUpkeep += (division.CurrentSize * division.UnitType.Stats[CUnit.STAT_MAINTENANCE]);
+            }
+            return totalUpkeep;
         }
 
         public int GetTotalLosses()
         {
-            return _totalLosses;
-        }
-
-        public void RecalculateStats()
-        {
-            _totalSize = 0;
-            _totalCost = 0;
-            _totalLosses = 0;
+            int totalLosses = 0;
             foreach (CDivision division in Divisions)
             {
-                _totalSize   += division.CurrentSize;
-                _totalCost   += (division.CurrentSize * division.UnitType.Stats[CUnit.STAT_RECRUITMENT]);
-                _totalUpkeep += (division.CurrentSize * division.UnitType.Stats[CUnit.STAT_MAINTENANCE]);
-                _totalLosses += (division.StartingSize - division.CurrentSize);
+                totalLosses += (division.StartingSize - division.CurrentSize);
             }
+            return totalLosses;
         }
 
         public void ClearGuarding(CDivision division)

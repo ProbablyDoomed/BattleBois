@@ -24,7 +24,7 @@ namespace BattleBois
 
             TraitReference.LoadTraitDefinitions();
             ClearAllTraitRows();
-
+            ArmyDivisionListBox.Items.Clear();
         }        
 
         private void ShowSaveJsonObjectDialog<T>(T objectToSave)
@@ -69,8 +69,7 @@ namespace BattleBois
                 String name = newTextBox.Text;
                 int value = (int)newNumeric.Value;
 
-                UnitCreateTraitDetailText.Text = UnitCreateTraitDetailText.Text + TraitReference.GetFullTraitDescription(name, value) + "\r\n";
-  
+                UnitCreateTraitDetailText.Text = UnitCreateTraitDetailText.Text + TraitReference.GetFullTraitDescription(name, value) + "\r\n";  
             }
         }
 
@@ -173,7 +172,6 @@ namespace BattleBois
             unitToSave.Traits = traitSet;
 
             ShowSaveJsonObjectDialog<CUnit>(unitToSave);
-
         }
 
         private void UnitLoadButton_Click(object sender, EventArgs e)
@@ -243,6 +241,16 @@ namespace BattleBois
         }
 
         private void DivisionUnitLoadButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ArmyAddDivisionButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ArmyDivisionListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

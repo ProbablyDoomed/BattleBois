@@ -30,6 +30,9 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.TabArmy = new System.Windows.Forms.TabPage();
+            this.ArmyAddDivisionButton = new System.Windows.Forms.Button();
+            this.ArmyDivisionListBox = new System.Windows.Forms.ListBox();
+            this.DivisionUnitLoadButton = new System.Windows.Forms.Button();
             this.DivisionLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
@@ -38,6 +41,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.DivisionUnitLabel = new System.Windows.Forms.Label();
             this.DivisionSizeLabel = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.TabUnitCommander = new System.Windows.Forms.TabPage();
             this.UnitCreateTraitDetailText = new System.Windows.Forms.TextBox();
             this.CommanderLoadButton = new System.Windows.Forms.Button();
@@ -84,8 +88,6 @@
             this.AppTabs = new System.Windows.Forms.TabControl();
             this.saveDialog = new System.Windows.Forms.SaveFileDialog();
             this.loadDialog = new System.Windows.Forms.OpenFileDialog();
-            this.DivisionUnitLoadButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.TabArmy.SuspendLayout();
             this.DivisionLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -118,6 +120,8 @@
             // 
             // TabArmy
             // 
+            this.TabArmy.Controls.Add(this.ArmyAddDivisionButton);
+            this.TabArmy.Controls.Add(this.ArmyDivisionListBox);
             this.TabArmy.Controls.Add(this.DivisionUnitLoadButton);
             this.TabArmy.Controls.Add(this.DivisionLayoutPanel);
             this.TabArmy.Location = new System.Drawing.Point(4, 22);
@@ -127,6 +131,41 @@
             this.TabArmy.TabIndex = 2;
             this.TabArmy.Text = "Create Armies";
             this.TabArmy.UseVisualStyleBackColor = true;
+            // 
+            // ArmyAddDivisionButton
+            // 
+            this.ArmyAddDivisionButton.Location = new System.Drawing.Point(211, 122);
+            this.ArmyAddDivisionButton.Name = "ArmyAddDivisionButton";
+            this.ArmyAddDivisionButton.Size = new System.Drawing.Size(109, 23);
+            this.ArmyAddDivisionButton.TabIndex = 9;
+            this.ArmyAddDivisionButton.Text = "Add to Army -->";
+            this.ArmyAddDivisionButton.UseVisualStyleBackColor = true;
+            this.ArmyAddDivisionButton.Click += new System.EventHandler(this.ArmyAddDivisionButton_Click);
+            // 
+            // ArmyDivisionListBox
+            // 
+            this.ArmyDivisionListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ArmyDivisionListBox.FormattingEnabled = true;
+            this.ArmyDivisionListBox.ItemHeight = 20;
+            this.ArmyDivisionListBox.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C"});
+            this.ArmyDivisionListBox.Location = new System.Drawing.Point(491, 6);
+            this.ArmyDivisionListBox.Name = "ArmyDivisionListBox";
+            this.ArmyDivisionListBox.Size = new System.Drawing.Size(387, 524);
+            this.ArmyDivisionListBox.TabIndex = 8;
+            this.ArmyDivisionListBox.SelectedIndexChanged += new System.EventHandler(this.ArmyDivisionListBox_SelectedIndexChanged);
+            // 
+            // DivisionUnitLoadButton
+            // 
+            this.DivisionUnitLoadButton.Location = new System.Drawing.Point(326, 35);
+            this.DivisionUnitLoadButton.Name = "DivisionUnitLoadButton";
+            this.DivisionUnitLoadButton.Size = new System.Drawing.Size(54, 23);
+            this.DivisionUnitLoadButton.TabIndex = 7;
+            this.DivisionUnitLoadButton.Text = "Select...";
+            this.DivisionUnitLoadButton.UseVisualStyleBackColor = true;
+            this.DivisionUnitLoadButton.Click += new System.EventHandler(this.DivisionUnitLoadButton_Click);
             // 
             // DivisionLayoutPanel
             // 
@@ -253,6 +292,14 @@
             this.DivisionSizeLabel.TabIndex = 11;
             this.DivisionSizeLabel.Text = "Starting Size";
             this.DivisionSizeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(89, 31);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(219, 21);
+            this.comboBox1.TabIndex = 14;
             // 
             // TabUnitCommander
             // 
@@ -943,24 +990,6 @@
             this.saveDialog.Filter = "JSON files|*.json";
             this.saveDialog.Title = "Save Unit JSON File";
             // 
-            // DivisionUnitLoadButton
-            // 
-            this.DivisionUnitLoadButton.Location = new System.Drawing.Point(326, 35);
-            this.DivisionUnitLoadButton.Name = "DivisionUnitLoadButton";
-            this.DivisionUnitLoadButton.Size = new System.Drawing.Size(54, 23);
-            this.DivisionUnitLoadButton.TabIndex = 7;
-            this.DivisionUnitLoadButton.Text = "Select...";
-            this.DivisionUnitLoadButton.UseVisualStyleBackColor = true;
-            this.DivisionUnitLoadButton.Click += new System.EventHandler(this.DivisionUnitLoadButton_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(89, 31);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(219, 21);
-            this.comboBox1.TabIndex = 14;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1056,6 +1085,8 @@
         private System.Windows.Forms.Label DivisionSizeLabel;
         private System.Windows.Forms.Button DivisionUnitLoadButton;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ListBox ArmyDivisionListBox;
+        private System.Windows.Forms.Button ArmyAddDivisionButton;
     }
 }
 

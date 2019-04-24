@@ -13,14 +13,12 @@ namespace BattleBois
         private static bool loaded = false;
         private static TraitDefinitions definitions;
 
-        public class TraitDefinitions
-        {
-            public Dictionary<String, String> List = new Dictionary<String, String>();
-        }        
+        //Wrapper class to represent this specific use of a String-String dictionary
+        public class TraitDefinitions : Dictionary<String, String> { }
 
         public static void LoadTraitDefinitions()
         {
-            definitions = JsonFiles.LoadFromDefault<TraitDefinitions>(TRAIT_FILE);
+            definitions = JsonFiles.LoadFromDefault<TraitDefinitions>(TRAIT_FILE);            
             loaded = true;
         }
 
@@ -28,7 +26,7 @@ namespace BattleBois
         {
             if (loaded)
             {
-                return definitions.List.Keys.ToList();
+                return definitions.Keys.ToList();
             }
             else
             {
@@ -52,7 +50,7 @@ namespace BattleBois
         {
             if (IsThisATrait(traitName))
             {
-                String explanation = definitions.List[traitName];
+                String explanation = definitions[traitName];
                 String nameFormat = ": ", descriptionValue = "N";
                 if(explanation.Contains(STRING_FMT_ARG_0))
                 {
@@ -60,7 +58,7 @@ namespace BattleBois
                     descriptionValue = value.ToString();
                 }
 
-                String description = traitName + nameFormat + definitions.List[traitName];
+                String description = traitName + nameFormat + definitions[traitName];
                 description = String.Format(description, descriptionValue);
                 return description;
             }

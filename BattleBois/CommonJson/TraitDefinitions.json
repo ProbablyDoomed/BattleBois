@@ -1,5 +1,4 @@
 {
-  "List": {
     "Accuracy": "{0} times per combat, this unit may reroll an attack.",
     "Blood Prayer": "This unit may still act on the turn following their death.",
     "Bloodletting": "At the start of each of their turns, this unit loses 5 Defensive Strength and gains 5 Offensive Strength. At the start of every 3rd turn, this unit gains +1d10 Casualty Dice.",
@@ -77,6 +76,5 @@
     "Zenata": "This unit has advantage on retreat checks.",
 
     "In Awe of the Size": "This unit gains {0} Defensive Strength against units that it outnumbers.",
-    "Mad Lads": "This unit's casualty dice are doubled for an attack that beats the highest Defensive Strength among the enemy units."
-  }
+    "Mad Lads": "This unit deals double its normal casualty dice on any attack that beats the highest Defensive Strength among the enemy units."
 }
