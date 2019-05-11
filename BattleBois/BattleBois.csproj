@@ -100,6 +100,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Commanders\Cy.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -140,6 +141,24 @@
     <Folder Include="Armies\" />
     <Folder Include="Battles\" />
     <Folder Include="Custom_Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\atk_sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\def_shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\mrl_happy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\mrl_neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\mrl_sad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\num_soldier.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

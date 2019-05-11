@@ -14,17 +14,20 @@ namespace BattleBois
     public partial class Form1 : Form
     {
         const int MAX_TRAITS = 10;
+        const int MAX_ARMY_DIVISIONS = 10;
 
         const String TRAIT_NAME_CONTROL_PREFIX = "TextTraitName";
         const String TRAIT_VALUE_CONTROL_PREFIX = "NumericTraitValue";
+        const String ARMY_EDIT_DIVISION_CONTROL_PREFIX = "ArmyEditDivison";
+        private CUnit armyAddUnit = new CUnit();
 
         public Form1()
         {
             InitializeComponent();
 
             TraitReference.LoadTraitDefinitions();
+            ClearAllArmyRows();
             ClearAllTraitRows();
-            ArmyDivisionListBox.Items.Clear();
         }        
 
         private void ShowSaveJsonObjectDialog<T>(T objectToSave)
@@ -122,7 +125,6 @@ namespace BattleBois
         private void RemoveLastTraitRow()
         {
             int lastRow = UnitTraitsTable.RowCount - 1;
-
             if (lastRow >= 0)
             {
                 UnitTraitsTable.Controls.RemoveByKey(TRAIT_NAME_CONTROL_PREFIX + lastRow.ToString());
@@ -133,9 +135,51 @@ namespace BattleBois
 
         private void ClearAllTraitRows()
         {
-            while(UnitTraitsTable.RowCount > 0)
+            while (UnitTraitsTable.RowCount > 0)
             {
                 RemoveLastTraitRow();
+            }
+        }
+
+        private void AddNewArmyRow()
+        {
+            int newRow = ArmyTable.RowCount;
+
+            if (newRow < MAX_ARMY_DIVISIONS)
+            {
+                DivisionControl newDivision = new DivisionControl()
+                {
+                    Name = ARMY_EDIT_DIVISION_CONTROL_PREFIX + newRow.ToString(),
+                };
+
+                ArmyTable.Controls.Add(newDivision, 0, newRow);
+                ArmyTable.RowCount++;
+            }
+        }
+
+        private void AddNewArmyRow(CDivision division)
+        {
+            AddNewArmyRow();
+            int lastRow = ArmyTable.RowCount - 1;
+            DivisionControl control = (DivisionControl)(ArmyTable.Controls[ARMY_EDIT_DIVISION_CONTROL_PREFIX + lastRow.ToString()]);
+            control.DisplayedDivision = division;
+        }
+
+        private void RemoveArmyRow()
+        {
+            int lastRow = ArmyTable.RowCount - 1;
+            if (lastRow >= 0)
+            {
+                ArmyTable.Controls.RemoveByKey(ARMY_EDIT_DIVISION_CONTROL_PREFIX + lastRow.ToString());
+                ArmyTable.RowCount--;
+            }
+        }
+
+        private void ClearAllArmyRows()
+        {
+            while (ArmyTable.RowCount > 0)
+            {
+                RemoveArmyRow();
             }
         }
 
@@ -242,15 +286,39 @@ namespace BattleBois
 
         private void DivisionUnitLoadButton_Click(object sender, EventArgs e)
         {
-
+            CUnit loadedDivisionUnit = ShowLoadJsonObjectDialog<CUnit>();
+            if(loadedDivisionUnit != null)
+            {
+                armyAddUnit = loadedDivisionUnit;
+                DivisionUnitText.Text = loadedDivisionUnit.Name;
+            }
         }
 
         private void ArmyAddDivisionButton_Click(object sender, EventArgs e)
         {
+            CDivision division = new CDivision()
+            {
+                Name = DivisionNameText.Text,
+                UnitType = armyAddUnit,
+                StartingSize = (int)DivisionSizeNumeric.Value,
+                CurrentSize = (int)DivisionSizeNumeric.Value,
+                Morale = (int)DivisionMoraleNumeric.Value,
+            };
+
+            AddNewArmyRow(division);
+        }
+
+        private void ArmyRemoveDivisionButton_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void ArmyDivisionListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ArmyAddCommanderButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ArmyRemoveCommanderButton_Click(object sender, EventArgs e)
         {
 
         }

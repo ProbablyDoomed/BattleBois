@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace BattleBois
 {
-    class CArmy
+    public class CArmy
     {
 
         public static readonly String DEFAULT_NAME = "Unnamed";
-        public static readonly int DEFAULT_COMMANDER_INDEX = 0;
+        public static readonly int DEFAULT_COMMANDER_INDEX = 1;
 
         private readonly string MISSING_GUARD_PAIR_MESSAGE = "Guard pairing GUID not found.";
 
@@ -19,7 +19,7 @@ namespace BattleBois
         public List<CDivision> Divisions { get; set; } = new List<CDivision>();
         public List<CCommander> Commanders { get; set; } = new List<CCommander>()
         {
-            [DEFAULT_COMMANDER_INDEX] = CCommander.NO_COMMANDER
+            CCommander.NO_COMMANDER
         };
         public int ActiveCommanderIndex { get; set; } = DEFAULT_COMMANDER_INDEX;
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BattleBois
 {
-    class CBattle
+    public class CBattle
     {
         public List<CArmy> Armies { get; set; } = new List<CArmy>();
 
