@@ -9,6 +9,7 @@ namespace BattleBois
     public class CBattle
     {
         public List<CArmy> Armies { get; set; } = new List<CArmy>();
+        public List<CEnvironment> EnvironmentalConditions { get; set; } = new List<CEnvironment>();
 
     }
 }

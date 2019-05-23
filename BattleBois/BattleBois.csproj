@@ -68,6 +68,7 @@
     <Compile Include="CBattle.cs" />
     <Compile Include="CCommander.cs" />
     <Compile Include="CDivision.cs" />
+    <Compile Include="CEnvironment.cs" />
     <Compile Include="CUnit.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="DivisionControl.cs">

@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.TabArmy = new System.Windows.Forms.TabPage();
+            this.ArmyCommanderDetailText = new System.Windows.Forms.TextBox();
+            this.ArmyUnitDetailText = new System.Windows.Forms.TextBox();
             this.ArmyRemoveDivisionButton = new System.Windows.Forms.Button();
             this.ArmyRemoveCommanderButton = new System.Windows.Forms.Button();
             this.ArmyAddCommanderButton = new System.Windows.Forms.Button();
             this.ArmyCommanderList = new System.Windows.Forms.ListBox();
             this.ArmyCommanderLabel = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.ArmyLoadButton = new System.Windows.Forms.Button();
+            this.ArmySaveButton = new System.Windows.Forms.Button();
             this.ArmyTable = new System.Windows.Forms.TableLayoutPanel();
             this.ArmyAddDivisionButton = new System.Windows.Forms.Button();
             this.DivisionUnitLoadButton = new System.Windows.Forms.Button();
@@ -95,6 +96,7 @@
             this.AppTabs = new System.Windows.Forms.TabControl();
             this.saveDialog = new System.Windows.Forms.SaveFileDialog();
             this.loadDialog = new System.Windows.Forms.OpenFileDialog();
+            this.ArmyUpdateDivisionButton = new System.Windows.Forms.Button();
             this.TabArmy.SuspendLayout();
             this.DivisionLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DivisionMoraleNumeric)).BeginInit();
@@ -115,25 +117,18 @@
             this.AppTabs.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(548, 423);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 24);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "TEST";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.TestButtonClick);
-            // 
             // TabArmy
             // 
+            this.TabArmy.Controls.Add(this.ArmyUpdateDivisionButton);
+            this.TabArmy.Controls.Add(this.ArmyCommanderDetailText);
+            this.TabArmy.Controls.Add(this.ArmyUnitDetailText);
             this.TabArmy.Controls.Add(this.ArmyRemoveDivisionButton);
             this.TabArmy.Controls.Add(this.ArmyRemoveCommanderButton);
             this.TabArmy.Controls.Add(this.ArmyAddCommanderButton);
             this.TabArmy.Controls.Add(this.ArmyCommanderList);
             this.TabArmy.Controls.Add(this.ArmyCommanderLabel);
-            this.TabArmy.Controls.Add(this.button2);
-            this.TabArmy.Controls.Add(this.button3);
+            this.TabArmy.Controls.Add(this.ArmyLoadButton);
+            this.TabArmy.Controls.Add(this.ArmySaveButton);
             this.TabArmy.Controls.Add(this.ArmyTable);
             this.TabArmy.Controls.Add(this.ArmyAddDivisionButton);
             this.TabArmy.Controls.Add(this.DivisionUnitLoadButton);
@@ -146,11 +141,35 @@
             this.TabArmy.Text = "Create Armies";
             this.TabArmy.UseVisualStyleBackColor = true;
             // 
+            // ArmyCommanderDetailText
+            // 
+            this.ArmyCommanderDetailText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ArmyCommanderDetailText.Location = new System.Drawing.Point(8, 486);
+            this.ArmyCommanderDetailText.Multiline = true;
+            this.ArmyCommanderDetailText.Name = "ArmyCommanderDetailText";
+            this.ArmyCommanderDetailText.ReadOnly = true;
+            this.ArmyCommanderDetailText.Size = new System.Drawing.Size(261, 52);
+            this.ArmyCommanderDetailText.TabIndex = 19;
+            // 
+            // ArmyUnitDetailText
+            // 
+            this.ArmyUnitDetailText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ArmyUnitDetailText.Location = new System.Drawing.Point(8, 180);
+            this.ArmyUnitDetailText.Multiline = true;
+            this.ArmyUnitDetailText.Name = "ArmyUnitDetailText";
+            this.ArmyUnitDetailText.ReadOnly = true;
+            this.ArmyUnitDetailText.Size = new System.Drawing.Size(330, 120);
+            this.ArmyUnitDetailText.TabIndex = 18;
+            // 
             // ArmyRemoveDivisionButton
             // 
-            this.ArmyRemoveDivisionButton.Location = new System.Drawing.Point(211, 151);
+            this.ArmyRemoveDivisionButton.Location = new System.Drawing.Point(38, 122);
             this.ArmyRemoveDivisionButton.Name = "ArmyRemoveDivisionButton";
-            this.ArmyRemoveDivisionButton.Size = new System.Drawing.Size(109, 23);
+            this.ArmyRemoveDivisionButton.Size = new System.Drawing.Size(96, 24);
             this.ArmyRemoveDivisionButton.TabIndex = 17;
             this.ArmyRemoveDivisionButton.Text = "Remove";
             this.ArmyRemoveDivisionButton.UseVisualStyleBackColor = true;
@@ -158,7 +177,7 @@
             // 
             // ArmyRemoveCommanderButton
             // 
-            this.ArmyRemoveCommanderButton.Location = new System.Drawing.Point(257, 515);
+            this.ArmyRemoveCommanderButton.Location = new System.Drawing.Point(275, 515);
             this.ArmyRemoveCommanderButton.Name = "ArmyRemoveCommanderButton";
             this.ArmyRemoveCommanderButton.Size = new System.Drawing.Size(63, 23);
             this.ArmyRemoveCommanderButton.TabIndex = 16;
@@ -168,7 +187,7 @@
             // 
             // ArmyAddCommanderButton
             // 
-            this.ArmyAddCommanderButton.Location = new System.Drawing.Point(257, 486);
+            this.ArmyAddCommanderButton.Location = new System.Drawing.Point(275, 486);
             this.ArmyAddCommanderButton.Name = "ArmyAddCommanderButton";
             this.ArmyAddCommanderButton.Size = new System.Drawing.Size(63, 23);
             this.ArmyAddCommanderButton.TabIndex = 15;
@@ -179,44 +198,46 @@
             // ArmyCommanderList
             // 
             this.ArmyCommanderList.FormattingEnabled = true;
-            this.ArmyCommanderList.Location = new System.Drawing.Point(15, 320);
+            this.ArmyCommanderList.Location = new System.Drawing.Point(8, 320);
             this.ArmyCommanderList.Name = "ArmyCommanderList";
-            this.ArmyCommanderList.Size = new System.Drawing.Size(305, 160);
+            this.ArmyCommanderList.Size = new System.Drawing.Size(330, 160);
             this.ArmyCommanderList.TabIndex = 14;
+            this.ArmyCommanderList.SelectedIndexChanged += new System.EventHandler(this.ArmyCommanderList_SelectedIndexChanged);
             // 
             // ArmyCommanderLabel
             // 
             this.ArmyCommanderLabel.AutoSize = true;
-            this.ArmyCommanderLabel.Location = new System.Drawing.Point(12, 303);
+            this.ArmyCommanderLabel.Location = new System.Drawing.Point(8, 303);
             this.ArmyCommanderLabel.Name = "ArmyCommanderLabel";
             this.ArmyCommanderLabel.Size = new System.Drawing.Size(68, 13);
             this.ArmyCommanderLabel.TabIndex = 13;
             this.ArmyCommanderLabel.Text = "Commanders";
             // 
-            // button2
+            // ArmyLoadButton
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(695, 61);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 53);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Load Army";
-            this.button2.UseVisualStyleBackColor = true;
+            this.ArmyLoadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ArmyLoadButton.Location = new System.Drawing.Point(784, 61);
+            this.ArmyLoadButton.Name = "ArmyLoadButton";
+            this.ArmyLoadButton.Size = new System.Drawing.Size(87, 53);
+            this.ArmyLoadButton.TabIndex = 12;
+            this.ArmyLoadButton.Text = "Load Army";
+            this.ArmyLoadButton.UseVisualStyleBackColor = true;
+            this.ArmyLoadButton.Click += new System.EventHandler(this.ArmyLoadButton_Click);
             // 
-            // button3
+            // ArmySaveButton
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(695, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(87, 53);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Save Army";
-            this.button3.UseVisualStyleBackColor = true;
+            this.ArmySaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ArmySaveButton.Location = new System.Drawing.Point(784, 6);
+            this.ArmySaveButton.Name = "ArmySaveButton";
+            this.ArmySaveButton.Size = new System.Drawing.Size(87, 53);
+            this.ArmySaveButton.TabIndex = 11;
+            this.ArmySaveButton.Text = "Save Army";
+            this.ArmySaveButton.UseVisualStyleBackColor = true;
+            this.ArmySaveButton.Click += new System.EventHandler(this.ArmySaveButton_Click);
             // 
             // ArmyTable
             // 
             this.ArmyTable.AutoScroll = true;
-            this.ArmyTable.AutoSize = true;
             this.ArmyTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.ArmyTable.ColumnCount = 1;
             this.ArmyTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -224,22 +245,22 @@
             this.ArmyTable.Name = "ArmyTable";
             this.ArmyTable.RowCount = 1;
             this.ArmyTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.ArmyTable.Size = new System.Drawing.Size(270, 540);
+            this.ArmyTable.Size = new System.Drawing.Size(306, 540);
             this.ArmyTable.TabIndex = 10;
             // 
             // ArmyAddDivisionButton
             // 
-            this.ArmyAddDivisionButton.Location = new System.Drawing.Point(211, 122);
+            this.ArmyAddDivisionButton.Location = new System.Drawing.Point(242, 122);
             this.ArmyAddDivisionButton.Name = "ArmyAddDivisionButton";
-            this.ArmyAddDivisionButton.Size = new System.Drawing.Size(109, 23);
+            this.ArmyAddDivisionButton.Size = new System.Drawing.Size(96, 24);
             this.ArmyAddDivisionButton.TabIndex = 9;
-            this.ArmyAddDivisionButton.Text = "Add to Army -->";
+            this.ArmyAddDivisionButton.Text = "Add";
             this.ArmyAddDivisionButton.UseVisualStyleBackColor = true;
             this.ArmyAddDivisionButton.Click += new System.EventHandler(this.ArmyAddDivisionButton_Click);
             // 
             // DivisionUnitLoadButton
             // 
-            this.DivisionUnitLoadButton.Location = new System.Drawing.Point(326, 35);
+            this.DivisionUnitLoadButton.Location = new System.Drawing.Point(340, 36);
             this.DivisionUnitLoadButton.Name = "DivisionUnitLoadButton";
             this.DivisionUnitLoadButton.Size = new System.Drawing.Size(63, 23);
             this.DivisionUnitLoadButton.TabIndex = 7;
@@ -269,7 +290,7 @@
             this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.DivisionLayoutPanel.Size = new System.Drawing.Size(312, 110);
+            this.DivisionLayoutPanel.Size = new System.Drawing.Size(330, 110);
             this.DivisionLayoutPanel.TabIndex = 6;
             // 
             // DivisionUnitText
@@ -280,7 +301,7 @@
             this.DivisionUnitText.Location = new System.Drawing.Point(89, 31);
             this.DivisionUnitText.Name = "DivisionUnitText";
             this.DivisionUnitText.ReadOnly = true;
-            this.DivisionUnitText.Size = new System.Drawing.Size(219, 20);
+            this.DivisionUnitText.Size = new System.Drawing.Size(237, 20);
             this.DivisionUnitText.TabIndex = 14;
             // 
             // DivisionMoraleNumeric
@@ -300,7 +321,7 @@
             0,
             -2147483648});
             this.DivisionMoraleNumeric.Name = "DivisionMoraleNumeric";
-            this.DivisionMoraleNumeric.Size = new System.Drawing.Size(219, 20);
+            this.DivisionMoraleNumeric.Size = new System.Drawing.Size(237, 20);
             this.DivisionMoraleNumeric.TabIndex = 13;
             // 
             // DivisionSizeNumeric
@@ -315,7 +336,7 @@
             0,
             0});
             this.DivisionSizeNumeric.Name = "DivisionSizeNumeric";
-            this.DivisionSizeNumeric.Size = new System.Drawing.Size(219, 20);
+            this.DivisionSizeNumeric.Size = new System.Drawing.Size(237, 20);
             this.DivisionSizeNumeric.TabIndex = 12;
             this.DivisionSizeNumeric.ThousandsSeparator = true;
             this.DivisionSizeNumeric.Value = new decimal(new int[] {
@@ -357,7 +378,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DivisionNameText.Location = new System.Drawing.Point(89, 4);
             this.DivisionNameText.Name = "DivisionNameText";
-            this.DivisionNameText.Size = new System.Drawing.Size(219, 20);
+            this.DivisionNameText.Size = new System.Drawing.Size(237, 20);
             this.DivisionNameText.TabIndex = 3;
             // 
             // DivisionUnitLabel
@@ -936,12 +957,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UnitTypeCombo.FormattingEnabled = true;
-            this.UnitTypeCombo.Items.AddRange(new object[] {
-            "Light Infanty",
-            "Heavy Infantry",
-            "Light Cavalry",
-            "Heavy Cavalry",
-            "Siege Weapon"});
             this.UnitTypeCombo.Location = new System.Drawing.Point(109, 31);
             this.UnitTypeCombo.Name = "UnitTypeCombo";
             this.UnitTypeCombo.Size = new System.Drawing.Size(200, 21);
@@ -1075,13 +1090,22 @@
             this.saveDialog.Filter = "JSON files|*.json";
             this.saveDialog.Title = "Save Unit JSON File";
             // 
+            // ArmyUpdateDivisionButton
+            // 
+            this.ArmyUpdateDivisionButton.Location = new System.Drawing.Point(140, 122);
+            this.ArmyUpdateDivisionButton.Name = "ArmyUpdateDivisionButton";
+            this.ArmyUpdateDivisionButton.Size = new System.Drawing.Size(96, 24);
+            this.ArmyUpdateDivisionButton.TabIndex = 20;
+            this.ArmyUpdateDivisionButton.Text = "Update";
+            this.ArmyUpdateDivisionButton.UseVisualStyleBackColor = true;
+            this.ArmyUpdateDivisionButton.Click += new System.EventHandler(this.ArmyUpdateDivisionButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 580);
             this.Controls.Add(this.AppTabs);
-            this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "BattleBois";
             this.TabArmy.ResumeLayout(false);
@@ -1112,8 +1136,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage TabArmy;
         private System.Windows.Forms.TabPage TabUnitCommander;
         private System.Windows.Forms.Button UnitSaveButton;
@@ -1173,13 +1195,16 @@
         private System.Windows.Forms.Button ArmyAddDivisionButton;
         private System.Windows.Forms.TableLayoutPanel ArmyTable;
         private System.Windows.Forms.TextBox DivisionUnitText;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button ArmyLoadButton;
+        private System.Windows.Forms.Button ArmySaveButton;
         private System.Windows.Forms.Label ArmyCommanderLabel;
         private System.Windows.Forms.Button ArmyRemoveDivisionButton;
         private System.Windows.Forms.Button ArmyRemoveCommanderButton;
         private System.Windows.Forms.Button ArmyAddCommanderButton;
         private System.Windows.Forms.ListBox ArmyCommanderList;
+        private System.Windows.Forms.TextBox ArmyCommanderDetailText;
+        private System.Windows.Forms.TextBox ArmyUnitDetailText;
+        private System.Windows.Forms.Button ArmyUpdateDivisionButton;
     }
 }
 

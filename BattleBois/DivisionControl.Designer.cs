@@ -47,10 +47,10 @@
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameLabel.Location = new System.Drawing.Point(3, 2);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(96, 16);
+            this.NameLabel.Size = new System.Drawing.Size(87, 15);
             this.NameLabel.TabIndex = 0;
             this.NameLabel.Text = "Division Name";
             // 
@@ -75,7 +75,7 @@
             // NumIcon
             // 
             this.NumIcon.Image = global::BattleBois.Properties.Resources.num_soldier;
-            this.NumIcon.Location = new System.Drawing.Point(144, 4);
+            this.NumIcon.Location = new System.Drawing.Point(176, 3);
             this.NumIcon.Name = "NumIcon";
             this.NumIcon.Size = new System.Drawing.Size(16, 16);
             this.NumIcon.TabIndex = 3;
@@ -95,7 +95,7 @@
             this.TypeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TypeLabel.AutoSize = true;
             this.TypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TypeLabel.Location = new System.Drawing.Point(216, 2);
+            this.TypeLabel.Location = new System.Drawing.Point(219, 24);
             this.TypeLabel.Name = "TypeLabel";
             this.TypeLabel.Size = new System.Drawing.Size(22, 13);
             this.TypeLabel.TabIndex = 5;
@@ -140,17 +140,17 @@
             this.TroopsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TroopsLabel.AutoSize = true;
             this.TroopsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TroopsLabel.Location = new System.Drawing.Point(162, 5);
+            this.TroopsLabel.Location = new System.Drawing.Point(194, 4);
             this.TroopsLabel.Name = "TroopsLabel";
-            this.TroopsLabel.Size = new System.Drawing.Size(43, 13);
+            this.TroopsLabel.Size = new System.Drawing.Size(46, 13);
             this.TroopsLabel.TabIndex = 9;
-            this.TroopsLabel.Text = "100000";
+            this.TroopsLabel.Text = "100,000";
             // 
             // DivisionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.TroopsLabel);
             this.Controls.Add(this.MoraleLabel);

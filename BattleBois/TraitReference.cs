@@ -8,8 +8,11 @@ namespace BattleBois
 {
     static class TraitReference
     {
+        public static readonly String TRAIT_RANGED = "Range";
+
         private static readonly String STRING_FMT_ARG_0 = "{0}";
         private static readonly String TRAIT_FILE = "TraitDefinitions.json";
+
         private static bool loaded = false;
         private static TraitDefinitions definitions;
 

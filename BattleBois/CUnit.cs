@@ -9,8 +9,14 @@ namespace BattleBois
     {
         public static readonly String DEFAULT_NAME = "Unnamed";
         public static readonly String DEFAULT_TYPE = "Untyped";
-        public static readonly String DEFAULT_DICE = "Unnamed";
+        public static readonly String DEFAULT_DICE = "1d1-1";
         public static readonly double DEFAULT_STAT = 0;
+
+        public static readonly String TYPE_LIGHT_INFANTRY = "Light Infantry";
+        public static readonly String TYPE_HEAVY_INFANTRY = "Heavy Infantry";
+        public static readonly String TYPE_LIGHT_CAVALRY  = "Light Cavalry";
+        public static readonly String TYPE_HEAVY_CAVALRY  = "Heavy Cavalry";
+        public static readonly String TYPE_SIEGE_WEAPON   = "Siege Weapon";
 
         public static readonly String STAT_OFFENSE     = "Offensive Strength";
         public static readonly String STAT_DEFENSE     = "Defensive Strength";

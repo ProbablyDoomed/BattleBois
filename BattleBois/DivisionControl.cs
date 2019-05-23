@@ -17,11 +17,11 @@ namespace BattleBois
         private static readonly Dictionary<String, String> TypeAbbreviations = new Dictionary<string, string>
         {
             [CUnit.DEFAULT_TYPE] = TYPE_DEFAULT_ABBREVIATION,
-            ["Light Infantry"] = "LI",
-            ["Heavy Infantry"] = "HI",
-            ["Light Cavalry"] = "LC",
-            ["Heavy Cavalry"] = "HC",
-            ["Siege Weapon"] = "SW",
+            [CUnit.TYPE_LIGHT_INFANTRY] = "LI",
+            [CUnit.TYPE_HEAVY_INFANTRY] = "HI",
+            [CUnit.TYPE_LIGHT_CAVALRY]  = "LC",
+            [CUnit.TYPE_HEAVY_CAVALRY]  = "HC",
+            [CUnit.TYPE_SIEGE_WEAPON]   = "SW",
         };
 
         private CDivision _displayedDivision;
