@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.TabArmy = new System.Windows.Forms.TabPage();
+            this.ArmyUpdateDivisionButton = new System.Windows.Forms.Button();
             this.ArmyCommanderDetailText = new System.Windows.Forms.TextBox();
             this.ArmyUnitDetailText = new System.Windows.Forms.TextBox();
             this.ArmyRemoveDivisionButton = new System.Windows.Forms.Button();
@@ -94,9 +96,29 @@
             this.UnitTraitsTable = new System.Windows.Forms.TableLayoutPanel();
             this.TabBattle = new System.Windows.Forms.TabPage();
             this.AppTabs = new System.Windows.Forms.TabControl();
-            this.saveDialog = new System.Windows.Forms.SaveFileDialog();
-            this.loadDialog = new System.Windows.Forms.OpenFileDialog();
-            this.ArmyUpdateDivisionButton = new System.Windows.Forms.Button();
+            this.TabOptions = new System.Windows.Forms.TabPage();
+            this.TraitFileSelectButton = new System.Windows.Forms.Button();
+            this.BattleDirSelectButton = new System.Windows.Forms.Button();
+            this.ArmyDirSelectButton = new System.Windows.Forms.Button();
+            this.CommanderDirSelectButton = new System.Windows.Forms.Button();
+            this.UnitDirSelectButton = new System.Windows.Forms.Button();
+            this.TraitFileSelectText = new System.Windows.Forms.TextBox();
+            this.BattleDirSelectText = new System.Windows.Forms.TextBox();
+            this.CommanderDirSelectText = new System.Windows.Forms.TextBox();
+            this.ArmyDirSelectText = new System.Windows.Forms.TextBox();
+            this.UnitDirSelectText = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.OptionsCmdrDirLabel = new System.Windows.Forms.Label();
+            this.OptionsUnitDirLabel = new System.Windows.Forms.Label();
+            this.SaveDialog = new System.Windows.Forms.SaveFileDialog();
+            this.LoadDialog = new System.Windows.Forms.OpenFileDialog();
+            this.FolderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.TraitFileExportButton = new System.Windows.Forms.Button();
+            this.TraitFileResetButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.TabArmy.SuspendLayout();
             this.DivisionLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DivisionMoraleNumeric)).BeginInit();
@@ -115,6 +137,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.UnitDefenseNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnitOffenseNumeric)).BeginInit();
             this.AppTabs.SuspendLayout();
+            this.TabOptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabArmy
@@ -140,6 +163,16 @@
             this.TabArmy.TabIndex = 2;
             this.TabArmy.Text = "Create Armies";
             this.TabArmy.UseVisualStyleBackColor = true;
+            // 
+            // ArmyUpdateDivisionButton
+            // 
+            this.ArmyUpdateDivisionButton.Location = new System.Drawing.Point(140, 122);
+            this.ArmyUpdateDivisionButton.Name = "ArmyUpdateDivisionButton";
+            this.ArmyUpdateDivisionButton.Size = new System.Drawing.Size(96, 24);
+            this.ArmyUpdateDivisionButton.TabIndex = 20;
+            this.ArmyUpdateDivisionButton.Text = "Update";
+            this.ArmyUpdateDivisionButton.UseVisualStyleBackColor = true;
+            this.ArmyUpdateDivisionButton.Click += new System.EventHandler(this.ArmyUpdateDivisionButton_Click);
             // 
             // ArmyCommanderDetailText
             // 
@@ -1077,6 +1110,7 @@
             this.AppTabs.Controls.Add(this.TabBattle);
             this.AppTabs.Controls.Add(this.TabArmy);
             this.AppTabs.Controls.Add(this.TabUnitCommander);
+            this.AppTabs.Controls.Add(this.TabOptions);
             this.AppTabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AppTabs.Location = new System.Drawing.Point(0, 0);
             this.AppTabs.Name = "AppTabs";
@@ -1084,21 +1118,217 @@
             this.AppTabs.Size = new System.Drawing.Size(887, 580);
             this.AppTabs.TabIndex = 1;
             // 
-            // saveDialog
+            // TabOptions
             // 
-            this.saveDialog.DefaultExt = "json";
-            this.saveDialog.Filter = "JSON files|*.json";
-            this.saveDialog.Title = "Save Unit JSON File";
+            this.TabOptions.Controls.Add(this.label6);
+            this.TabOptions.Controls.Add(this.TraitFileResetButton);
+            this.TabOptions.Controls.Add(this.TraitFileExportButton);
+            this.TabOptions.Controls.Add(this.TraitFileSelectButton);
+            this.TabOptions.Controls.Add(this.BattleDirSelectButton);
+            this.TabOptions.Controls.Add(this.ArmyDirSelectButton);
+            this.TabOptions.Controls.Add(this.CommanderDirSelectButton);
+            this.TabOptions.Controls.Add(this.UnitDirSelectButton);
+            this.TabOptions.Controls.Add(this.TraitFileSelectText);
+            this.TabOptions.Controls.Add(this.BattleDirSelectText);
+            this.TabOptions.Controls.Add(this.CommanderDirSelectText);
+            this.TabOptions.Controls.Add(this.ArmyDirSelectText);
+            this.TabOptions.Controls.Add(this.UnitDirSelectText);
+            this.TabOptions.Controls.Add(this.label5);
+            this.TabOptions.Controls.Add(this.label4);
+            this.TabOptions.Controls.Add(this.label2);
+            this.TabOptions.Controls.Add(this.label3);
+            this.TabOptions.Controls.Add(this.OptionsCmdrDirLabel);
+            this.TabOptions.Controls.Add(this.OptionsUnitDirLabel);
+            this.TabOptions.Location = new System.Drawing.Point(4, 22);
+            this.TabOptions.Name = "TabOptions";
+            this.TabOptions.Padding = new System.Windows.Forms.Padding(3);
+            this.TabOptions.Size = new System.Drawing.Size(879, 554);
+            this.TabOptions.TabIndex = 3;
+            this.TabOptions.Text = "Options";
+            this.TabOptions.UseVisualStyleBackColor = true;
             // 
-            // ArmyUpdateDivisionButton
+            // TraitFileSelectButton
             // 
-            this.ArmyUpdateDivisionButton.Location = new System.Drawing.Point(140, 122);
-            this.ArmyUpdateDivisionButton.Name = "ArmyUpdateDivisionButton";
-            this.ArmyUpdateDivisionButton.Size = new System.Drawing.Size(96, 24);
-            this.ArmyUpdateDivisionButton.TabIndex = 20;
-            this.ArmyUpdateDivisionButton.Text = "Update";
-            this.ArmyUpdateDivisionButton.UseVisualStyleBackColor = true;
-            this.ArmyUpdateDivisionButton.Click += new System.EventHandler(this.ArmyUpdateDivisionButton_Click);
+            this.TraitFileSelectButton.Location = new System.Drawing.Point(739, 196);
+            this.TraitFileSelectButton.Name = "TraitFileSelectButton";
+            this.TraitFileSelectButton.Size = new System.Drawing.Size(63, 23);
+            this.TraitFileSelectButton.TabIndex = 16;
+            this.TraitFileSelectButton.Text = "Select...";
+            this.TraitFileSelectButton.UseVisualStyleBackColor = true;
+            this.TraitFileSelectButton.Click += new System.EventHandler(this.TraitFileSelectButton_Click);
+            // 
+            // BattleDirSelectButton
+            // 
+            this.BattleDirSelectButton.Location = new System.Drawing.Point(739, 122);
+            this.BattleDirSelectButton.Name = "BattleDirSelectButton";
+            this.BattleDirSelectButton.Size = new System.Drawing.Size(63, 23);
+            this.BattleDirSelectButton.TabIndex = 15;
+            this.BattleDirSelectButton.Text = "Select...";
+            this.BattleDirSelectButton.UseVisualStyleBackColor = true;
+            this.BattleDirSelectButton.Click += new System.EventHandler(this.DirSelectButton_Click);
+            // 
+            // ArmyDirSelectButton
+            // 
+            this.ArmyDirSelectButton.Location = new System.Drawing.Point(739, 93);
+            this.ArmyDirSelectButton.Name = "ArmyDirSelectButton";
+            this.ArmyDirSelectButton.Size = new System.Drawing.Size(63, 23);
+            this.ArmyDirSelectButton.TabIndex = 14;
+            this.ArmyDirSelectButton.Text = "Select...";
+            this.ArmyDirSelectButton.UseVisualStyleBackColor = true;
+            this.ArmyDirSelectButton.Click += new System.EventHandler(this.DirSelectButton_Click);
+            // 
+            // CommanderDirSelectButton
+            // 
+            this.CommanderDirSelectButton.Location = new System.Drawing.Point(739, 64);
+            this.CommanderDirSelectButton.Name = "CommanderDirSelectButton";
+            this.CommanderDirSelectButton.Size = new System.Drawing.Size(63, 23);
+            this.CommanderDirSelectButton.TabIndex = 13;
+            this.CommanderDirSelectButton.Text = "Select...";
+            this.CommanderDirSelectButton.UseVisualStyleBackColor = true;
+            this.CommanderDirSelectButton.Click += new System.EventHandler(this.DirSelectButton_Click);
+            // 
+            // UnitDirSelectButton
+            // 
+            this.UnitDirSelectButton.Location = new System.Drawing.Point(739, 35);
+            this.UnitDirSelectButton.Name = "UnitDirSelectButton";
+            this.UnitDirSelectButton.Size = new System.Drawing.Size(63, 23);
+            this.UnitDirSelectButton.TabIndex = 12;
+            this.UnitDirSelectButton.Text = "Select...";
+            this.UnitDirSelectButton.UseVisualStyleBackColor = true;
+            this.UnitDirSelectButton.Click += new System.EventHandler(this.DirSelectButton_Click);
+            // 
+            // TraitFileSelectText
+            // 
+            this.TraitFileSelectText.Location = new System.Drawing.Point(111, 198);
+            this.TraitFileSelectText.Name = "TraitFileSelectText";
+            this.TraitFileSelectText.ReadOnly = true;
+            this.TraitFileSelectText.Size = new System.Drawing.Size(622, 20);
+            this.TraitFileSelectText.TabIndex = 11;
+            // 
+            // BattleDirSelectText
+            // 
+            this.BattleDirSelectText.Location = new System.Drawing.Point(111, 124);
+            this.BattleDirSelectText.Name = "BattleDirSelectText";
+            this.BattleDirSelectText.ReadOnly = true;
+            this.BattleDirSelectText.Size = new System.Drawing.Size(622, 20);
+            this.BattleDirSelectText.TabIndex = 9;
+            // 
+            // CommanderDirSelectText
+            // 
+            this.CommanderDirSelectText.Location = new System.Drawing.Point(111, 66);
+            this.CommanderDirSelectText.Name = "CommanderDirSelectText";
+            this.CommanderDirSelectText.ReadOnly = true;
+            this.CommanderDirSelectText.Size = new System.Drawing.Size(622, 20);
+            this.CommanderDirSelectText.TabIndex = 8;
+            // 
+            // ArmyDirSelectText
+            // 
+            this.ArmyDirSelectText.Location = new System.Drawing.Point(111, 95);
+            this.ArmyDirSelectText.Name = "ArmyDirSelectText";
+            this.ArmyDirSelectText.ReadOnly = true;
+            this.ArmyDirSelectText.Size = new System.Drawing.Size(622, 20);
+            this.ArmyDirSelectText.TabIndex = 7;
+            // 
+            // UnitDirSelectText
+            // 
+            this.UnitDirSelectText.Location = new System.Drawing.Point(111, 37);
+            this.UnitDirSelectText.Name = "UnitDirSelectText";
+            this.UnitDirSelectText.ReadOnly = true;
+            this.UnitDirSelectText.Size = new System.Drawing.Size(622, 20);
+            this.UnitDirSelectText.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Default Directories:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 201);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Trait Definitions File:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(66, 127);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Battles";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(67, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Armies";
+            // 
+            // OptionsCmdrDirLabel
+            // 
+            this.OptionsCmdrDirLabel.AutoSize = true;
+            this.OptionsCmdrDirLabel.Location = new System.Drawing.Point(37, 69);
+            this.OptionsCmdrDirLabel.Name = "OptionsCmdrDirLabel";
+            this.OptionsCmdrDirLabel.Size = new System.Drawing.Size(68, 13);
+            this.OptionsCmdrDirLabel.TabIndex = 1;
+            this.OptionsCmdrDirLabel.Text = "Commanders";
+            // 
+            // OptionsUnitDirLabel
+            // 
+            this.OptionsUnitDirLabel.AutoSize = true;
+            this.OptionsUnitDirLabel.Location = new System.Drawing.Point(47, 40);
+            this.OptionsUnitDirLabel.Name = "OptionsUnitDirLabel";
+            this.OptionsUnitDirLabel.Size = new System.Drawing.Size(58, 13);
+            this.OptionsUnitDirLabel.TabIndex = 0;
+            this.OptionsUnitDirLabel.Text = "Unit Types";
+            // 
+            // SaveDialog
+            // 
+            this.SaveDialog.DefaultExt = "json";
+            this.SaveDialog.Filter = "JSON files|*.json";
+            this.SaveDialog.Title = "Save Unit JSON File";
+            // 
+            // LoadDialog
+            // 
+            this.LoadDialog.DefaultExt = "json";
+            // 
+            // TraitFileExportButton
+            // 
+            this.TraitFileExportButton.Location = new System.Drawing.Point(739, 225);
+            this.TraitFileExportButton.Name = "TraitFileExportButton";
+            this.TraitFileExportButton.Size = new System.Drawing.Size(63, 23);
+            this.TraitFileExportButton.TabIndex = 17;
+            this.TraitFileExportButton.Text = "Export...";
+            this.TraitFileExportButton.UseVisualStyleBackColor = true;
+            this.TraitFileExportButton.Click += new System.EventHandler(this.TraitFileExportButton_Click);
+            // 
+            // TraitFileResetButton
+            // 
+            this.TraitFileResetButton.Location = new System.Drawing.Point(739, 254);
+            this.TraitFileResetButton.Name = "TraitFileResetButton";
+            this.TraitFileResetButton.Size = new System.Drawing.Size(63, 23);
+            this.TraitFileResetButton.TabIndex = 18;
+            this.TraitFileResetButton.Text = "Reset";
+            this.TraitFileResetButton.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(178, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(555, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Files can be loaded and saved anywhere, but the load and save dialog boxes will s" +
+    "tart in these directories by default.";
             // 
             // Form1
             // 
@@ -1106,6 +1336,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 580);
             this.Controls.Add(this.AppTabs);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "BattleBois";
             this.TabArmy.ResumeLayout(false);
@@ -1131,6 +1362,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.UnitDefenseNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnitOffenseNumeric)).EndInit();
             this.AppTabs.ResumeLayout(false);
+            this.TabOptions.ResumeLayout(false);
+            this.TabOptions.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1165,8 +1398,8 @@
         private System.Windows.Forms.TabPage TabBattle;
         private System.Windows.Forms.TabControl AppTabs;
         private System.Windows.Forms.Button UnitLoadButton;
-        private System.Windows.Forms.SaveFileDialog saveDialog;
-        private System.Windows.Forms.OpenFileDialog loadDialog;
+        private System.Windows.Forms.SaveFileDialog SaveDialog;
+        private System.Windows.Forms.OpenFileDialog LoadDialog;
         private System.Windows.Forms.TableLayoutPanel CommanderCreateStatsTable;
         private System.Windows.Forms.Label CommanderNameLabel;
         private System.Windows.Forms.TextBox CommanderNameText;
@@ -1205,6 +1438,27 @@
         private System.Windows.Forms.TextBox ArmyCommanderDetailText;
         private System.Windows.Forms.TextBox ArmyUnitDetailText;
         private System.Windows.Forms.Button ArmyUpdateDivisionButton;
+        private System.Windows.Forms.TabPage TabOptions;
+        private System.Windows.Forms.TextBox BattleDirSelectText;
+        private System.Windows.Forms.TextBox CommanderDirSelectText;
+        private System.Windows.Forms.TextBox ArmyDirSelectText;
+        private System.Windows.Forms.TextBox UnitDirSelectText;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label OptionsCmdrDirLabel;
+        private System.Windows.Forms.Label OptionsUnitDirLabel;
+        private System.Windows.Forms.FolderBrowserDialog FolderDialog;
+        private System.Windows.Forms.TextBox TraitFileSelectText;
+        private System.Windows.Forms.Button TraitFileSelectButton;
+        private System.Windows.Forms.Button BattleDirSelectButton;
+        private System.Windows.Forms.Button ArmyDirSelectButton;
+        private System.Windows.Forms.Button CommanderDirSelectButton;
+        private System.Windows.Forms.Button UnitDirSelectButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button TraitFileResetButton;
+        private System.Windows.Forms.Button TraitFileExportButton;
     }
 }
 

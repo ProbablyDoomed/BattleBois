@@ -10,28 +10,24 @@ namespace BattleBois
 {
     static class JsonFiles
     {
-        public static readonly Dictionary<Type, String> TYPE_DIRECTORIES = new Dictionary<Type, string>
+        public static String COMMON_JSON_DIR = "CommonJson";
+
+        //Wrapper class to represent this specific use of a String-String dictionary
+        public static Dictionary<String, String> JsonFilePaths = new Dictionary<String, String>();
+
+        public static void LoadFilePaths()
         {
-            [typeof(CUnit)] = "Units",
-            [typeof(CCommander)] = "Commanders",
-            [typeof(CArmy)] = "Armies",
-            [typeof(CBattle)] = "Battles",
+            JsonFilePaths = LoadFromCommonDirectory<Dictionary<String, String>>("FilePaths.json");
+        }
 
-            [typeof(TraitReference.TraitDefinitions)] = "CommonJson"
-        };
-
-        public static T LoadFromDefault<T>(String fileName)
+        public static void SaveFilePaths()
         {
-            String fullPath = fileName;
-            try
-            {
-                fullPath = TYPE_DIRECTORIES[typeof(T)] + '\\' + fileName;
-            }
-            catch (KeyNotFoundException)
-            {
-                Console.WriteLine("No directory for type," + typeof(T).ToString() + ", will check top level.");
-            }
+            SaveAsToCommonDirectory<Dictionary<String, String>>("FilePaths.json", JsonFilePaths);
+        }
 
+        public static T LoadFromCommonDirectory<T>(String fileName)
+        {
+            String fullPath = COMMON_JSON_DIR + '\\' + fileName;
             return LoadFrom<T>(fullPath);
         }
 
@@ -53,19 +49,9 @@ namespace BattleBois
             return jsonObject;
         }
 
-        public static void SaveAsToDefault<T>(String fileName, T item)
+        public static void SaveAsToCommonDirectory<T>(String fileName, T item)
         {
-            String fullPath = fileName;
-
-            try
-            {
-                fullPath = TYPE_DIRECTORIES[typeof(T)] + '\\' + fileName;
-            }
-            catch (KeyNotFoundException)
-            {
-                Console.WriteLine("No directory for type," + typeof(T).ToString() + ", will save at top level.");
-            }
-
+            String fullPath = COMMON_JSON_DIR + '\\' + fileName;
             SaveAs<T>(fullPath, item);
         }
 

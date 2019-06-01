@@ -21,7 +21,14 @@ namespace BattleBois
 
         public static void LoadTraitDefinitions()
         {
-            definitions = JsonFiles.LoadFromDefault<TraitDefinitions>(TRAIT_FILE);            
+            if (JsonFiles.JsonFilePaths[typeof(TraitDefinitions).Name] == "")
+            {
+                definitions = JsonFiles.LoadFromCommonDirectory<TraitDefinitions>(TRAIT_FILE);
+            }
+            else
+            {
+                definitions = JsonFiles.LoadFrom<TraitDefinitions>(JsonFiles.JsonFilePaths[typeof(TraitDefinitions).Name]);
+            }
             loaded = true;
         }
 

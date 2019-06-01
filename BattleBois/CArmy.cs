@@ -17,10 +17,8 @@ namespace BattleBois
 
         public String Name { get; set; } = DEFAULT_NAME;
         public List<CDivision> Divisions { get; set; } = new List<CDivision>();
-        public List<CCommander> Commanders { get; set; } = new List<CCommander>()
-        {
-            CCommander.NO_COMMANDER
-        };
+        public List<CCommander> Commanders { get; set; } = new List<CCommander>();
+
         public int ActiveCommanderIndex { get; set; } = DEFAULT_COMMANDER_INDEX;
 
         public int GetTotalSize()

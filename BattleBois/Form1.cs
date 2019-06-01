@@ -29,11 +29,27 @@ namespace BattleBois
         private CArmy armyCreatorWorkingCopy = new CArmy();
         private DivisionControl selectedDivisionControl;
 
+        private Dictionary<String, Type> DirectoryButtonTypeMap = new Dictionary<String, Type>()
+        {
+            ["UnitDirSelectButton"] = typeof(CUnit),
+            ["CommanderDirSelectButton"] = typeof(CCommander),
+            ["ArmyDirSelectButton"] = typeof(CArmy),
+            ["BattleDirSelectButton"] = typeof(CBattle),
+        };
+
+        private Dictionary<String, String> DirectoryButtonTextBoxMap = new Dictionary<String, String>()
+        {
+            ["UnitDirSelectButton"] = "UnitDirSelectText",
+            ["CommanderDirSelectButton"] = "CommanderDirSelectText",
+            ["ArmyDirSelectButton"] = "ArmyDirSelectText",
+            ["BattleDirSelectButton"] = "BattleDirSelectText",
+        };
+
         public Form1()
         {
             InitializeComponent();
 
-            UnitTypeCombo.Items.AddRange(new object[] {
+            UnitTypeCombo.Items.AddRange( new String[] {
                 CUnit.TYPE_LIGHT_INFANTRY,
                 CUnit.TYPE_HEAVY_INFANTRY,
                 CUnit.TYPE_LIGHT_CAVALRY,
@@ -41,36 +57,40 @@ namespace BattleBois
                 CUnit.TYPE_SIEGE_WEAPON
             });
 
+            JsonFiles.LoadFilePaths();
+
+            UnitDirSelectText.Text      = JsonFiles.JsonFilePaths["CUnit"];
+            CommanderDirSelectText.Text = JsonFiles.JsonFilePaths["CCommander"];
+            ArmyDirSelectText.Text      = JsonFiles.JsonFilePaths["CArmy"];
+            BattleDirSelectText.Text    = JsonFiles.JsonFilePaths["CBattle"];
+
             TraitReference.LoadTraitDefinitions();
+
             ClearAllArmyRows();
             ClearAllTraitRows();
         }        
 
         private void ShowSaveJsonObjectDialog<T>(T objectToSave)
         {
-            saveDialog.InitialDirectory = Application.StartupPath 
-                                        + Path.DirectorySeparatorChar 
-                                        + JsonFiles.TYPE_DIRECTORIES[typeof(T)];
+            SaveDialog.InitialDirectory = JsonFiles.JsonFilePaths[typeof(T).Name];
 
-            saveDialog.ShowDialog();
+            SaveDialog.ShowDialog();
 
-            if (saveDialog.FileName != "")
+            if (SaveDialog.FileName != "")
             {
-                JsonFiles.SaveAs<T>(saveDialog.FileName, objectToSave);
+                JsonFiles.SaveAs<T>(SaveDialog.FileName, objectToSave);
             }
         }
 
         private T ShowLoadJsonObjectDialog<T>()
         {
-            loadDialog.InitialDirectory = Application.StartupPath
-                                        + Path.DirectorySeparatorChar
-                                        + JsonFiles.TYPE_DIRECTORIES[typeof(T)];
+            LoadDialog.InitialDirectory = JsonFiles.JsonFilePaths[typeof(T).Name];
 
-            loadDialog.ShowDialog();
+            LoadDialog.ShowDialog();
 
-            if (loadDialog.FileName != "")
+            if (LoadDialog.FileName != "")
             {
-                return JsonFiles.LoadFrom<T>(loadDialog.FileName);                
+                return JsonFiles.LoadFrom<T>(LoadDialog.FileName);                
             }
             else
             {
@@ -186,34 +206,47 @@ namespace BattleBois
             }
         }
 
-        private void ArmyEditorDivision_Click(object sender, EventArgs e)
-        {   
-            if(selectedDivisionControl != null)
+        private void SelectNewArmyEditorDivision(DivisionControl newSelection)
+        {
+            if (selectedDivisionControl != null)
             {
                 selectedDivisionControl.BackColor = DefaultDivisionBgColour;
             }
 
-            if (sender.GetType() == typeof(DivisionControl))
+            if (newSelection != null)
             {
-                selectedDivisionControl = ((DivisionControl)sender);
+                selectedDivisionControl = newSelection;
+
+                selectedDivisionControl.BackColor = SelectedDivisionBgColour;
+
+                CDivision division = selectedDivisionControl.DisplayedDivision;
+
+                DivisionNameText.Text = division.Name;
+                divisionSelectedUnitType = division.UnitType;
+                DivisionUnitText.Text = divisionSelectedUnitType.Name;
+                DivisionSizeNumeric.Value = division.StartingSize;
+                DivisionSizeNumeric.Value = division.CurrentSize;
+                DivisionMoraleNumeric.Value = division.Morale;
+
+                RefreshDivisionTraitDescriptionList();
             }
             else
             {
-                selectedDivisionControl = (DivisionControl)(((Control)sender).GetContainerControl());
+                throw new ArgumentNullException("newSelection", "Tried to select a null carmy division control");
             }
+            
+        }
 
-            selectedDivisionControl.BackColor = SelectedDivisionBgColour;
-
-            CDivision division = selectedDivisionControl.DisplayedDivision;
-
-            DivisionNameText.Text = division.Name;
-            divisionSelectedUnitType = division.UnitType;
-            DivisionUnitText.Text = divisionSelectedUnitType.Name;
-            DivisionSizeNumeric.Value = division.StartingSize;
-            DivisionSizeNumeric.Value = division.CurrentSize;
-            DivisionMoraleNumeric.Value = division.Morale;
-
-            RefreshDivisionTraitDescriptionList();
+        private void ArmyEditorDivision_Click(object sender, EventArgs e)
+        {             
+            if (sender.GetType() == typeof(DivisionControl))
+            {
+                SelectNewArmyEditorDivision((DivisionControl)sender);
+            }
+            else
+            {
+                SelectNewArmyEditorDivision((DivisionControl)((Control)sender).GetContainerControl());
+            }   
         }
         
         private void AddNewArmyRow(CDivision division)
@@ -232,6 +265,10 @@ namespace BattleBois
                 DivisionControl lastDivisionControl = (DivisionControl)(ArmyTable.Controls[ARMY_EDIT_DIVISION_CONTROL_PREFIX + lastRow.ToString()]);
                 if (lastDivisionControl != null)
                 {
+                    if(lastDivisionControl == selectedDivisionControl)
+                    {
+                        selectedDivisionControl = null;
+                    }
                     armyCreatorWorkingCopy.Divisions.Remove(lastDivisionControl.DisplayedDivision);
                     ArmyTable.Controls.Remove(lastDivisionControl);
                 }
@@ -386,27 +423,44 @@ namespace BattleBois
 
         private void ArmyRemoveDivisionButton_Click(object sender, EventArgs e)
         {
-            bool found = false;
+            int foundRow = -1;
 
             for(int row=0; row < ArmyTable.RowCount; row++)
             {
-                if (found)
+                if (foundRow >= 0)
                 {
                     ArmyTable.SetRow(ArmyTable.Controls[ARMY_EDIT_DIVISION_CONTROL_PREFIX + row.ToString()], row - 1);
                     ArmyTable.Controls[ARMY_EDIT_DIVISION_CONTROL_PREFIX + row.ToString()].Name = ARMY_EDIT_DIVISION_CONTROL_PREFIX + (row - 1).ToString();
                 }
+
                 if (ArmyTable.Controls[ARMY_EDIT_DIVISION_CONTROL_PREFIX + row.ToString()] == selectedDivisionControl)
                 {
-                    found = true;
+                    foundRow = row;
                     ArmyTable.Controls.RemoveByKey(ARMY_EDIT_DIVISION_CONTROL_PREFIX + row.ToString());
                     armyCreatorWorkingCopy.Divisions.Remove(selectedDivisionControl.DisplayedDivision);
                 }
             }
 
-            if (found)
+            if (foundRow >= 0)
             {
                 ArmyTable.RowCount--;
-                selectedDivisionControl = null;
+                if (foundRow > 0)
+                {
+                    int newSelectRow = foundRow;
+                    if(newSelectRow > ArmyTable.RowCount-1)
+                    {
+                        newSelectRow = ArmyTable.RowCount-1;
+                    }
+
+                    DivisionControl replacementControl = 
+                        (DivisionControl)(ArmyTable.Controls[ARMY_EDIT_DIVISION_CONTROL_PREFIX + newSelectRow.ToString()]);
+                    SelectNewArmyEditorDivision(replacementControl);
+                }
+                else
+                {
+                    selectedDivisionControl = null;
+                }
+
             }
 
         }
@@ -484,14 +538,34 @@ namespace BattleBois
 
                 foreach (CCommander commander in armyCreatorWorkingCopy.Commanders)
                 {
-                    if (commander != CCommander.NO_COMMANDER)
-                    {
-                        ArmyCommanderList.Items.Add(commander.Name);
-                    }
+                    ArmyCommanderList.Items.Add(commander.Name);
                 }
 
             }
             
+        }
+
+        private void DirSelectButton_Click(object sender, EventArgs e)
+        {
+            Type jsonObjType = DirectoryButtonTypeMap[((Control)sender).Name];
+            String textBoxName = DirectoryButtonTextBoxMap[((Control)sender).Name];
+            FolderDialog.ShowDialog();
+            if (FolderDialog.SelectedPath != "")
+            {
+                JsonFiles.JsonFilePaths[jsonObjType.Name] = FolderDialog.SelectedPath;
+                TabOptions.Controls[textBoxName].Text = FolderDialog.SelectedPath;
+                JsonFiles.SaveFilePaths();
+            }
+        }
+
+        private void TraitFileSelectButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TraitFileExportButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
