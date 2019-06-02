@@ -97,6 +97,9 @@
             this.TabBattle = new System.Windows.Forms.TabPage();
             this.AppTabs = new System.Windows.Forms.TabControl();
             this.TabOptions = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TraitFileResetButton = new System.Windows.Forms.Button();
+            this.TraitFileExportButton = new System.Windows.Forms.Button();
             this.TraitFileSelectButton = new System.Windows.Forms.Button();
             this.BattleDirSelectButton = new System.Windows.Forms.Button();
             this.ArmyDirSelectButton = new System.Windows.Forms.Button();
@@ -116,9 +119,6 @@
             this.SaveDialog = new System.Windows.Forms.SaveFileDialog();
             this.LoadDialog = new System.Windows.Forms.OpenFileDialog();
             this.FolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.TraitFileExportButton = new System.Windows.Forms.Button();
-            this.TraitFileResetButton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.TabArmy.SuspendLayout();
             this.DivisionLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DivisionMoraleNumeric)).BeginInit();
@@ -156,19 +156,21 @@
             this.TabArmy.Controls.Add(this.ArmyAddDivisionButton);
             this.TabArmy.Controls.Add(this.DivisionUnitLoadButton);
             this.TabArmy.Controls.Add(this.DivisionLayoutPanel);
-            this.TabArmy.Location = new System.Drawing.Point(4, 22);
+            this.TabArmy.Location = new System.Drawing.Point(4, 25);
+            this.TabArmy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TabArmy.Name = "TabArmy";
-            this.TabArmy.Padding = new System.Windows.Forms.Padding(3);
-            this.TabArmy.Size = new System.Drawing.Size(879, 554);
+            this.TabArmy.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabArmy.Size = new System.Drawing.Size(1175, 685);
             this.TabArmy.TabIndex = 2;
             this.TabArmy.Text = "Create Armies";
             this.TabArmy.UseVisualStyleBackColor = true;
             // 
             // ArmyUpdateDivisionButton
             // 
-            this.ArmyUpdateDivisionButton.Location = new System.Drawing.Point(140, 122);
+            this.ArmyUpdateDivisionButton.Location = new System.Drawing.Point(187, 150);
+            this.ArmyUpdateDivisionButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ArmyUpdateDivisionButton.Name = "ArmyUpdateDivisionButton";
-            this.ArmyUpdateDivisionButton.Size = new System.Drawing.Size(96, 24);
+            this.ArmyUpdateDivisionButton.Size = new System.Drawing.Size(128, 30);
             this.ArmyUpdateDivisionButton.TabIndex = 20;
             this.ArmyUpdateDivisionButton.Text = "Update";
             this.ArmyUpdateDivisionButton.UseVisualStyleBackColor = true;
@@ -179,11 +181,12 @@
             this.ArmyCommanderDetailText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArmyCommanderDetailText.Location = new System.Drawing.Point(8, 486);
+            this.ArmyCommanderDetailText.Location = new System.Drawing.Point(11, 598);
+            this.ArmyCommanderDetailText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ArmyCommanderDetailText.Multiline = true;
             this.ArmyCommanderDetailText.Name = "ArmyCommanderDetailText";
             this.ArmyCommanderDetailText.ReadOnly = true;
-            this.ArmyCommanderDetailText.Size = new System.Drawing.Size(261, 52);
+            this.ArmyCommanderDetailText.Size = new System.Drawing.Size(347, 63);
             this.ArmyCommanderDetailText.TabIndex = 19;
             // 
             // ArmyUnitDetailText
@@ -191,18 +194,20 @@
             this.ArmyUnitDetailText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArmyUnitDetailText.Location = new System.Drawing.Point(8, 180);
+            this.ArmyUnitDetailText.Location = new System.Drawing.Point(11, 222);
+            this.ArmyUnitDetailText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ArmyUnitDetailText.Multiline = true;
             this.ArmyUnitDetailText.Name = "ArmyUnitDetailText";
             this.ArmyUnitDetailText.ReadOnly = true;
-            this.ArmyUnitDetailText.Size = new System.Drawing.Size(330, 120);
+            this.ArmyUnitDetailText.Size = new System.Drawing.Size(439, 147);
             this.ArmyUnitDetailText.TabIndex = 18;
             // 
             // ArmyRemoveDivisionButton
             // 
-            this.ArmyRemoveDivisionButton.Location = new System.Drawing.Point(38, 122);
+            this.ArmyRemoveDivisionButton.Location = new System.Drawing.Point(51, 150);
+            this.ArmyRemoveDivisionButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ArmyRemoveDivisionButton.Name = "ArmyRemoveDivisionButton";
-            this.ArmyRemoveDivisionButton.Size = new System.Drawing.Size(96, 24);
+            this.ArmyRemoveDivisionButton.Size = new System.Drawing.Size(128, 30);
             this.ArmyRemoveDivisionButton.TabIndex = 17;
             this.ArmyRemoveDivisionButton.Text = "Remove";
             this.ArmyRemoveDivisionButton.UseVisualStyleBackColor = true;
@@ -210,9 +215,10 @@
             // 
             // ArmyRemoveCommanderButton
             // 
-            this.ArmyRemoveCommanderButton.Location = new System.Drawing.Point(275, 515);
+            this.ArmyRemoveCommanderButton.Location = new System.Drawing.Point(367, 634);
+            this.ArmyRemoveCommanderButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ArmyRemoveCommanderButton.Name = "ArmyRemoveCommanderButton";
-            this.ArmyRemoveCommanderButton.Size = new System.Drawing.Size(63, 23);
+            this.ArmyRemoveCommanderButton.Size = new System.Drawing.Size(84, 28);
             this.ArmyRemoveCommanderButton.TabIndex = 16;
             this.ArmyRemoveCommanderButton.Text = "Remove";
             this.ArmyRemoveCommanderButton.UseVisualStyleBackColor = true;
@@ -220,9 +226,10 @@
             // 
             // ArmyAddCommanderButton
             // 
-            this.ArmyAddCommanderButton.Location = new System.Drawing.Point(275, 486);
+            this.ArmyAddCommanderButton.Location = new System.Drawing.Point(367, 598);
+            this.ArmyAddCommanderButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ArmyAddCommanderButton.Name = "ArmyAddCommanderButton";
-            this.ArmyAddCommanderButton.Size = new System.Drawing.Size(63, 23);
+            this.ArmyAddCommanderButton.Size = new System.Drawing.Size(84, 28);
             this.ArmyAddCommanderButton.TabIndex = 15;
             this.ArmyAddCommanderButton.Text = "Add...";
             this.ArmyAddCommanderButton.UseVisualStyleBackColor = true;
@@ -231,27 +238,31 @@
             // ArmyCommanderList
             // 
             this.ArmyCommanderList.FormattingEnabled = true;
-            this.ArmyCommanderList.Location = new System.Drawing.Point(8, 320);
+            this.ArmyCommanderList.ItemHeight = 16;
+            this.ArmyCommanderList.Location = new System.Drawing.Point(11, 394);
+            this.ArmyCommanderList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ArmyCommanderList.Name = "ArmyCommanderList";
-            this.ArmyCommanderList.Size = new System.Drawing.Size(330, 160);
+            this.ArmyCommanderList.Size = new System.Drawing.Size(439, 196);
             this.ArmyCommanderList.TabIndex = 14;
             this.ArmyCommanderList.SelectedIndexChanged += new System.EventHandler(this.ArmyCommanderList_SelectedIndexChanged);
             // 
             // ArmyCommanderLabel
             // 
             this.ArmyCommanderLabel.AutoSize = true;
-            this.ArmyCommanderLabel.Location = new System.Drawing.Point(8, 303);
+            this.ArmyCommanderLabel.Location = new System.Drawing.Point(11, 373);
+            this.ArmyCommanderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ArmyCommanderLabel.Name = "ArmyCommanderLabel";
-            this.ArmyCommanderLabel.Size = new System.Drawing.Size(68, 13);
+            this.ArmyCommanderLabel.Size = new System.Drawing.Size(91, 17);
             this.ArmyCommanderLabel.TabIndex = 13;
             this.ArmyCommanderLabel.Text = "Commanders";
             // 
             // ArmyLoadButton
             // 
             this.ArmyLoadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ArmyLoadButton.Location = new System.Drawing.Point(784, 61);
+            this.ArmyLoadButton.Location = new System.Drawing.Point(1045, 75);
+            this.ArmyLoadButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ArmyLoadButton.Name = "ArmyLoadButton";
-            this.ArmyLoadButton.Size = new System.Drawing.Size(87, 53);
+            this.ArmyLoadButton.Size = new System.Drawing.Size(116, 65);
             this.ArmyLoadButton.TabIndex = 12;
             this.ArmyLoadButton.Text = "Load Army";
             this.ArmyLoadButton.UseVisualStyleBackColor = true;
@@ -260,9 +271,10 @@
             // ArmySaveButton
             // 
             this.ArmySaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ArmySaveButton.Location = new System.Drawing.Point(784, 6);
+            this.ArmySaveButton.Location = new System.Drawing.Point(1045, 7);
+            this.ArmySaveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ArmySaveButton.Name = "ArmySaveButton";
-            this.ArmySaveButton.Size = new System.Drawing.Size(87, 53);
+            this.ArmySaveButton.Size = new System.Drawing.Size(116, 65);
             this.ArmySaveButton.TabIndex = 11;
             this.ArmySaveButton.Text = "Save Army";
             this.ArmySaveButton.UseVisualStyleBackColor = true;
@@ -274,18 +286,20 @@
             this.ArmyTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.ArmyTable.ColumnCount = 1;
             this.ArmyTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.ArmyTable.Location = new System.Drawing.Point(419, 6);
+            this.ArmyTable.Location = new System.Drawing.Point(559, 7);
+            this.ArmyTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ArmyTable.Name = "ArmyTable";
             this.ArmyTable.RowCount = 1;
             this.ArmyTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.ArmyTable.Size = new System.Drawing.Size(306, 540);
+            this.ArmyTable.Size = new System.Drawing.Size(408, 665);
             this.ArmyTable.TabIndex = 10;
             // 
             // ArmyAddDivisionButton
             // 
-            this.ArmyAddDivisionButton.Location = new System.Drawing.Point(242, 122);
+            this.ArmyAddDivisionButton.Location = new System.Drawing.Point(323, 150);
+            this.ArmyAddDivisionButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ArmyAddDivisionButton.Name = "ArmyAddDivisionButton";
-            this.ArmyAddDivisionButton.Size = new System.Drawing.Size(96, 24);
+            this.ArmyAddDivisionButton.Size = new System.Drawing.Size(128, 30);
             this.ArmyAddDivisionButton.TabIndex = 9;
             this.ArmyAddDivisionButton.Text = "Add";
             this.ArmyAddDivisionButton.UseVisualStyleBackColor = true;
@@ -293,9 +307,10 @@
             // 
             // DivisionUnitLoadButton
             // 
-            this.DivisionUnitLoadButton.Location = new System.Drawing.Point(340, 36);
+            this.DivisionUnitLoadButton.Location = new System.Drawing.Point(453, 44);
+            this.DivisionUnitLoadButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DivisionUnitLoadButton.Name = "DivisionUnitLoadButton";
-            this.DivisionUnitLoadButton.Size = new System.Drawing.Size(63, 23);
+            this.DivisionUnitLoadButton.Size = new System.Drawing.Size(84, 28);
             this.DivisionUnitLoadButton.TabIndex = 7;
             this.DivisionUnitLoadButton.Text = "Select...";
             this.DivisionUnitLoadButton.UseVisualStyleBackColor = true;
@@ -315,15 +330,16 @@
             this.DivisionLayoutPanel.Controls.Add(this.DivisionNameText, 1, 0);
             this.DivisionLayoutPanel.Controls.Add(this.DivisionUnitLabel, 0, 1);
             this.DivisionLayoutPanel.Controls.Add(this.DivisionSizeLabel, 0, 2);
-            this.DivisionLayoutPanel.Location = new System.Drawing.Point(8, 6);
+            this.DivisionLayoutPanel.Location = new System.Drawing.Point(11, 7);
+            this.DivisionLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DivisionLayoutPanel.Name = "DivisionLayoutPanel";
             this.DivisionLayoutPanel.RowCount = 4;
-            this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.DivisionLayoutPanel.Size = new System.Drawing.Size(330, 110);
+            this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.DivisionLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.DivisionLayoutPanel.Size = new System.Drawing.Size(440, 135);
             this.DivisionLayoutPanel.TabIndex = 6;
             // 
             // DivisionUnitText
@@ -331,10 +347,11 @@
             this.DivisionUnitText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DivisionUnitText.Location = new System.Drawing.Point(89, 31);
+            this.DivisionUnitText.Location = new System.Drawing.Point(118, 38);
+            this.DivisionUnitText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DivisionUnitText.Name = "DivisionUnitText";
             this.DivisionUnitText.ReadOnly = true;
-            this.DivisionUnitText.Size = new System.Drawing.Size(237, 20);
+            this.DivisionUnitText.Size = new System.Drawing.Size(317, 22);
             this.DivisionUnitText.TabIndex = 14;
             // 
             // DivisionMoraleNumeric
@@ -342,7 +359,8 @@
             this.DivisionMoraleNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DivisionMoraleNumeric.Location = new System.Drawing.Point(89, 85);
+            this.DivisionMoraleNumeric.Location = new System.Drawing.Point(118, 104);
+            this.DivisionMoraleNumeric.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DivisionMoraleNumeric.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -354,7 +372,7 @@
             0,
             -2147483648});
             this.DivisionMoraleNumeric.Name = "DivisionMoraleNumeric";
-            this.DivisionMoraleNumeric.Size = new System.Drawing.Size(237, 20);
+            this.DivisionMoraleNumeric.Size = new System.Drawing.Size(317, 22);
             this.DivisionMoraleNumeric.TabIndex = 13;
             // 
             // DivisionSizeNumeric
@@ -362,14 +380,15 @@
             this.DivisionSizeNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DivisionSizeNumeric.Location = new System.Drawing.Point(89, 58);
+            this.DivisionSizeNumeric.Location = new System.Drawing.Point(118, 71);
+            this.DivisionSizeNumeric.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DivisionSizeNumeric.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
             this.DivisionSizeNumeric.Name = "DivisionSizeNumeric";
-            this.DivisionSizeNumeric.Size = new System.Drawing.Size(237, 20);
+            this.DivisionSizeNumeric.Size = new System.Drawing.Size(317, 22);
             this.DivisionSizeNumeric.TabIndex = 12;
             this.DivisionSizeNumeric.ThousandsSeparator = true;
             this.DivisionSizeNumeric.Value = new decimal(new int[] {
@@ -384,9 +403,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DivisionMoraleLabel.AutoSize = true;
-            this.DivisionMoraleLabel.Location = new System.Drawing.Point(4, 82);
+            this.DivisionMoraleLabel.Location = new System.Drawing.Point(5, 100);
+            this.DivisionMoraleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DivisionMoraleLabel.Name = "DivisionMoraleLabel";
-            this.DivisionMoraleLabel.Size = new System.Drawing.Size(78, 27);
+            this.DivisionMoraleLabel.Size = new System.Drawing.Size(104, 34);
             this.DivisionMoraleLabel.TabIndex = 6;
             this.DivisionMoraleLabel.Text = "Starting Morale";
             this.DivisionMoraleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -397,9 +417,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DivisionNameLabel.AutoSize = true;
-            this.DivisionNameLabel.Location = new System.Drawing.Point(4, 1);
+            this.DivisionNameLabel.Location = new System.Drawing.Point(5, 1);
+            this.DivisionNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DivisionNameLabel.Name = "DivisionNameLabel";
-            this.DivisionNameLabel.Size = new System.Drawing.Size(78, 26);
+            this.DivisionNameLabel.Size = new System.Drawing.Size(104, 32);
             this.DivisionNameLabel.TabIndex = 2;
             this.DivisionNameLabel.Text = "Division Name";
             this.DivisionNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -409,9 +430,10 @@
             this.DivisionNameText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DivisionNameText.Location = new System.Drawing.Point(89, 4);
+            this.DivisionNameText.Location = new System.Drawing.Point(118, 5);
+            this.DivisionNameText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DivisionNameText.Name = "DivisionNameText";
-            this.DivisionNameText.Size = new System.Drawing.Size(237, 20);
+            this.DivisionNameText.Size = new System.Drawing.Size(317, 22);
             this.DivisionNameText.TabIndex = 3;
             // 
             // DivisionUnitLabel
@@ -420,9 +442,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DivisionUnitLabel.AutoSize = true;
-            this.DivisionUnitLabel.Location = new System.Drawing.Point(4, 28);
+            this.DivisionUnitLabel.Location = new System.Drawing.Point(5, 34);
+            this.DivisionUnitLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DivisionUnitLabel.Name = "DivisionUnitLabel";
-            this.DivisionUnitLabel.Size = new System.Drawing.Size(78, 26);
+            this.DivisionUnitLabel.Size = new System.Drawing.Size(104, 32);
             this.DivisionUnitLabel.TabIndex = 4;
             this.DivisionUnitLabel.Text = "Unit Type";
             this.DivisionUnitLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -433,9 +456,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DivisionSizeLabel.AutoSize = true;
-            this.DivisionSizeLabel.Location = new System.Drawing.Point(4, 55);
+            this.DivisionSizeLabel.Location = new System.Drawing.Point(5, 67);
+            this.DivisionSizeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DivisionSizeLabel.Name = "DivisionSizeLabel";
-            this.DivisionSizeLabel.Size = new System.Drawing.Size(78, 26);
+            this.DivisionSizeLabel.Size = new System.Drawing.Size(104, 32);
             this.DivisionSizeLabel.TabIndex = 11;
             this.DivisionSizeLabel.Text = "Starting Size";
             this.DivisionSizeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -451,29 +475,32 @@
             this.TabUnitCommander.Controls.Add(this.UnitTraitRemoveButton);
             this.TabUnitCommander.Controls.Add(this.UnitTraitAddButton);
             this.TabUnitCommander.Controls.Add(this.UnitCreateStatsTable);
-            this.TabUnitCommander.Location = new System.Drawing.Point(4, 22);
+            this.TabUnitCommander.Location = new System.Drawing.Point(4, 25);
+            this.TabUnitCommander.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TabUnitCommander.Name = "TabUnitCommander";
-            this.TabUnitCommander.Padding = new System.Windows.Forms.Padding(3);
-            this.TabUnitCommander.Size = new System.Drawing.Size(879, 554);
+            this.TabUnitCommander.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabUnitCommander.Size = new System.Drawing.Size(1175, 685);
             this.TabUnitCommander.TabIndex = 1;
             this.TabUnitCommander.Text = "Create Unit Types and Commanders";
             this.TabUnitCommander.UseVisualStyleBackColor = true;
             // 
             // UnitCreateTraitDetailText
             // 
-            this.UnitCreateTraitDetailText.Location = new System.Drawing.Point(387, 254);
+            this.UnitCreateTraitDetailText.Location = new System.Drawing.Point(516, 313);
+            this.UnitCreateTraitDetailText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitCreateTraitDetailText.Multiline = true;
             this.UnitCreateTraitDetailText.Name = "UnitCreateTraitDetailText";
             this.UnitCreateTraitDetailText.ReadOnly = true;
-            this.UnitCreateTraitDetailText.Size = new System.Drawing.Size(483, 290);
+            this.UnitCreateTraitDetailText.Size = new System.Drawing.Size(643, 356);
             this.UnitCreateTraitDetailText.TabIndex = 8;
             // 
             // CommanderLoadButton
             // 
             this.CommanderLoadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CommanderLoadButton.Location = new System.Drawing.Point(783, 61);
+            this.CommanderLoadButton.Location = new System.Drawing.Point(1044, 75);
+            this.CommanderLoadButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CommanderLoadButton.Name = "CommanderLoadButton";
-            this.CommanderLoadButton.Size = new System.Drawing.Size(87, 53);
+            this.CommanderLoadButton.Size = new System.Drawing.Size(116, 65);
             this.CommanderLoadButton.TabIndex = 7;
             this.CommanderLoadButton.Text = "Load Commander";
             this.CommanderLoadButton.UseVisualStyleBackColor = true;
@@ -482,9 +509,10 @@
             // CommanderSaveButton
             // 
             this.CommanderSaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CommanderSaveButton.Location = new System.Drawing.Point(783, 8);
+            this.CommanderSaveButton.Location = new System.Drawing.Point(1044, 10);
+            this.CommanderSaveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CommanderSaveButton.Name = "CommanderSaveButton";
-            this.CommanderSaveButton.Size = new System.Drawing.Size(87, 53);
+            this.CommanderSaveButton.Size = new System.Drawing.Size(116, 65);
             this.CommanderSaveButton.TabIndex = 6;
             this.CommanderSaveButton.Text = "Save Commander";
             this.CommanderSaveButton.UseVisualStyleBackColor = true;
@@ -508,16 +536,17 @@
             this.CommanderCreateStatsTable.Controls.Add(this.CommanderIntLabel, 0, 1);
             this.CommanderCreateStatsTable.Controls.Add(this.CommanderIntNumeric, 1, 1);
             this.CommanderCreateStatsTable.Controls.Add(this.label1, 0, 2);
-            this.CommanderCreateStatsTable.Location = new System.Drawing.Point(465, 7);
+            this.CommanderCreateStatsTable.Location = new System.Drawing.Point(620, 9);
+            this.CommanderCreateStatsTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CommanderCreateStatsTable.Name = "CommanderCreateStatsTable";
             this.CommanderCreateStatsTable.RowCount = 6;
-            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.CommanderCreateStatsTable.Size = new System.Drawing.Size(312, 164);
+            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.CommanderCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.CommanderCreateStatsTable.Size = new System.Drawing.Size(416, 202);
             this.CommanderCreateStatsTable.TabIndex = 5;
             // 
             // CommanderMaritimeNumeric
@@ -525,7 +554,8 @@
             this.CommanderMaritimeNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CommanderMaritimeNumeric.Location = new System.Drawing.Point(105, 139);
+            this.CommanderMaritimeNumeric.Location = new System.Drawing.Point(139, 170);
+            this.CommanderMaritimeNumeric.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CommanderMaritimeNumeric.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -537,7 +567,7 @@
             0,
             -2147483648});
             this.CommanderMaritimeNumeric.Name = "CommanderMaritimeNumeric";
-            this.CommanderMaritimeNumeric.Size = new System.Drawing.Size(203, 20);
+            this.CommanderMaritimeNumeric.Size = new System.Drawing.Size(272, 22);
             this.CommanderMaritimeNumeric.TabIndex = 15;
             // 
             // CommanderLandWarNumeric
@@ -545,7 +575,8 @@
             this.CommanderLandWarNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CommanderLandWarNumeric.Location = new System.Drawing.Point(105, 112);
+            this.CommanderLandWarNumeric.Location = new System.Drawing.Point(139, 137);
+            this.CommanderLandWarNumeric.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CommanderLandWarNumeric.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -557,7 +588,7 @@
             0,
             -2147483648});
             this.CommanderLandWarNumeric.Name = "CommanderLandWarNumeric";
-            this.CommanderLandWarNumeric.Size = new System.Drawing.Size(203, 20);
+            this.CommanderLandWarNumeric.Size = new System.Drawing.Size(272, 22);
             this.CommanderLandWarNumeric.TabIndex = 14;
             // 
             // CommanderChaNumeric
@@ -565,7 +596,8 @@
             this.CommanderChaNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CommanderChaNumeric.Location = new System.Drawing.Point(105, 85);
+            this.CommanderChaNumeric.Location = new System.Drawing.Point(139, 104);
+            this.CommanderChaNumeric.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CommanderChaNumeric.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -577,7 +609,7 @@
             0,
             -2147483648});
             this.CommanderChaNumeric.Name = "CommanderChaNumeric";
-            this.CommanderChaNumeric.Size = new System.Drawing.Size(203, 20);
+            this.CommanderChaNumeric.Size = new System.Drawing.Size(272, 22);
             this.CommanderChaNumeric.TabIndex = 13;
             // 
             // CommanderWisNumeric
@@ -585,7 +617,8 @@
             this.CommanderWisNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CommanderWisNumeric.Location = new System.Drawing.Point(105, 58);
+            this.CommanderWisNumeric.Location = new System.Drawing.Point(139, 71);
+            this.CommanderWisNumeric.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CommanderWisNumeric.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -597,7 +630,7 @@
             0,
             -2147483648});
             this.CommanderWisNumeric.Name = "CommanderWisNumeric";
-            this.CommanderWisNumeric.Size = new System.Drawing.Size(203, 20);
+            this.CommanderWisNumeric.Size = new System.Drawing.Size(272, 22);
             this.CommanderWisNumeric.TabIndex = 12;
             // 
             // CommanderMaritimeLabel
@@ -606,9 +639,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CommanderMaritimeLabel.AutoSize = true;
-            this.CommanderMaritimeLabel.Location = new System.Drawing.Point(4, 136);
+            this.CommanderMaritimeLabel.Location = new System.Drawing.Point(5, 166);
+            this.CommanderMaritimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CommanderMaritimeLabel.Name = "CommanderMaritimeLabel";
-            this.CommanderMaritimeLabel.Size = new System.Drawing.Size(94, 27);
+            this.CommanderMaritimeLabel.Size = new System.Drawing.Size(125, 35);
             this.CommanderMaritimeLabel.TabIndex = 6;
             this.CommanderMaritimeLabel.Text = "Maritime Tactics";
             this.CommanderMaritimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -619,9 +653,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CommanderLandWarLabel.AutoSize = true;
-            this.CommanderLandWarLabel.Location = new System.Drawing.Point(4, 109);
+            this.CommanderLandWarLabel.Location = new System.Drawing.Point(5, 133);
+            this.CommanderLandWarLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CommanderLandWarLabel.Name = "CommanderLandWarLabel";
-            this.CommanderLandWarLabel.Size = new System.Drawing.Size(94, 26);
+            this.CommanderLandWarLabel.Size = new System.Drawing.Size(125, 32);
             this.CommanderLandWarLabel.TabIndex = 6;
             this.CommanderLandWarLabel.Text = "Land Warfare";
             this.CommanderLandWarLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -632,9 +667,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CommanderChaLabel.AutoSize = true;
-            this.CommanderChaLabel.Location = new System.Drawing.Point(4, 82);
+            this.CommanderChaLabel.Location = new System.Drawing.Point(5, 100);
+            this.CommanderChaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CommanderChaLabel.Name = "CommanderChaLabel";
-            this.CommanderChaLabel.Size = new System.Drawing.Size(94, 26);
+            this.CommanderChaLabel.Size = new System.Drawing.Size(125, 32);
             this.CommanderChaLabel.TabIndex = 6;
             this.CommanderChaLabel.Text = "CHA";
             this.CommanderChaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -645,9 +681,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CommanderNameLabel.AutoSize = true;
-            this.CommanderNameLabel.Location = new System.Drawing.Point(4, 1);
+            this.CommanderNameLabel.Location = new System.Drawing.Point(5, 1);
+            this.CommanderNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CommanderNameLabel.Name = "CommanderNameLabel";
-            this.CommanderNameLabel.Size = new System.Drawing.Size(94, 26);
+            this.CommanderNameLabel.Size = new System.Drawing.Size(125, 32);
             this.CommanderNameLabel.TabIndex = 2;
             this.CommanderNameLabel.Text = "Commander Name";
             this.CommanderNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -657,9 +694,10 @@
             this.CommanderNameText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CommanderNameText.Location = new System.Drawing.Point(105, 4);
+            this.CommanderNameText.Location = new System.Drawing.Point(139, 5);
+            this.CommanderNameText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CommanderNameText.Name = "CommanderNameText";
-            this.CommanderNameText.Size = new System.Drawing.Size(203, 20);
+            this.CommanderNameText.Size = new System.Drawing.Size(272, 22);
             this.CommanderNameText.TabIndex = 3;
             // 
             // CommanderIntLabel
@@ -668,9 +706,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CommanderIntLabel.AutoSize = true;
-            this.CommanderIntLabel.Location = new System.Drawing.Point(4, 28);
+            this.CommanderIntLabel.Location = new System.Drawing.Point(5, 34);
+            this.CommanderIntLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CommanderIntLabel.Name = "CommanderIntLabel";
-            this.CommanderIntLabel.Size = new System.Drawing.Size(94, 26);
+            this.CommanderIntLabel.Size = new System.Drawing.Size(125, 32);
             this.CommanderIntLabel.TabIndex = 4;
             this.CommanderIntLabel.Text = "INT";
             this.CommanderIntLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -680,7 +719,8 @@
             this.CommanderIntNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CommanderIntNumeric.Location = new System.Drawing.Point(105, 31);
+            this.CommanderIntNumeric.Location = new System.Drawing.Point(139, 38);
+            this.CommanderIntNumeric.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CommanderIntNumeric.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -692,7 +732,7 @@
             0,
             -2147483648});
             this.CommanderIntNumeric.Name = "CommanderIntNumeric";
-            this.CommanderIntNumeric.Size = new System.Drawing.Size(203, 20);
+            this.CommanderIntNumeric.Size = new System.Drawing.Size(272, 22);
             this.CommanderIntNumeric.TabIndex = 10;
             // 
             // label1
@@ -701,9 +741,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 55);
+            this.label1.Location = new System.Drawing.Point(5, 67);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 26);
+            this.label1.Size = new System.Drawing.Size(125, 32);
             this.label1.TabIndex = 11;
             this.label1.Text = "WIS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -711,9 +752,10 @@
             // UnitLoadButton
             // 
             this.UnitLoadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitLoadButton.Location = new System.Drawing.Point(327, 60);
+            this.UnitLoadButton.Location = new System.Drawing.Point(436, 74);
+            this.UnitLoadButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitLoadButton.Name = "UnitLoadButton";
-            this.UnitLoadButton.Size = new System.Drawing.Size(81, 53);
+            this.UnitLoadButton.Size = new System.Drawing.Size(108, 65);
             this.UnitLoadButton.TabIndex = 4;
             this.UnitLoadButton.Text = "Load Unit";
             this.UnitLoadButton.UseVisualStyleBackColor = true;
@@ -722,9 +764,10 @@
             // UnitSaveButton
             // 
             this.UnitSaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitSaveButton.Location = new System.Drawing.Point(327, 7);
+            this.UnitSaveButton.Location = new System.Drawing.Point(436, 9);
+            this.UnitSaveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitSaveButton.Name = "UnitSaveButton";
-            this.UnitSaveButton.Size = new System.Drawing.Size(81, 53);
+            this.UnitSaveButton.Size = new System.Drawing.Size(108, 65);
             this.UnitSaveButton.TabIndex = 3;
             this.UnitSaveButton.Text = "Save Unit";
             this.UnitSaveButton.UseVisualStyleBackColor = true;
@@ -733,9 +776,10 @@
             // UnitTraitRemoveButton
             // 
             this.UnitTraitRemoveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitTraitRemoveButton.Location = new System.Drawing.Point(327, 250);
+            this.UnitTraitRemoveButton.Location = new System.Drawing.Point(436, 308);
+            this.UnitTraitRemoveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitTraitRemoveButton.Name = "UnitTraitRemoveButton";
-            this.UnitTraitRemoveButton.Size = new System.Drawing.Size(32, 32);
+            this.UnitTraitRemoveButton.Size = new System.Drawing.Size(43, 39);
             this.UnitTraitRemoveButton.TabIndex = 2;
             this.UnitTraitRemoveButton.Text = "-";
             this.UnitTraitRemoveButton.UseVisualStyleBackColor = true;
@@ -744,9 +788,10 @@
             // UnitTraitAddButton
             // 
             this.UnitTraitAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitTraitAddButton.Location = new System.Drawing.Point(327, 288);
+            this.UnitTraitAddButton.Location = new System.Drawing.Point(436, 354);
+            this.UnitTraitAddButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitTraitAddButton.Name = "UnitTraitAddButton";
-            this.UnitTraitAddButton.Size = new System.Drawing.Size(32, 32);
+            this.UnitTraitAddButton.Size = new System.Drawing.Size(43, 39);
             this.UnitTraitAddButton.TabIndex = 1;
             this.UnitTraitAddButton.Text = "+";
             this.UnitTraitAddButton.UseVisualStyleBackColor = true;
@@ -780,21 +825,22 @@
             this.UnitCreateStatsTable.Controls.Add(this.UnitMaintenenceLabel, 0, 6);
             this.UnitCreateStatsTable.Controls.Add(this.UnitOffenseNumeric, 1, 2);
             this.UnitCreateStatsTable.Controls.Add(this.UnitTraitsTable, 1, -1);
-            this.UnitCreateStatsTable.Location = new System.Drawing.Point(8, 7);
+            this.UnitCreateStatsTable.Location = new System.Drawing.Point(11, 9);
+            this.UnitCreateStatsTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitCreateStatsTable.Name = "UnitCreateStatsTable";
             this.UnitCreateStatsTable.RowCount = 10;
-            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.UnitCreateStatsTable.Size = new System.Drawing.Size(313, 541);
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.UnitCreateStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.UnitCreateStatsTable.Size = new System.Drawing.Size(417, 666);
             this.UnitCreateStatsTable.TabIndex = 0;
             // 
             // UnitTraitsLabel
@@ -802,10 +848,10 @@
             this.UnitTraitsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UnitTraitsLabel.AutoSize = true;
-            this.UnitTraitsLabel.Location = new System.Drawing.Point(4, 253);
-            this.UnitTraitsLabel.Margin = new System.Windows.Forms.Padding(3, 9, 3, 0);
+            this.UnitTraitsLabel.Location = new System.Drawing.Point(5, 309);
+            this.UnitTraitsLabel.Margin = new System.Windows.Forms.Padding(4, 11, 4, 0);
             this.UnitTraitsLabel.Name = "UnitTraitsLabel";
-            this.UnitTraitsLabel.Size = new System.Drawing.Size(98, 13);
+            this.UnitTraitsLabel.Size = new System.Drawing.Size(129, 17);
             this.UnitTraitsLabel.TabIndex = 18;
             this.UnitTraitsLabel.Text = "Traits";
             this.UnitTraitsLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -815,9 +861,10 @@
             this.UnitMoraleText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.UnitMoraleText.Location = new System.Drawing.Point(109, 220);
+            this.UnitMoraleText.Location = new System.Drawing.Point(143, 269);
+            this.UnitMoraleText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitMoraleText.Name = "UnitMoraleText";
-            this.UnitMoraleText.Size = new System.Drawing.Size(200, 20);
+            this.UnitMoraleText.Size = new System.Drawing.Size(269, 22);
             this.UnitMoraleText.TabIndex = 17;
             // 
             // UnitMoraleLabel
@@ -826,9 +873,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UnitMoraleLabel.AutoSize = true;
-            this.UnitMoraleLabel.Location = new System.Drawing.Point(4, 217);
+            this.UnitMoraleLabel.Location = new System.Drawing.Point(5, 265);
+            this.UnitMoraleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UnitMoraleLabel.Name = "UnitMoraleLabel";
-            this.UnitMoraleLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitMoraleLabel.Size = new System.Drawing.Size(129, 32);
             this.UnitMoraleLabel.TabIndex = 16;
             this.UnitMoraleLabel.Text = "Morale Dice";
             this.UnitMoraleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -838,9 +886,10 @@
             this.UnitCasualtyText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.UnitCasualtyText.Location = new System.Drawing.Point(109, 193);
+            this.UnitCasualtyText.Location = new System.Drawing.Point(143, 236);
+            this.UnitCasualtyText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitCasualtyText.Name = "UnitCasualtyText";
-            this.UnitCasualtyText.Size = new System.Drawing.Size(200, 20);
+            this.UnitCasualtyText.Size = new System.Drawing.Size(269, 22);
             this.UnitCasualtyText.TabIndex = 15;
             // 
             // UnitCasualtyLabel
@@ -849,9 +898,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UnitCasualtyLabel.AutoSize = true;
-            this.UnitCasualtyLabel.Location = new System.Drawing.Point(4, 190);
+            this.UnitCasualtyLabel.Location = new System.Drawing.Point(5, 232);
+            this.UnitCasualtyLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UnitCasualtyLabel.Name = "UnitCasualtyLabel";
-            this.UnitCasualtyLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitCasualtyLabel.Size = new System.Drawing.Size(129, 32);
             this.UnitCasualtyLabel.TabIndex = 14;
             this.UnitCasualtyLabel.Text = "Casualty Dice";
             this.UnitCasualtyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -867,7 +917,8 @@
             0,
             0,
             131072});
-            this.UnitMaintenenceNumeric.Location = new System.Drawing.Point(109, 166);
+            this.UnitMaintenenceNumeric.Location = new System.Drawing.Point(143, 203);
+            this.UnitMaintenenceNumeric.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitMaintenenceNumeric.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -879,7 +930,7 @@
             0,
             -2147483648});
             this.UnitMaintenenceNumeric.Name = "UnitMaintenenceNumeric";
-            this.UnitMaintenenceNumeric.Size = new System.Drawing.Size(200, 20);
+            this.UnitMaintenenceNumeric.Size = new System.Drawing.Size(269, 22);
             this.UnitMaintenenceNumeric.TabIndex = 13;
             // 
             // UnitRecruitmentNumeric
@@ -893,7 +944,8 @@
             0,
             0,
             131072});
-            this.UnitRecruitmentNumeric.Location = new System.Drawing.Point(109, 139);
+            this.UnitRecruitmentNumeric.Location = new System.Drawing.Point(143, 170);
+            this.UnitRecruitmentNumeric.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitRecruitmentNumeric.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -905,7 +957,7 @@
             0,
             -2147483648});
             this.UnitRecruitmentNumeric.Name = "UnitRecruitmentNumeric";
-            this.UnitRecruitmentNumeric.Size = new System.Drawing.Size(200, 20);
+            this.UnitRecruitmentNumeric.Size = new System.Drawing.Size(269, 22);
             this.UnitRecruitmentNumeric.TabIndex = 12;
             // 
             // UnitInitiativeNumeric
@@ -913,7 +965,8 @@
             this.UnitInitiativeNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.UnitInitiativeNumeric.Location = new System.Drawing.Point(109, 112);
+            this.UnitInitiativeNumeric.Location = new System.Drawing.Point(143, 137);
+            this.UnitInitiativeNumeric.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitInitiativeNumeric.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -925,7 +978,7 @@
             0,
             -2147483648});
             this.UnitInitiativeNumeric.Name = "UnitInitiativeNumeric";
-            this.UnitInitiativeNumeric.Size = new System.Drawing.Size(200, 20);
+            this.UnitInitiativeNumeric.Size = new System.Drawing.Size(269, 22);
             this.UnitInitiativeNumeric.TabIndex = 11;
             // 
             // UnitDefenseNumeric
@@ -933,7 +986,8 @@
             this.UnitDefenseNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.UnitDefenseNumeric.Location = new System.Drawing.Point(109, 85);
+            this.UnitDefenseNumeric.Location = new System.Drawing.Point(143, 104);
+            this.UnitDefenseNumeric.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitDefenseNumeric.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -945,7 +999,7 @@
             0,
             -2147483648});
             this.UnitDefenseNumeric.Name = "UnitDefenseNumeric";
-            this.UnitDefenseNumeric.Size = new System.Drawing.Size(200, 20);
+            this.UnitDefenseNumeric.Size = new System.Drawing.Size(269, 22);
             this.UnitDefenseNumeric.TabIndex = 10;
             // 
             // UnitNameText
@@ -953,9 +1007,10 @@
             this.UnitNameText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.UnitNameText.Location = new System.Drawing.Point(109, 4);
+            this.UnitNameText.Location = new System.Drawing.Point(143, 5);
+            this.UnitNameText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitNameText.Name = "UnitNameText";
-            this.UnitNameText.Size = new System.Drawing.Size(200, 20);
+            this.UnitNameText.Size = new System.Drawing.Size(269, 22);
             this.UnitNameText.TabIndex = 0;
             // 
             // UnitNameLabel
@@ -964,9 +1019,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UnitNameLabel.AutoSize = true;
-            this.UnitNameLabel.Location = new System.Drawing.Point(4, 1);
+            this.UnitNameLabel.Location = new System.Drawing.Point(5, 1);
+            this.UnitNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UnitNameLabel.Name = "UnitNameLabel";
-            this.UnitNameLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitNameLabel.Size = new System.Drawing.Size(129, 32);
             this.UnitNameLabel.TabIndex = 1;
             this.UnitNameLabel.Text = "Unit Name";
             this.UnitNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -977,9 +1033,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UnitTypeLabel.AutoSize = true;
-            this.UnitTypeLabel.Location = new System.Drawing.Point(4, 28);
+            this.UnitTypeLabel.Location = new System.Drawing.Point(5, 34);
+            this.UnitTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UnitTypeLabel.Name = "UnitTypeLabel";
-            this.UnitTypeLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitTypeLabel.Size = new System.Drawing.Size(129, 32);
             this.UnitTypeLabel.TabIndex = 2;
             this.UnitTypeLabel.Text = "Unit Type";
             this.UnitTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -990,9 +1047,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UnitTypeCombo.FormattingEnabled = true;
-            this.UnitTypeCombo.Location = new System.Drawing.Point(109, 31);
+            this.UnitTypeCombo.Location = new System.Drawing.Point(143, 38);
+            this.UnitTypeCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitTypeCombo.Name = "UnitTypeCombo";
-            this.UnitTypeCombo.Size = new System.Drawing.Size(200, 21);
+            this.UnitTypeCombo.Size = new System.Drawing.Size(269, 24);
             this.UnitTypeCombo.TabIndex = 3;
             // 
             // UnitOffenseLabel
@@ -1001,9 +1059,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UnitOffenseLabel.AutoSize = true;
-            this.UnitOffenseLabel.Location = new System.Drawing.Point(4, 55);
+            this.UnitOffenseLabel.Location = new System.Drawing.Point(5, 67);
+            this.UnitOffenseLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UnitOffenseLabel.Name = "UnitOffenseLabel";
-            this.UnitOffenseLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitOffenseLabel.Size = new System.Drawing.Size(129, 32);
             this.UnitOffenseLabel.TabIndex = 4;
             this.UnitOffenseLabel.Text = "Offensive Strength";
             this.UnitOffenseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1014,9 +1073,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UnitDefenseLabel.AutoSize = true;
-            this.UnitDefenseLabel.Location = new System.Drawing.Point(4, 82);
+            this.UnitDefenseLabel.Location = new System.Drawing.Point(5, 100);
+            this.UnitDefenseLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UnitDefenseLabel.Name = "UnitDefenseLabel";
-            this.UnitDefenseLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitDefenseLabel.Size = new System.Drawing.Size(129, 32);
             this.UnitDefenseLabel.TabIndex = 5;
             this.UnitDefenseLabel.Text = "Defensive Strength";
             this.UnitDefenseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1027,9 +1087,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UnitInitiativeLabel.AutoSize = true;
-            this.UnitInitiativeLabel.Location = new System.Drawing.Point(4, 109);
+            this.UnitInitiativeLabel.Location = new System.Drawing.Point(5, 133);
+            this.UnitInitiativeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UnitInitiativeLabel.Name = "UnitInitiativeLabel";
-            this.UnitInitiativeLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitInitiativeLabel.Size = new System.Drawing.Size(129, 32);
             this.UnitInitiativeLabel.TabIndex = 6;
             this.UnitInitiativeLabel.Text = "Initiative Penalty";
             this.UnitInitiativeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1040,9 +1101,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UnitRecruitmentLabel.AutoSize = true;
-            this.UnitRecruitmentLabel.Location = new System.Drawing.Point(4, 136);
+            this.UnitRecruitmentLabel.Location = new System.Drawing.Point(5, 166);
+            this.UnitRecruitmentLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UnitRecruitmentLabel.Name = "UnitRecruitmentLabel";
-            this.UnitRecruitmentLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitRecruitmentLabel.Size = new System.Drawing.Size(129, 32);
             this.UnitRecruitmentLabel.TabIndex = 7;
             this.UnitRecruitmentLabel.Text = "Recruitment Cost";
             this.UnitRecruitmentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1053,9 +1115,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UnitMaintenenceLabel.AutoSize = true;
-            this.UnitMaintenenceLabel.Location = new System.Drawing.Point(4, 163);
+            this.UnitMaintenenceLabel.Location = new System.Drawing.Point(5, 199);
+            this.UnitMaintenenceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UnitMaintenenceLabel.Name = "UnitMaintenenceLabel";
-            this.UnitMaintenenceLabel.Size = new System.Drawing.Size(98, 26);
+            this.UnitMaintenenceLabel.Size = new System.Drawing.Size(129, 32);
             this.UnitMaintenenceLabel.TabIndex = 8;
             this.UnitMaintenenceLabel.Text = "Maintenence Cost";
             this.UnitMaintenenceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1065,7 +1128,8 @@
             this.UnitOffenseNumeric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.UnitOffenseNumeric.Location = new System.Drawing.Point(109, 58);
+            this.UnitOffenseNumeric.Location = new System.Drawing.Point(143, 71);
+            this.UnitOffenseNumeric.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitOffenseNumeric.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -1077,7 +1141,7 @@
             0,
             -2147483648});
             this.UnitOffenseNumeric.Name = "UnitOffenseNumeric";
-            this.UnitOffenseNumeric.Size = new System.Drawing.Size(200, 20);
+            this.UnitOffenseNumeric.Size = new System.Drawing.Size(269, 22);
             this.UnitOffenseNumeric.TabIndex = 9;
             // 
             // UnitTraitsTable
@@ -1087,20 +1151,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UnitTraitsTable.ColumnCount = 2;
             this.UnitTraitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.UnitTraitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
-            this.UnitTraitsTable.Location = new System.Drawing.Point(109, 247);
+            this.UnitTraitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
+            this.UnitTraitsTable.Location = new System.Drawing.Point(143, 302);
+            this.UnitTraitsTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitTraitsTable.Name = "UnitTraitsTable";
             this.UnitTraitsTable.RowCount = 1;
             this.UnitTraitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.UnitTraitsTable.Size = new System.Drawing.Size(200, 290);
+            this.UnitTraitsTable.Size = new System.Drawing.Size(269, 359);
             this.UnitTraitsTable.TabIndex = 19;
             // 
             // TabBattle
             // 
-            this.TabBattle.Location = new System.Drawing.Point(4, 22);
+            this.TabBattle.Location = new System.Drawing.Point(4, 25);
+            this.TabBattle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TabBattle.Name = "TabBattle";
-            this.TabBattle.Padding = new System.Windows.Forms.Padding(3);
-            this.TabBattle.Size = new System.Drawing.Size(879, 554);
+            this.TabBattle.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabBattle.Size = new System.Drawing.Size(1175, 685);
             this.TabBattle.TabIndex = 0;
             this.TabBattle.Text = "Battle Manager";
             this.TabBattle.UseVisualStyleBackColor = true;
@@ -1113,9 +1179,10 @@
             this.AppTabs.Controls.Add(this.TabOptions);
             this.AppTabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AppTabs.Location = new System.Drawing.Point(0, 0);
+            this.AppTabs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AppTabs.Name = "AppTabs";
             this.AppTabs.SelectedIndex = 0;
-            this.AppTabs.Size = new System.Drawing.Size(887, 580);
+            this.AppTabs.Size = new System.Drawing.Size(1183, 714);
             this.AppTabs.TabIndex = 1;
             // 
             // TabOptions
@@ -1139,19 +1206,53 @@
             this.TabOptions.Controls.Add(this.label3);
             this.TabOptions.Controls.Add(this.OptionsCmdrDirLabel);
             this.TabOptions.Controls.Add(this.OptionsUnitDirLabel);
-            this.TabOptions.Location = new System.Drawing.Point(4, 22);
+            this.TabOptions.Location = new System.Drawing.Point(4, 25);
+            this.TabOptions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TabOptions.Name = "TabOptions";
-            this.TabOptions.Padding = new System.Windows.Forms.Padding(3);
-            this.TabOptions.Size = new System.Drawing.Size(879, 554);
+            this.TabOptions.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabOptions.Size = new System.Drawing.Size(1175, 685);
             this.TabOptions.TabIndex = 3;
             this.TabOptions.Text = "Options";
             this.TabOptions.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(237, 22);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(742, 17);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Files can be loaded and saved anywhere, but the load and save dialog boxes will s" +
+    "tart in these directories by default.";
+            // 
+            // TraitFileResetButton
+            // 
+            this.TraitFileResetButton.Location = new System.Drawing.Point(985, 313);
+            this.TraitFileResetButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TraitFileResetButton.Name = "TraitFileResetButton";
+            this.TraitFileResetButton.Size = new System.Drawing.Size(84, 28);
+            this.TraitFileResetButton.TabIndex = 18;
+            this.TraitFileResetButton.Text = "Reset";
+            this.TraitFileResetButton.UseVisualStyleBackColor = true;
+            // 
+            // TraitFileExportButton
+            // 
+            this.TraitFileExportButton.Location = new System.Drawing.Point(985, 277);
+            this.TraitFileExportButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TraitFileExportButton.Name = "TraitFileExportButton";
+            this.TraitFileExportButton.Size = new System.Drawing.Size(84, 28);
+            this.TraitFileExportButton.TabIndex = 17;
+            this.TraitFileExportButton.Text = "Export...";
+            this.TraitFileExportButton.UseVisualStyleBackColor = true;
+            this.TraitFileExportButton.Click += new System.EventHandler(this.TraitFileExportButton_Click);
+            // 
             // TraitFileSelectButton
             // 
-            this.TraitFileSelectButton.Location = new System.Drawing.Point(739, 196);
+            this.TraitFileSelectButton.Location = new System.Drawing.Point(985, 241);
+            this.TraitFileSelectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TraitFileSelectButton.Name = "TraitFileSelectButton";
-            this.TraitFileSelectButton.Size = new System.Drawing.Size(63, 23);
+            this.TraitFileSelectButton.Size = new System.Drawing.Size(84, 28);
             this.TraitFileSelectButton.TabIndex = 16;
             this.TraitFileSelectButton.Text = "Select...";
             this.TraitFileSelectButton.UseVisualStyleBackColor = true;
@@ -1159,9 +1260,10 @@
             // 
             // BattleDirSelectButton
             // 
-            this.BattleDirSelectButton.Location = new System.Drawing.Point(739, 122);
+            this.BattleDirSelectButton.Location = new System.Drawing.Point(985, 150);
+            this.BattleDirSelectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BattleDirSelectButton.Name = "BattleDirSelectButton";
-            this.BattleDirSelectButton.Size = new System.Drawing.Size(63, 23);
+            this.BattleDirSelectButton.Size = new System.Drawing.Size(84, 28);
             this.BattleDirSelectButton.TabIndex = 15;
             this.BattleDirSelectButton.Text = "Select...";
             this.BattleDirSelectButton.UseVisualStyleBackColor = true;
@@ -1169,9 +1271,10 @@
             // 
             // ArmyDirSelectButton
             // 
-            this.ArmyDirSelectButton.Location = new System.Drawing.Point(739, 93);
+            this.ArmyDirSelectButton.Location = new System.Drawing.Point(985, 114);
+            this.ArmyDirSelectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ArmyDirSelectButton.Name = "ArmyDirSelectButton";
-            this.ArmyDirSelectButton.Size = new System.Drawing.Size(63, 23);
+            this.ArmyDirSelectButton.Size = new System.Drawing.Size(84, 28);
             this.ArmyDirSelectButton.TabIndex = 14;
             this.ArmyDirSelectButton.Text = "Select...";
             this.ArmyDirSelectButton.UseVisualStyleBackColor = true;
@@ -1179,9 +1282,10 @@
             // 
             // CommanderDirSelectButton
             // 
-            this.CommanderDirSelectButton.Location = new System.Drawing.Point(739, 64);
+            this.CommanderDirSelectButton.Location = new System.Drawing.Point(985, 79);
+            this.CommanderDirSelectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CommanderDirSelectButton.Name = "CommanderDirSelectButton";
-            this.CommanderDirSelectButton.Size = new System.Drawing.Size(63, 23);
+            this.CommanderDirSelectButton.Size = new System.Drawing.Size(84, 28);
             this.CommanderDirSelectButton.TabIndex = 13;
             this.CommanderDirSelectButton.Text = "Select...";
             this.CommanderDirSelectButton.UseVisualStyleBackColor = true;
@@ -1189,9 +1293,10 @@
             // 
             // UnitDirSelectButton
             // 
-            this.UnitDirSelectButton.Location = new System.Drawing.Point(739, 35);
+            this.UnitDirSelectButton.Location = new System.Drawing.Point(985, 43);
+            this.UnitDirSelectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitDirSelectButton.Name = "UnitDirSelectButton";
-            this.UnitDirSelectButton.Size = new System.Drawing.Size(63, 23);
+            this.UnitDirSelectButton.Size = new System.Drawing.Size(84, 28);
             this.UnitDirSelectButton.TabIndex = 12;
             this.UnitDirSelectButton.Text = "Select...";
             this.UnitDirSelectButton.UseVisualStyleBackColor = true;
@@ -1199,95 +1304,106 @@
             // 
             // TraitFileSelectText
             // 
-            this.TraitFileSelectText.Location = new System.Drawing.Point(111, 198);
+            this.TraitFileSelectText.Location = new System.Drawing.Point(148, 244);
+            this.TraitFileSelectText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TraitFileSelectText.Name = "TraitFileSelectText";
             this.TraitFileSelectText.ReadOnly = true;
-            this.TraitFileSelectText.Size = new System.Drawing.Size(622, 20);
+            this.TraitFileSelectText.Size = new System.Drawing.Size(828, 22);
             this.TraitFileSelectText.TabIndex = 11;
             // 
             // BattleDirSelectText
             // 
-            this.BattleDirSelectText.Location = new System.Drawing.Point(111, 124);
+            this.BattleDirSelectText.Location = new System.Drawing.Point(148, 153);
+            this.BattleDirSelectText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BattleDirSelectText.Name = "BattleDirSelectText";
             this.BattleDirSelectText.ReadOnly = true;
-            this.BattleDirSelectText.Size = new System.Drawing.Size(622, 20);
+            this.BattleDirSelectText.Size = new System.Drawing.Size(828, 22);
             this.BattleDirSelectText.TabIndex = 9;
             // 
             // CommanderDirSelectText
             // 
-            this.CommanderDirSelectText.Location = new System.Drawing.Point(111, 66);
+            this.CommanderDirSelectText.Location = new System.Drawing.Point(148, 81);
+            this.CommanderDirSelectText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CommanderDirSelectText.Name = "CommanderDirSelectText";
             this.CommanderDirSelectText.ReadOnly = true;
-            this.CommanderDirSelectText.Size = new System.Drawing.Size(622, 20);
+            this.CommanderDirSelectText.Size = new System.Drawing.Size(828, 22);
             this.CommanderDirSelectText.TabIndex = 8;
             // 
             // ArmyDirSelectText
             // 
-            this.ArmyDirSelectText.Location = new System.Drawing.Point(111, 95);
+            this.ArmyDirSelectText.Location = new System.Drawing.Point(148, 117);
+            this.ArmyDirSelectText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ArmyDirSelectText.Name = "ArmyDirSelectText";
             this.ArmyDirSelectText.ReadOnly = true;
-            this.ArmyDirSelectText.Size = new System.Drawing.Size(622, 20);
+            this.ArmyDirSelectText.Size = new System.Drawing.Size(828, 22);
             this.ArmyDirSelectText.TabIndex = 7;
             // 
             // UnitDirSelectText
             // 
-            this.UnitDirSelectText.Location = new System.Drawing.Point(111, 37);
+            this.UnitDirSelectText.Location = new System.Drawing.Point(148, 46);
+            this.UnitDirSelectText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnitDirSelectText.Name = "UnitDirSelectText";
             this.UnitDirSelectText.ReadOnly = true;
-            this.UnitDirSelectText.Size = new System.Drawing.Size(622, 20);
+            this.UnitDirSelectText.Size = new System.Drawing.Size(828, 22);
             this.UnitDirSelectText.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 18);
+            this.label5.Location = new System.Drawing.Point(11, 22);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 13);
+            this.label5.Size = new System.Drawing.Size(129, 17);
             this.label5.TabIndex = 5;
             this.label5.Text = "Default Directories:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 201);
+            this.label4.Location = new System.Drawing.Point(11, 247);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.Size = new System.Drawing.Size(137, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "Trait Definitions File:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 127);
+            this.label2.Location = new System.Drawing.Point(88, 156);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.Size = new System.Drawing.Size(51, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Battles";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 98);
+            this.label3.Location = new System.Drawing.Point(89, 121);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(51, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Armies";
             // 
             // OptionsCmdrDirLabel
             // 
             this.OptionsCmdrDirLabel.AutoSize = true;
-            this.OptionsCmdrDirLabel.Location = new System.Drawing.Point(37, 69);
+            this.OptionsCmdrDirLabel.Location = new System.Drawing.Point(49, 85);
+            this.OptionsCmdrDirLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.OptionsCmdrDirLabel.Name = "OptionsCmdrDirLabel";
-            this.OptionsCmdrDirLabel.Size = new System.Drawing.Size(68, 13);
+            this.OptionsCmdrDirLabel.Size = new System.Drawing.Size(91, 17);
             this.OptionsCmdrDirLabel.TabIndex = 1;
             this.OptionsCmdrDirLabel.Text = "Commanders";
             // 
             // OptionsUnitDirLabel
             // 
             this.OptionsUnitDirLabel.AutoSize = true;
-            this.OptionsUnitDirLabel.Location = new System.Drawing.Point(47, 40);
+            this.OptionsUnitDirLabel.Location = new System.Drawing.Point(63, 49);
+            this.OptionsUnitDirLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.OptionsUnitDirLabel.Name = "OptionsUnitDirLabel";
-            this.OptionsUnitDirLabel.Size = new System.Drawing.Size(58, 13);
+            this.OptionsUnitDirLabel.Size = new System.Drawing.Size(76, 17);
             this.OptionsUnitDirLabel.TabIndex = 0;
             this.OptionsUnitDirLabel.Text = "Unit Types";
             // 
@@ -1301,42 +1417,14 @@
             // 
             this.LoadDialog.DefaultExt = "json";
             // 
-            // TraitFileExportButton
-            // 
-            this.TraitFileExportButton.Location = new System.Drawing.Point(739, 225);
-            this.TraitFileExportButton.Name = "TraitFileExportButton";
-            this.TraitFileExportButton.Size = new System.Drawing.Size(63, 23);
-            this.TraitFileExportButton.TabIndex = 17;
-            this.TraitFileExportButton.Text = "Export...";
-            this.TraitFileExportButton.UseVisualStyleBackColor = true;
-            this.TraitFileExportButton.Click += new System.EventHandler(this.TraitFileExportButton_Click);
-            // 
-            // TraitFileResetButton
-            // 
-            this.TraitFileResetButton.Location = new System.Drawing.Point(739, 254);
-            this.TraitFileResetButton.Name = "TraitFileResetButton";
-            this.TraitFileResetButton.Size = new System.Drawing.Size(63, 23);
-            this.TraitFileResetButton.TabIndex = 18;
-            this.TraitFileResetButton.Text = "Reset";
-            this.TraitFileResetButton.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(178, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(555, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Files can be loaded and saved anywhere, but the load and save dialog boxes will s" +
-    "tart in these directories by default.";
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 580);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1183, 714);
             this.Controls.Add(this.AppTabs);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "BattleBois";
             this.TabArmy.ResumeLayout(false);
