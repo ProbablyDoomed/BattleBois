@@ -519,6 +519,7 @@ namespace BattleBois
 
         private void ArmySaveButton_Click(object sender, EventArgs e)
         {
+            armyCreatorWorkingCopy.Name = ArmyNameText.Text;
             ShowSaveJsonObjectDialog<CArmy>(armyCreatorWorkingCopy);
         }
 
@@ -531,7 +532,9 @@ namespace BattleBois
                 ClearAllArmyRows();
                 ArmyCommanderList.Items.Clear();
 
-                foreach(CDivision division in armyCreatorWorkingCopy.Divisions)
+                ArmyNameText.Text = armyCreatorWorkingCopy.Name;
+
+                foreach (CDivision division in armyCreatorWorkingCopy.Divisions)
                 {
                     AddNewArmyRow(division);
                 }
@@ -560,7 +563,13 @@ namespace BattleBois
 
         private void TraitFileSelectButton_Click(object sender, EventArgs e)
         {
-
+            TraitReference.TraitDefinitions newDefs = ShowLoadJsonObjectDialog<TraitReference.TraitDefinitions>();
+            if (LoadDialog.FileName != "")
+            {
+                JsonFiles.JsonFilePaths[typeof(TraitReference.TraitDefinitions).Name] = LoadDialog.FileName;
+                JsonFiles.LoadFilePaths();
+            }
+            
         }
 
         private void TraitFileExportButton_Click(object sender, EventArgs e)
